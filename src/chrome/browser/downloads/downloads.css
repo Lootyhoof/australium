@@ -228,10 +228,21 @@ richlistitem[type="download"]:hover > stack > .downloadButton.downloadRetry:acti
 /*** Main indicator icon ***/
 
 #downloads-indicator-icon {
-  background: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"),
-                              0, 108, 18, 90) center no-repeat;
-  min-width: 18px;
-  min-height: 18px;
+      background: -moz-image-rect(url("chrome://browser/skin/Toolbar-glass.png"),
+                                  0, 108, 18, 90) center no-repeat;
+      min-width: 18px;
+      min-height: 18px;
+}
+
+@media (-moz-windows-compositor) {
+  @media not all and (-moz-windows-glass) {
+    #downloads-indicator-icon {
+      background: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"),
+                                  0, 108, 18, 90) center no-repeat;
+      min-width: 18px;
+      min-height: 18px;
+    }
+  }
 }
 
 #downloads-indicator-icon:-moz-lwtheme-brighttext {
@@ -247,9 +258,19 @@ richlistitem[type="download"]:hover > stack > .downloadButton.downloadRetry:acti
    equivalent to -moz-any([progress], [paused]). */
 
 #downloads-indicator:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
-  background: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"),
+  background: -moz-image-rect(url("chrome://browser/skin/Toolbar-glass.png"),
                               0, 108, 18, 90) center no-repeat;
   background-size: 12px;
+}   
+   
+@media (-moz-windows-compositor) {
+  @media not all and (-moz-windows-glass) {
+    #downloads-indicator:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
+      background: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"),
+                                  0, 108, 18, 90) center no-repeat;
+      background-size: 12px;
+    }
+  }
 }
 
 #downloads-indicator:not([counter])[attention] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
