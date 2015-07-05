@@ -93,10 +93,6 @@
   background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
 }
 
-#nav-bar[tabsontop=true]:not(:-moz-lwtheme) {
-  margin-top: -1px; /* Move up 1px into the TabsToolbar */
-}
-
 #nav-bar-overflow-button {
   -moz-image-region: rect(-5px, 12px, 11px, -4px);
 }
@@ -691,13 +687,15 @@ menuitem.bookmark-item {
 /* ::::: primary toolbar buttons ::::: */
 
 .toolbarbutton-1 {
-  list-style-image: url("chrome://browser/skin/Toolbar.png");
-}
-
-@media (-moz-windows-glass) {
-.toolbarbutton-1:not(:-moz-lwtheme) {
   list-style-image: url("chrome://browser/skin/Toolbar-glass.png");
 }
+
+@media (-moz-windows-compositor) {
+  @media not all and (-moz-windows-glass) {
+    .toolbarbutton-1:not(:-moz-lwtheme) {
+      list-style-image: url("chrome://browser/skin/Toolbar.png");
+    }
+  }
 }
 
 .toolbarbutton-1:-moz-lwtheme-brighttext {
@@ -1059,6 +1057,28 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 #downloads-button {
   -moz-image-region: rect(0, 108px, 18px, 90px);
+}
+
+#status4evar-download-button #status4evar-download-icon:not(:-moz-lwtheme),
+#status4evar-download-button:-moz-lwtheme-brighttext #status4evar-download-icon:not(:-moz-lwtheme) {
+  background: -moz-image-rect(url("chrome://browser/skin/Toolbar-glass.png"),
+                              0, 108, 18, 90) center no-repeat !important;
+}
+
+@media (-moz-windows-compositor) {
+  @media not all and (-moz-windows-glass) {
+    #status4evar-download-button #status4evar-download-icon:not(:-moz-lwtheme),
+    #status4evar-download-button:-moz-lwtheme-brighttext #status4evar-download-icon:not(:-moz-lwtheme) {
+      background: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"),
+                                  0, 108, 18, 90) center no-repeat !important;
+    }
+  }
+}
+
+#status4evar-download-button #status4evar-download-icon:-moz-lwtheme-brighttext,
+#status4evar-download-button:-moz-lwtheme-brighttext #status4evar-download-icon:-moz-lwtheme-brighttext {
+  background: -moz-image-rect(url("chrome://browser/skin/Toolbar-inverted.png"),
+                              0, 108, 18, 90) center no-repeat !important;
 }
 
 #history-button {
@@ -1928,6 +1948,14 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   -moz-box-align: stretch;
 }
 
+.tabbrowser-tab[selected=true] {
+  margin-bottom: -1px;
+}
+
+.tabbrowser-tab[selected=true] .tab-content {
+  margin-bottom: 2px;
+}
+
 /* The selected tab should appear above adjacent tabs, .tabs-newtab-button and the highlight of #nav-bar */
 .tabbrowser-tab[selected=true] {
   position: relative;
@@ -1937,6 +1965,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 .tab-background-middle {
   -moz-box-flex: 1;
   background-clip: padding-box;
+  background-color: transparent !important;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
   margin: 0 -15px;
@@ -3916,6 +3945,7 @@ toolbarpaletteitem[dragover] {
   @media (-moz-windows-glass) {
     #navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar):not(:-moz-lwtheme),
     #browser-bottombox:not(:-moz-lwtheme),
+	#PersonalToolbar[collapsed=false] ~ #TabsToolbar[tabsontop=false],
     .browserContainer > findbar {
       background-color: hsl(210,75%,92%);
     }
@@ -4237,6 +4267,11 @@ toolbarpaletteitem[dragover] {
 
   #main-window[sizemode=normal] #tabbrowser-tabs[tabsontop=true] > .tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox > .scrollbox-innerbox:not(:-moz-lwtheme) {
     position: relative;
+  }
+  
+  #appmenu-button-container,
+  #main-window:after  {
+    z-index: 1 !important;
   }
 
   /* End Glass Fog */
