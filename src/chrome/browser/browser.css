@@ -206,28 +206,18 @@
   -moz-margin-start: .5em;
 }
 
-#appmenu-toolbar-button {
-  color: -moz-menubartext;
-  -moz-appearance: none;
-  margin: 3px 0;
-  padding: 0 1em 1px;
-  border: 1px solid rgba(0,0,0,.35);
-  box-shadow: 0 0 1px rgba(255,255,255,.5)  inset;
-  background-image: -moz-linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,0) 80%);
-  background-clip: padding-box;
-  border-radius: 3px;
+#appmenu-toolbar-button > .toolbarbutton-icon {
+  list-style-image: url("chrome://browser/skin/hamburger.png");
+  -moz-image-region: rect(0px, 18px, 18px, 0px);
+  margin: 0;
+  padding: 0;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 1px;
 }
 
-#appmenu-toolbar-button:not(:-moz-any(:hover:active,[open])):hover {
-  background-image: -moz-linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,0));
-}
-
-#appmenu-toolbar-button[open] {
-  box-shadow: 0 0 3px rgba(0,0,0,.5) inset;
-}
-
+#appmenu-toolbar-button > label,
 #appmenu-toolbar-button > .toolbarbutton-menu-dropmarker {
-  -moz-padding-start: 4px;
+  display: none !important;
 }
 
 .splitmenu-menuitem {
@@ -1894,7 +1884,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 /* Tabstrip */
 
 #TabsToolbar {
-  min-height: 0;
+  min-height: 31px;
   padding: 0;
 }
 
