@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.1.0
+- Pale Moon v26 compatibility
+- fix window borders on Windows 10
+- use more modern popup style (fixes Linux issues)
+- add more lwtheme styles from Australis
+- fix tabbar height
+- Linux: style appmenu
+
 ### 1.0.1
 - Win7: fix tab background
 - Win7: fix TabsToolbar background when tabsontop is false
