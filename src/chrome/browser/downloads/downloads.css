@@ -1,8 +1,4 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-
-/* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
@@ -22,10 +18,26 @@
   display: none;
 }
 
+#downloadsPanel[hasdownloads] > #emptyDownloads {
+  display: none;
+}
+
+#emptyDownloads {
+  padding: 10px 20px;
+  max-width: 40ch;
+}
+
 #downloadsHistory {
   background: transparent;
-  color: -moz-nativehyperlinktext;
   cursor: pointer;
+}
+
+@media (-moz-os-version: windows-xp),
+       (-moz-os-version: windows-vista),
+       (-moz-os-version: windows-win7) {
+  #downloadsHistory {
+    color: -moz-nativehyperlinktext;
+  }
 }
 
 #downloadsPanel[keyfocus] > #downloadsFooter > #downloadsHistory:focus {
@@ -38,12 +50,46 @@
   margin: 1em;
 }
 
-@media (-moz-windows-default-theme) {
-  #downloadsPanel[hasdownloads] > #downloadsFooter {
-    background-color: #f1f5fb;
-    box-shadow: 0px 1px 2px rgb(204,214,234) inset;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+#downloadsFooter {
+  background-color: hsla(210,4%,10%,.04);
+  box-shadow: 0 1px 0 hsla(210,4%,10%,.08) inset;
+  transition-duration: 150ms;
+  transition-property: background-color;
+}
+
+#downloadsFooter:hover {
+  background-color: hsla(210,4%,10%,.05);
+}
+
+#downloadsFooter:hover:active {
+  background-color: hsla(210,4%,10%,.1);
+  box-shadow: 0 2px 0 0 hsla(210,4%,10%,.1) inset;
+}
+
+@media (-moz-os-version: windows-xp),
+       (-moz-os-version: windows-vista),
+       (-moz-os-version: windows-win7) {
+  @media (-moz-windows-default-theme) {
+    #downloadsFooter {
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      transition-duration: 0s;
+    }
+
+    #downloadsFooter,
+    #downloadsFooter:hover,
+    #downloadsFooter:hover:active {
+      background-color: #f1f5fb;
+      box-shadow: 0px 1px 2px rgb(204,214,234) inset;
+    }
+
+    @media (-moz-os-version: windows-xp) {
+      #downloadsFooter,
+      #downloadsFooter:hover,
+      #downloadsFooter:hover:active {
+        background-color: hsla(216,45%,88%,.98);
+      }
+    }
   }
 }
 
@@ -81,6 +127,14 @@ richlistitem[type="download"] {
   border-bottom: 1px solid hsla(220,18%,51%,.25);
   background: transparent;
   padding: 8px;
+}
+
+@media (-moz-windows-default-theme) and (-moz-os-version: windows-vista),
+       (-moz-windows-default-theme) and (-moz-os-version: windows-win7) {
+  richlistitem[type="download"] {
+    border: 1px solid transparent;
+    border-bottom: 1px solid hsl(213,40%,90%);
+  }
 }
 
 richlistitem[type="download"]:first-child {
@@ -167,25 +221,63 @@ richlistitem[type="download"]:first-child {
 /*** Highlighted list items ***/
 
 #downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"][exists]:hover {
-  border-radius: 3px;
-  border-top: 1px solid hsla(0,0%,100%,.2);
-  border-bottom: 1px solid hsla(0,0%,0%,.2);
-  background-color: Highlight;
-  color: HighlightText;
+  background-color: hsla(210,4%,10%,.08);
+  outline: 1px solid hsla(210,4%,10%,.1);
+  outline-offset: -1px;
   cursor: pointer;
+}
+
+#downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"][exists]:hover:active {
+  background-color: hsla(210,4%,10%,.15);
+  outline: 1px solid hsla(210,4%,10%,.15);
+  box-shadow: 0 1px 0 0 hsla(210,4%,10%,.05) inset;
+}
+
+@media (-moz-os-version: windows-xp),
+       (-moz-os-version: windows-vista),
+       (-moz-os-version: windows-win7) {
+  #downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"][exists]:hover {
+    border-radius: 3px;
+    outline: 0;
+    border-top: 1px solid hsla(0,0%,100%,.2);
+    border-bottom: 1px solid hsla(0,0%,0%,.2);
+    background-color: Highlight;
+    color: HighlightText;
+  }
+
+  #downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"][exists]:hover:active {
+    background-color: Highlight;
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+@media (-moz-windows-default-theme) and (-moz-os-version: windows-vista),
+       (-moz-windows-default-theme) and (-moz-os-version: windows-win7) {
+  #downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"][exists]:hover {
+    border: 1px solid hsl(213,45%,65%);
+    box-shadow: 0 0 0 1px hsla(0,0%,100%,.5) inset,
+                0 1px 0 hsla(0,0%,100%,.3) inset;
+    background-image: linear-gradient(hsl(212,86%,92%), hsl(212,91%,86%));
+    color: black;
+  }
 }
 
 /*** Button icons ***/
 
+.downloadButton.downloadConfirmBlock,
 .downloadButton.downloadCancel {
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
+richlistitem[type="download"]:hover > stack > .downloadButton.downloadConfirmBlock,
 richlistitem[type="download"]:hover > stack > .downloadButton.downloadCancel {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
+richlistitem[type="download"]:hover > stack > .downloadButton.downloadConfirmBlock:hover,
 richlistitem[type="download"]:hover > stack > .downloadButton.downloadCancel:hover {
   -moz-image-region: rect(0px, 48px, 16px, 32px);
 }
+richlistitem[type="download"]:hover > stack > .downloadButton.downloadConfirmBlock:active,
 richlistitem[type="download"]:hover > stack > .downloadButton.downloadCancel:active {
   -moz-image-region: rect(0px, 64px, 16px, 48px);
 }
@@ -201,6 +293,26 @@ richlistitem[type="download"]:hover > stack > .downloadButton.downloadShow:hover
 }
 richlistitem[type="download"]:hover > stack > .downloadButton.downloadShow:active {
   -moz-image-region: rect(16px, 64px, 32px, 48px);
+}
+@media (-moz-os-version: windows-xp) {
+  #downloadsPanel[keyfocus] > #downloadsListBox > richlistitem[type="download"][state="1"]:hover > stack > .downloadButton.downloadShow {
+    -moz-image-region: rect(16px, 32px, 32px, 16px);
+  }
+  #downloadsPanel[keyfocus] > #downloadsListBox > richlistitem[type="download"][state="1"]:hover > stack > .downloadButton.downloadShow:hover {
+    -moz-image-region: rect(16px, 48px, 32px, 32px);
+  }
+  #downloadsPanel[keyfocus] > #downloadsListBox > richlistitem[type="download"][state="1"]:hover > stack > .downloadButton.downloadShow:active {
+    -moz-image-region: rect(16px, 64px, 32px, 48px);
+  }
+  #downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"]:hover > stack > .downloadButton.downloadShow {
+    -moz-image-region: rect(16px, 96px, 32px, 80px);
+  }
+  #downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"]:hover > stack > .downloadButton.downloadShow:hover {
+    -moz-image-region: rect(16px, 112px, 32px, 96px);
+  }
+  #downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"]:hover > stack > .downloadButton.downloadShow:active {
+    -moz-image-region: rect(16px, 128px, 32px, 112px);
+  }
 }
 
 .downloadButton.downloadRetry {
@@ -218,63 +330,115 @@ richlistitem[type="download"]:hover > stack > .downloadButton.downloadRetry:acti
 
 /*** Status and progress indicator ***/
 
-#downloads-indicator-anchor {
-  /* Makes the outermost stack element positioned, so that its contents are
-     rendered over the main browser window in the Z order.  This is required by
-     the animated event notification. */
+#downloads-animation-container {
+  min-height: 1px;
+  min-width: 1px;
+  height: 1px;
+  margin-bottom: -1px;
+  /* Makes the outermost animation container element positioned, so that its
+     contents are rendered over the main browser window in the Z order.
+     This is required by the animated event notification. */
   position: relative;
+  /* The selected tab may overlap #downloads-indicator-notification */
+  z-index: 5;
 }
 
 /*** Main indicator icon ***/
 
-#downloads-indicator-icon {
-      background: -moz-image-rect(url("chrome://browser/skin/Toolbar-glass.png"),
-                                  0, 108, 18, 90) center no-repeat;
-      min-width: 18px;
-      min-height: 18px;
-}
-
-@media (-moz-windows-compositor) {
-  @media not all and (-moz-windows-glass) {
-    #downloads-indicator-icon {
-      background: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"),
-                                  0, 108, 18, 90) center no-repeat;
-      min-width: 18px;
-      min-height: 18px;
-    }
+@media not all and (min-resolution: 1.1dppx) {
+  #downloads-indicator-icon {
+    background: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"), 0, 108, 18, 90) center no-repeat;
+    width: 18px;
+    height: 18px;
+    background-size: 18px;
   }
-}
+  
+  #downloads-indicator-icon:-moz-lwtheme-brighttext {
+    background: -moz-image-rect(url("chrome://browser/skin/Toolbar-inverted.png"), 0, 108, 18, 90) center no-repeat;
+    width: 18px;
+    height: 18px;
+    background-size: 18px;
+  }
 
-#downloads-indicator-icon:-moz-lwtheme-brighttext {
-  background: -moz-image-rect(url("chrome://browser/skin/Toolbar-inverted.png"),
-                              0, 108, 18, 90) center no-repeat;
-}
+  #downloads-button:not([attention]) > #downloads-indicator-anchor > #downloads-indicator-icon:-moz-lwtheme-brighttext {
+    background-image: -moz-image-rect(url("chrome://browser/skin/Toolbar-inverted.png"), 0, 108, 18, 90);
+  }
 
-#downloads-indicator[attention] > #downloads-indicator-anchor > #downloads-indicator-icon {
-  background-image: url("chrome://browser/skin/downloads/download-glow.png");
-}
+  #downloads-button[attention] > #downloads-indicator-anchor > #downloads-indicator-icon {
+    background-image: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"), 18, 108, 36, 90);
+  }
 
-/* In the next few rules, we use :not([counter]) as a shortcut that is
+  #downloads-button[attention] > #downloads-indicator-anchor > #downloads-indicator-icon:-moz-lwtheme-brighttext {
+    background-image: -moz-image-rect(url("chrome://browser/skin/Toolbar-inverted.png"), 18, 108, 36, 90);
+  }
+
+  /* In the next few rules, we use :not([counter]) as a shortcut that is
    equivalent to -moz-any([progress], [paused]). */
 
-#downloads-indicator:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
-  background: -moz-image-rect(url("chrome://browser/skin/Toolbar-glass.png"),
-                              0, 108, 18, 90) center no-repeat;
-  background-size: 12px;
-}   
-   
-@media (-moz-windows-compositor) {
-  @media not all and (-moz-windows-glass) {
-    #downloads-indicator:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
-      background: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"),
-                                  0, 108, 18, 90) center no-repeat;
-      background-size: 12px;
-    }
+  #downloads-button:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter:-moz-lwtheme-brighttext {
+    background: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"), 0, 108, 18, 90) center no-repeat;
+    background-size: 12px;
+  }
+
+  #downloads-button:not([counter]):not([attention]) > #downloads-indicator-anchor > #downloads-button-progress-area > #downloads-indicator-counter:-moz-lwtheme-brighttext {
+    background-image: -moz-image-rect(url("chrome://browser/skin/Toolbar-inverted.png"), 0, 108, 18, 90);
+  }
+
+  #downloads-button:not([counter])[attention] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
+    background-image: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"), 18, 108, 36, 90);
+  }
+
+  #downloads-button:not([counter])[attention] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter:-moz-lwtheme-brighttext {
+    background-image: -moz-image-rect(url("chrome://browser/skin/Toolbar-inverted.png"), 18, 108, 36, 90);
   }
 }
 
-#downloads-indicator:not([counter])[attention] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
-  background-image: url("chrome://browser/skin/downloads/download-glow.png");
+@media (min-resolution: 1.1dppx) {
+  #downloads-indicator-icon {
+    background: -moz-image-rect(url("chrome://browser/skin/Toolbar@2x.png"), 0, 216, 36, 180) center no-repeat;
+    width: 36px;
+    height: 36px;
+    background-size: 36px;
+  }
+  
+  #downloads-indicator-icon:-moz-lwtheme-brighttext {
+    background: -moz-image-rect(url("chrome://browser/skin/Toolbar-inverted@2x.png"), 0, 216, 36, 180) center no-repeat;
+    width: 36px;
+    height: 36px;
+    background-size: 36px;
+  }
+
+  #downloads-button:not([attention]) > #downloads-indicator-anchor > #downloads-indicator-icon:-moz-lwtheme-brighttext {
+    background-image: -moz-image-rect(url("chrome://browser/skin/Toolbar-inverted@2x.png"), 0, 216, 36, 180);
+  }
+
+  #downloads-button[attention] > #downloads-indicator-anchor > #downloads-indicator-icon {
+    background-image: -moz-image-rect(url("chrome://browser/skin/Toolbar@2x.png"), 36, 216, 72, 180);
+  }
+
+  #downloads-button[attention] > #downloads-indicator-anchor > #downloads-indicator-icon:-moz-lwtheme-brighttext {
+    background-image: -moz-image-rect(url("chrome://browser/skin/Toolbar-inverted@2x.png"), 36, 216, 72, 180);
+  }
+
+  /* In the next few rules, we use :not([counter]) as a shortcut that is
+   equivalent to -moz-any([progress], [paused]). */
+
+  #downloads-button:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
+    background: -moz-image-rect(url("chrome://browser/skin/Toolbar@2x.png"), 0, 216, 36, 180) center no-repeat;
+    background-size: 12px;
+ }
+
+  #downloads-button:not([counter]):not([attention]) > #downloads-indicator-anchor > #downloads-button-progress-area > #downloads-indicator-counter:-moz-lwtheme-brighttext {
+    background-image: -moz-image-rect(url("chrome://browser/skin/Toolbar-inverted@2x.png"), 0, 216, 36, 180);
+  }
+
+  #downloads-button:not([counter])[attention] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
+    background-image: -moz-image-rect(url("chrome://browser/skin/Toolbar@2x.png"), 36, 216, 72, 180);
+  }
+
+  #downloads-button:not([counter])[attention] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter:-moz-lwtheme-brighttext {
+    background-image: -moz-image-rect(url("chrome://browser/skin/Toolbar-inverted@2x.png"), 36, 216, 72, 180);
+  }
 }
 
 /*** Download notifications ***/
@@ -284,6 +448,8 @@ richlistitem[type="download"]:hover > stack > .downloadButton.downloadRetry:acti
   background-size: 16px;
   background-position: center;
   background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
 }
 
 @keyframes downloadsIndicatorNotificationStartRight {
@@ -298,13 +464,13 @@ richlistitem[type="download"]:hover > stack > .downloadButton.downloadRetry:acti
   to   { opacity: 0; transform: translate(0) scale(1); }
 }
 
-#downloads-indicator[notification="start"] > #downloads-indicator-anchor > #downloads-indicator-notification {
+#downloads-notification-anchor[notification="start"] > #downloads-indicator-notification {
   background-image: url("chrome://browser/skin/downloads/download-notification-start.png");
   animation-name: downloadsIndicatorNotificationStartRight;
   animation-duration: 1s;
 }
 
-#downloads-indicator[notification="start"]:-moz-locale-dir(rtl) > #downloads-indicator-anchor > #downloads-indicator-notification {
+#downloads-notification-anchor[notification="start"]:-moz-locale-dir(rtl) > #downloads-indicator-notification {
   animation-name: downloadsIndicatorNotificationStartLeft;
 }
 
@@ -314,7 +480,7 @@ richlistitem[type="download"]:hover > stack > .downloadButton.downloadRetry:acti
   to   { opacity: 0; transform: scale(8); }
 }
 
-#downloads-indicator[notification="finish"] > #downloads-indicator-anchor > #downloads-indicator-notification {
+#downloads-notification-anchor[notification="finish"] > #downloads-indicator-notification {
   background-image: url("chrome://browser/skin/downloads/download-notification-finish.png");
   animation-name: downloadsIndicatorNotificationFinish;
   animation-duration: 1s;
@@ -330,6 +496,13 @@ richlistitem[type="download"]:hover > stack > .downloadButton.downloadRetry:acti
   font-size: 9px;
   line-height: 9px;
   text-align: center;
+}
+
+@media not all and (-moz-os-version: windows-xp) {
+  #downloads-indicator-counter {
+    /* Bug 812345 added this... */
+    margin-bottom: -1px;
+  }
 }
 
 #downloads-indicator-counter:-moz-lwtheme-brighttext {
@@ -373,34 +546,17 @@ richlistitem[type="download"]:hover > stack > .downloadButton.downloadRetry:acti
   border-radius: 0 2px 2px 0;
 }
 
-#downloads-indicator[paused] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-progress > .progress-bar {
+#downloads-button[paused] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-progress > .progress-bar {
   background-color: rgb(220, 230, 81);
 }
 
-#downloads-indicator[paused] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-progress > .progress-remainder {
+#downloads-button[paused] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-progress > .progress-remainder {
   background-image: linear-gradient(#4b5000, #515700);
 }
 
-toolbar[mode="full"] > #downloads-indicator > .toolbarbutton-text {
-  margin: 0;
-  text-align: center;
-}
-
-@media (-moz-windows-default-theme) {
-  richlistitem[type="download"] {
-    border: 1px solid transparent;
-    border-bottom: 1px solid hsl(213,40%,90%);
-  }
-
-  #downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"][exists]:hover {
-    border: 1px solid hsl(213,45%,65%);
-    box-shadow: 0 0 0 1px hsla(0,0%,100%,.5) inset,
-                0 1px 0 hsla(0,0%,100%,.3) inset;
-    background-image: linear-gradient(hsl(212,86%,92%), hsl(212,91%,86%));
-    color: black;
-  }
-}
-
+@media (-moz-os-version: windows-vista),
+         (-moz-os-version: windows-win7),
+         (-moz-os-version: windows-win8) {
 @media (-moz-windows-compositor) {
   /* The following rules are for the downloads indicator when in its normal,
      non-downloading, non-paused state (ie, it's just showing the downloads
@@ -433,6 +589,20 @@ toolbar[mode="full"] > #downloads-indicator > .toolbarbutton-text {
     text-shadow: 0 0 1px rgba(0,0,0,.7),
                  0 1px 1.5px rgba(0,0,0,.5);
   }
+}
+
+@media (min-resolution: 1.1dppx) {
+  #toolbar-menubar #downloads-indicator:not([attention]) > #downloads-indicator-anchor > #downloads-indicator-icon:not(:-moz-lwtheme),
+  #TabsToolbar[tabsontop=true] #downloads-indicator:not([attention]) > #downloads-indicator-anchor > #downloads-indicator-icon:not(:-moz-lwtheme),
+  #navigator-toolbox[tabsontop=false] > #nav-bar #downloads-indicator:not([attention]) > #downloads-indicator-anchor > #downloads-indicator-icon:not(:-moz-lwtheme),
+  #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child #downloads-indicator:not([attention]) > #downloads-indicator-anchor > #downloads-indicator-icon:not(:-moz-lwtheme),
+  #toolbar-menubar #downloads-indicator:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter,
+  #TabsToolbar[tabsontop=true] #downloads-indicator:not(:-moz-lwtheme):not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter,
+  #navigator-toolbox[tabsontop=false] > #nav-bar #downloads-indicator:not(:-moz-lwtheme):not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter,
+  #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child #downloads-indicator:not(:-moz-lwtheme):not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
+    background-image: -moz-image-rect(url("chrome://browser/skin/Toolbar-inverted@2x.png"), 0, 216, 36, 180);
+  }
+}
 }
 
 #downloads-indicator-counter {
