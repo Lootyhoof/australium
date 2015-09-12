@@ -2,14 +2,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-
-@import url("chrome://global/skin/inContentUI.css");
+@import url("chrome://global/skin/in-content/common.css");
 
 #addon-page {
-  padding: 0;
+  font-size: 1.1em;
 }
 
 #addon-scrollbox {
@@ -28,7 +24,7 @@
 
 #addon-container {
   overflow: visible;
-  max-width: 600px;
+  max-width: 800px;
   margin: 20px;
   padding: 30px 90px;
 }
@@ -39,6 +35,7 @@
 }
 
 #icon {
+  margin-top: 8px;
   -moz-margin-end: 10px;
   max-width: 64px;
   max-height: 64px;
@@ -82,6 +79,7 @@
   list-style-image: url("chrome://mozapps/skin/extensions/alerticon-warning.png");
   width: 16px;
   height: 15px;
+  margin-top: 5px;
   -moz-margin-end: 5px;
 }
 
