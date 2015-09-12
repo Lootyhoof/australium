@@ -6,6 +6,9 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+
+
+
 /* Toolbar */
 #placesToolbar {
   padding: 3px;
@@ -19,6 +22,13 @@
 #back-button,
 #forward-button {
   list-style-image: url("chrome://browser/skin/Toolbar.png");
+}
+
+@media (-moz-windows-theme: luna-silver) {
+  #back-button,
+  #forward-button {
+    list-style-image: url("chrome://browser/skin/Toolbar-lunaSilver.png");
+  }
 }
 
 #back-button {
@@ -143,20 +153,34 @@
 }
 
 
-#placesView {
-  border-top: none;
-}
-
-@media not all and (-moz-windows-classic) {
-  #placesToolbox {
-    -moz-appearance: none;
-    background-color: transparent;
+@media not all and (-moz-os-version: windows-xp) {
+  #placesView {
+    border-top: none;
   }
 
-  #placesToolbar {
-    -moz-appearance: none;
-    background-color: -moz-Dialog;
-    color: -moz-dialogText;
+  @media not all and (-moz-windows-classic) {
+    #placesToolbox {
+      -moz-appearance: none;
+      background-color: transparent;
+    }
+
+    #placesToolbar {
+      -moz-appearance: none;
+      background-color: -moz-Dialog;
+      color: -moz-dialogText;
+    }
+  }
+
+  @media (-moz-windows-default-theme) {
+    #placesView > splitter {
+      border: 0;
+      -moz-border-end: 1px solid #A9B7C9;
+      min-width: 0;
+      width: 3px;
+      background-color: transparent;
+      -moz-margin-start: -3px;
+      position: relative;
+    }
   }
 }
 
@@ -170,7 +194,8 @@
   }
 }
 
-@media (-moz-windows-default-theme) {
+@media (-moz-windows-default-theme) and (-moz-os-version: windows-vista),
+       (-moz-windows-default-theme) and (-moz-os-version: windows-win7) {
   #placesView,
   #infoPane,
   #placesList,
@@ -181,16 +206,6 @@
   #placesToolbar {
     background-color: hsl(210,75%,92%);
     color: black;
-  }
-
-  #placesView > splitter {
-    border: 0;
-    -moz-border-end: 1px solid #A9B7C9;
-    min-width: 0;
-    width: 3px;
-    background-color: transparent;
-    -moz-margin-start: -3px;
-    position: relative;
   }
 
   #detailsDeck {
