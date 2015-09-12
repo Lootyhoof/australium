@@ -3,6 +3,134 @@ skin		global			australium		chrome/global/
 skin		mozapps			australium		chrome/mozapps/
 skin		communicator		australium		chrome/communicator/
 
+override chrome://browser/skin/aboutSessionRestore-window-icon.png  chrome://browser/skin/preferences/application.png                 os!=WINNT
+override chrome://browser/skin/aboutSessionRestore-window-icon.png  chrome://browser/skin/preferences/application.png                 os=WINNT osversion<6
 
+override chrome://browser/skin/Info.png                             chrome://browser/skin/Info-XP.png                                 os=WINNT osversion<6
+override chrome://browser/skin/livemark-folder.png                  chrome://browser/skin/livemark-folder-XP.png                      os=WINNT osversion<6
+override chrome://browser/skin/menu-back.png                        chrome://browser/skin/menu-back-XP.png                            os=WINNT osversion<6
+override chrome://browser/skin/menu-forward.png                     chrome://browser/skin/menu-forward-XP.png                         os=WINNT osversion<6
+override chrome://browser/skin/pageInfo.png                         chrome://browser/skin/pageInfo-XP.png                             os=WINNT osversion<6
+override chrome://browser/skin/Privacy-16.png                       chrome://browser/skin/Privacy-16-XP.png                           os=WINNT osversion<6
+override chrome://browser/skin/downloads/buttons.png                chrome://browser/skin/downloads/buttons-XP.png                    os=WINNT osversion<6
+override chrome://browser/skin/feeds/feedIcon.png                   chrome://browser/skin/feeds/feedIcon-XP.png                       os=WINNT osversion<6
+override chrome://browser/skin/feeds/feedIcon16.png                 chrome://browser/skin/feeds/feedIcon16-XP.png                     os=WINNT osversion<6
+override chrome://browser/skin/places/query.png                     chrome://browser/skin/places/query-XP.png                         os=WINNT osversion<6
+override chrome://browser/skin/places/bookmarksMenu.png             chrome://browser/skin/places/bookmarksMenu-XP.png                 os=WINNT osversion<6
+override chrome://browser/skin/places/bookmarksToolbar.png          chrome://browser/skin/places/bookmarksToolbar-XP.png              os=WINNT osversion<6
+override chrome://browser/skin/places/calendar.png                  chrome://browser/skin/places/calendar-XP.png                      os=WINNT osversion<6
+override chrome://browser/skin/places/toolbarDropMarker.png         chrome://browser/skin/places/toolbarDropMarker-XP.png             os=WINNT osversion<6
+override chrome://browser/skin/places/libraryToolbar.png            chrome://browser/skin/places/libraryToolbar-XP.png                os=WINNT osversion<6
+override chrome://browser/skin/places/starred48.png                 chrome://browser/skin/places/starred48-XP.png                     os=WINNT osversion<6
+override chrome://browser/skin/places/tag.png                       chrome://browser/skin/places/tag-XP.png                           os=WINNT osversion<6
+override chrome://browser/skin/places/history.png                   chrome://browser/skin/places/history-XP.png                       os=WINNT osversion<6
+override chrome://browser/skin/places/allBookmarks.png              chrome://browser/skin/places/allBookmarks-XP.png                  os=WINNT osversion<6
+override chrome://browser/skin/places/unsortedBookmarks.png         chrome://browser/skin/places/unsortedBookmarks-XP.png             os=WINNT osversion<6
+override chrome://browser/skin/preferences/alwaysAsk.png            chrome://browser/skin/preferences/alwaysAsk-XP.png                os=WINNT osversion<6
+override chrome://browser/skin/preferences/application.png          chrome://browser/skin/preferences/application-XP.png              os=WINNT osversion<6
+override chrome://browser/skin/preferences/mail.png                 chrome://browser/skin/preferences/mail-XP.png                     os=WINNT osversion<6
+override chrome://browser/skin/preferences/Options.png              chrome://browser/skin/preferences/Options-XP.png                  os=WINNT osversion<6
+override chrome://browser/skin/preferences/saveFile.png             chrome://browser/skin/preferences/saveFile-XP.png                 os=WINNT osversion<6
 
+override chrome://browser/skin/actionicon-tab.png                   chrome://browser/skin/actionicon-tab-XPVista7.png                 os=WINNT osversion<=6.1
+override chrome://browser/skin/toolbarbutton-dropdown-arrow.png     chrome://browser/skin/toolbarbutton-dropdown-arrow-XPVista7.png   os=WINNT osversion<=6.1
+override chrome://browser/skin/places/autocomplete-star.png         chrome://browser/skin/places/autocomplete-star-XPVista7.png       os=WINNT osversion<=6.1
+override chrome://browser/skin/tabbrowser/newtab.png                chrome://browser/skin/tabbrowser/newtab-XPVista7.png              os=WINNT osversion<=6.1
+override chrome://browser/skin/tabbrowser/newtab@2x.png             chrome://browser/skin/tabbrowser/newtab-XPVista7@2x.png           os=WINNT osversion<=6.1
+override chrome://browser/skin/tabbrowser/newtab-inverted.png       chrome://browser/skin/tabbrowser/newtab-inverted-XPVista7.png     os=WINNT osversion<=6.1
+override chrome://browser/skin/tabbrowser/newtab-inverted@2x.png    chrome://browser/skin/tabbrowser/newtab-inverted-XPVista7@2x.png  os=WINNT osversion<=6.1
+override chrome://browser/skin/tabbrowser/tab-arrow-left.png        chrome://browser/skin/tabbrowser/tab-arrow-left-XPVista7.png      os=WINNT osversion<=6.1
+override chrome://browser/skin/tabbrowser/tab-arrow-left@2x.png     chrome://browser/skin/tabbrowser/tab-arrow-left-XPVista7@2x.png   os=WINNT osversion<=6.1
+override chrome://browser/skin/actionicon-tab.png                   chrome://browser/skin/actionicon-tab-XPVista7.png                 os=Linux
+override chrome://browser/skin/toolbarbutton-dropdown-arrow.png     chrome://browser/skin/toolbarbutton-dropdown-arrow-XPVista7.png   os=Linux
+override chrome://browser/skin/places/autocomplete-star.png         chrome://browser/skin/places/autocomplete-star-XPVista7.png       os=Linux
+override chrome://browser/skin/tabbrowser/newtab.png                chrome://browser/skin/tabbrowser/newtab-XPVista7.png              os=Linux
+override chrome://browser/skin/tabbrowser/newtab@2x.png             chrome://browser/skin/tabbrowser/newtab-XPVista7@2x.png           os=Linux
+override chrome://browser/skin/tabbrowser/newtab-inverted.png       chrome://browser/skin/tabbrowser/newtab-inverted-XPVista7.png     os=Linux
+override chrome://browser/skin/tabbrowser/newtab-inverted@2x.png    chrome://browser/skin/tabbrowser/newtab-inverted-XPVista7@2x.png  os=Linux
+override chrome://browser/skin/tabbrowser/tab-arrow-left.png        chrome://browser/skin/tabbrowser/tab-arrow-left-XPVista7.png      os=Linux
+override chrome://browser/skin/tabbrowser/tab-arrow-left@2x.png     chrome://browser/skin/tabbrowser/tab-arrow-left-XPVista7@2x.png   os=Linux
 
+override chrome://browser/skin/Toolbar@2x.png                       chrome://browser/skin/Toolbar-aero@2x.png                         os=WINNT osversion=6
+override chrome://browser/skin/Toolbar@2x.png                       chrome://browser/skin/Toolbar-aero@2x.png                         os=WINNT osversion=6.1
+override chrome://browser/skin/Toolbar@2x.png                       chrome://browser/skin/Toolbar-win8@2x.png                         os=WINNT osversion=6.2
+override chrome://browser/skin/Toolbar@2x.png                       chrome://browser/skin/Toolbar-win8@2x.png                         os=WINNT osversion=6.3
+override chrome://browser/skin/Toolbar.png                          chrome://browser/skin/Toolbar-XP.png                              os=WINNT osversion<6
+override chrome://browser/skin/Toolbar.png                          chrome://browser/skin/Toolbar-aero.png                            os=WINNT osversion=6
+override chrome://browser/skin/Toolbar.png                          chrome://browser/skin/Toolbar-aero.png                            os=WINNT osversion=6.1
+override chrome://browser/skin/Toolbar.png                          chrome://browser/skin/Toolbar-win8.png                            os=WINNT osversion=6.2
+override chrome://browser/skin/Toolbar.png                          chrome://browser/skin/Toolbar-win8.png                            os=WINNT osversion=6.3
+override chrome://browser/skin/Toolbar.png                          chrome://browser/skin/Toolbar-linux.png                           os=Linux
+
+override chrome://browser/skin/reload-stop-go.png                   chrome://browser/skin/reload-stop-go-preWin10.png                 os=WINNT osversion<=6.3
+override chrome://browser/skin/reload-stop-go@2x.png                chrome://browser/skin/reload-stop-go-preWin10@2x.png              os=WINNT osversion<=6.3
+override chrome://browser/skin/urlbar-history-dropmarker.png        chrome://browser/skin/urlbar-history-dropmarker-preWin10.png      os=WINNT osversion<=6.3
+override chrome://browser/skin/urlbar-history-dropmarker@2x.png     chrome://browser/skin/urlbar-history-dropmarker-preWin10@2x.png   os=WINNT osversion<=6.3
+override chrome://browser/skin/reload-stop-go.png                   chrome://browser/skin/reload-stop-go-preWin10.png                 os=Linux
+override chrome://browser/skin/reload-stop-go@2x.png                chrome://browser/skin/reload-stop-go-preWin10@2x.png              os=Linux
+override chrome://browser/skin/urlbar-history-dropmarker.png        chrome://browser/skin/urlbar-history-dropmarker-preWin10.png      os=Linux
+override chrome://browser/skin/urlbar-history-dropmarker@2x.png     chrome://browser/skin/urlbar-history-dropmarker-preWin10@2x.png   os=Linux
+
+override chrome://browser/skin/tabbrowser/tab-background-start.png     chrome://browser/skin/tabbrowser/tab-background-start-preWin10.png     os=WINNT osversion<=6.3
+override chrome://browser/skin/tabbrowser/tab-background-start@2x.png  chrome://browser/skin/tabbrowser/tab-background-start-preWin10@2x.png  os=WINNT osversion<=6.3
+override chrome://browser/skin/tabbrowser/tab-background-middle.png    chrome://browser/skin/tabbrowser/tab-background-middle-preWin10.png    os=WINNT osversion<=6.3
+override chrome://browser/skin/tabbrowser/tab-background-middle@2x.png chrome://browser/skin/tabbrowser/tab-background-middle-preWin10@2x.png os=WINNT osversion<=6.3
+override chrome://browser/skin/tabbrowser/tab-background-end.png       chrome://browser/skin/tabbrowser/tab-background-end-preWin10.png       os=WINNT osversion<=6.3
+override chrome://browser/skin/tabbrowser/tab-background-end@2x.png    chrome://browser/skin/tabbrowser/tab-background-end-preWin10@2x.png    os=WINNT osversion<=6.3
+override chrome://browser/skin/tabbrowser/tab-background-start.png     chrome://browser/skin/tabbrowser/tab-background-start-preWin10.png     os=Linux
+override chrome://browser/skin/tabbrowser/tab-background-start@2x.png  chrome://browser/skin/tabbrowser/tab-background-start-preWin10@2x.png  os=Linux
+override chrome://browser/skin/tabbrowser/tab-background-middle.png    chrome://browser/skin/tabbrowser/tab-background-middle-preWin10.png    os=Linux
+override chrome://browser/skin/tabbrowser/tab-background-middle@2x.png chrome://browser/skin/tabbrowser/tab-background-middle-preWin10@2x.png os=Linux
+override chrome://browser/skin/tabbrowser/tab-background-end.png       chrome://browser/skin/tabbrowser/tab-background-end-preWin10.png       os=Linux
+override chrome://browser/skin/tabbrowser/tab-background-end@2x.png    chrome://browser/skin/tabbrowser/tab-background-end-preWin10@2x.png    os=Linux
+
+override chrome://global/skin/console/console-toolbar.png       chrome://global/skin/console/console-toolbar-XP.png      os=WINNT osversion<6
+override chrome://global/skin/dirListing/folder.png             chrome://global/skin/dirListing/folder-XP.png            os=WINNT osversion<6
+override chrome://global/skin/dirListing/local.png              chrome://global/skin/dirListing/local-XP.png             os=WINNT osversion<6
+override chrome://global/skin/dirListing/remote.png             chrome://global/skin/dirListing/remote-XP.png            os=WINNT osversion<6
+override chrome://global/skin/dirListing/up.png                 chrome://global/skin/dirListing/up-XP.png                os=WINNT osversion<6
+override chrome://global/skin/icons/autoscroll.png              chrome://global/skin/icons/autoscroll-XP.png             os=WINNT osversion<6
+override chrome://global/skin/icons/blacklist_favicon.png       chrome://global/skin/icons/blacklist_favicon-XP.png      os=WINNT osversion<6
+override chrome://global/skin/icons/blacklist_large.png         chrome://global/skin/icons/blacklist_large-XP.png        os=WINNT osversion<6
+override chrome://global/skin/icons/Error.png                   chrome://global/skin/icons/Error-XP.png                  os=WINNT osversion<6
+override chrome://global/skin/icons/error-16.png                chrome://global/skin/icons/error-16-XP.png               os=WINNT osversion<6
+override chrome://global/skin/icons/error-64.png                chrome://global/skin/icons/error-64-XP.png               os=WINNT osversion<6
+override chrome://global/skin/icons/folder-item.png             chrome://global/skin/icons/folder-item-XP.png            os=WINNT osversion<6
+override chrome://global/skin/icons/information-16.png          chrome://global/skin/icons/information-16-XP.png         os=WINNT osversion<6
+override chrome://global/skin/icons/information-24.png          chrome://global/skin/icons/information-24-XP.png         os=WINNT osversion<6
+override chrome://global/skin/icons/information-32.png          chrome://global/skin/icons/information-32-XP.png         os=WINNT osversion<6
+override chrome://global/skin/icons/Print-preview.png           chrome://global/skin/icons/Print-preview-XP.png          os=WINNT osversion<6
+override chrome://global/skin/icons/Portrait.png                chrome://global/skin/icons/Portrait-XP.png               os=WINNT osversion<6
+override chrome://global/skin/icons/Landscape.png               chrome://global/skin/icons/Landscape-XP.png              os=WINNT osversion<6
+override chrome://global/skin/icons/Question.png                chrome://global/skin/icons/Question-XP.png               os=WINNT osversion<6
+override chrome://global/skin/icons/question-16.png             chrome://global/skin/icons/question-16-XP.png            os=WINNT osversion<6
+override chrome://global/skin/icons/question-64.png             chrome://global/skin/icons/question-64-XP.png            os=WINNT osversion<6
+override chrome://global/skin/icons/Search-close.png            chrome://global/skin/icons/Search-close-XP.png           os=WINNT osversion<6
+override chrome://global/skin/icons/Search-glass.png            chrome://global/skin/icons/Search-glass-XP.png           os=WINNT osversion<6
+override chrome://global/skin/icons/sslWarning.png              chrome://global/skin/icons/sslWarning-XP.png             os=WINNT osversion<6
+override chrome://global/skin/icons/Warning.png                 chrome://global/skin/icons/Warning-XP.png                os=WINNT osversion<6
+override chrome://global/skin/icons/warning-large.png           chrome://global/skin/icons/warning-large-XP.png          os=WINNT osversion<6
+override chrome://global/skin/icons/warning-16.png              chrome://global/skin/icons/warning-16-XP.png             os=WINNT osversion<6
+override chrome://global/skin/icons/warning-64.png              chrome://global/skin/icons/warning-64-XP.png             os=WINNT osversion<6
+override chrome://global/skin/icons/windowControls.png          chrome://global/skin/icons/windowControls-XP.png         os=WINNT osversion<6
+override chrome://global/skin/printpreview/arrow-left.png       chrome://global/skin/printpreview/arrow-left-XP.png      os=WINNT osversion<6
+override chrome://global/skin/printpreview/arrow-left-end.png   chrome://global/skin/printpreview/arrow-left-end-XP.png  os=WINNT osversion<6
+override chrome://global/skin/printpreview/arrow-right.png      chrome://global/skin/printpreview/arrow-right-XP.png     os=WINNT osversion<6
+override chrome://global/skin/printpreview/arrow-right-end.png  chrome://global/skin/printpreview/arrow-right-end-XP.png os=WINNT osversion<6
+override chrome://global/skin/toolbar/spring.png                chrome://global/skin/toolbar/spring-XP.png               os=WINNT osversion<6
+override chrome://global/skin/tree/sort-asc.png                 chrome://global/skin/tree/sort-asc-XP.png                os=WINNT osversion<6
+override chrome://global/skin/tree/sort-dsc.png                 chrome://global/skin/tree/sort-dsc-XP.png                os=WINNT osversion<6
+override chrome://global/skin/tree/twisty-clsd.png              chrome://global/skin/tree/twisty-clsd-XP.png             os=WINNT osversion<6
+override chrome://global/skin/tree/twisty-open.png              chrome://global/skin/tree/twisty-open-XP.png             os=WINNT osversion<6
+
+override chrome://global/skin/icons/close.png                   chrome://global/skin/icons/close-XPVista7.png            os=WINNT osversion<=6.1
+override chrome://global/skin/icons/close@2x.png                chrome://global/skin/icons/close-XPVista7@2x.png         os=WINNT osversion<=6.1
+override chrome://global/skin/icons/close-inverted.png          chrome://global/skin/icons/close-inverted-XPVista7.png   os=WINNT osversion<=6.1
+override chrome://global/skin/icons/close-inverted@2x.png       chrome://global/skin/icons/close-inverted-XPVista7@2x.png os=WINNT osversion<=6.1
+override chrome://global/skin/icons/close.png                   chrome://global/skin/icons/close-XPVista7.png            os=Linux
+override chrome://global/skin/icons/close@2x.png                chrome://global/skin/icons/close-XPVista7@2x.png         os=Linux
+override chrome://global/skin/icons/close-inverted.png          chrome://global/skin/icons/close-inverted-XPVista7.png   os=Linux
+override chrome://global/skin/icons/close-inverted@2x.png       chrome://global/skin/icons/close-inverted-XPVista7@2x.png os=Linux
+
+override chrome://global/skin/arrow/arrow-lft-hov.gif           chrome://global/skin/arrow/arrow-lft.gif
+override chrome://global/skin/arrow/arrow-rit-hov.gif           chrome://global/skin/arrow/arrow-rit.gif
