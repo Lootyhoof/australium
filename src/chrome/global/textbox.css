@@ -40,6 +40,14 @@ html|*.textbox-textarea {
   font: inherit;
 }
 
+@media (-moz-windows-default-theme) {
+  @media not all and (-moz-os-version: windows-xp) {
+    textbox html|*.textbox-input::-moz-placeholder {
+      font-style: italic;
+    }
+  }
+}
+
 .textbox-contextmenu {
   cursor: default;
 }
@@ -67,6 +75,11 @@ textbox.plain {
   padding: 0px !important;
   margin: 0px !important;
   border: none !important;
+}
+
+textbox.plain html|*.textbox-input,
+textbox.plain html|*.textbox-textarea {
+  padding: 0px !important;
 }
 
 /* ::::: search textbox ::::: */
@@ -108,11 +121,3 @@ textbox.plain {
 toolbarpaletteitem > toolbaritem > textbox > .textbox-input-box > html|*.textbox-input {
   visibility: hidden;
 }
-
-
-@media (-moz-windows-default-theme) {
-  textbox html|*.textbox-input::-moz-placeholder {
-    font-style: italic;
-  }
-}
-
