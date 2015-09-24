@@ -2,10 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-
 /* ===== menu.css =======================================================
   == Styles used by XUL menu-related elements.
   ======================================================================= */
@@ -53,27 +49,73 @@ menuitem.spell-suggestion {
   font-weight: bold;
 }
 
+@media (-moz-os-version: gnu-linux),
+       (-moz-os-version: bsd) {
+  menu,
+  menuitem,
+  .splitmenu-menuitem {
+	max-width: 42em;
+  }
+  
+  menu[_moz-menuactive="true"],
+  menuitem[_moz-menuactive="true"],
+  .splitmenu-menuitem[_moz-menuactive="true"] {
+    color: -moz-menuhovertext;
+    background-color: -moz-menuhover;
+  }
+
+  menu[disabled="true"],
+  menuitem[disabled="true"],
+  .splitmenu-menuitem[disabled="true"] {
+    color: GrayText;
+  }
+
+  menubar > menu {
+    padding: 0px 4px;
+    color: -moz-menubartext;
+  }
+
+  menubar:-moz-lwtheme > menu {
+    text-shadow: none;
+  }
+
+  menubar:-moz-lwtheme > menu:not([open="true"]) {
+    color: inherit;
+    text-shadow: inherit;
+  }
+
+  menubar > menu[_moz-menuactive="true"]:not([open]):not([disabled="true"]):not(:-moz-lwtheme) {
+    color: -moz-menubartext;
+  }
+
+  menubar > menu[open] {
+    color: -moz-menubarhovertext;
+    background-color: -moz-menuhover;
+  }
+  
+  /* ::::: menu/menuitems in menulist popups ::::: */
+  .menulist-menupopup > menuitem,
+  menulist > menupopup > menuitem,
+  .menulist-menupopup > menu,
+  menulist > menupopup > menu {
+    padding: 1px 5px;
+    max-width: none;
+    font: message-box;
+  }
+}
+
 /* ..... internal content .... */
 
 .menu-accel,
 .menu-iconic-accel,
 .menu-text,
 .menu-iconic-text {
-  margin: 0px !important;
-  padding: 1px 0px;
   color: inherit;
-}
-
-.menu-text {
-  -moz-padding-start: 1.45em !important;
-  -moz-appearance: menuitemtext;
 }
 
 .menu-text,
 .menu-iconic-text {
   font-weight: inherit;
-  -moz-margin-start: 2px !important;
-  -moz-padding-end: 2px;
 }
 
 .menu-description {
@@ -85,12 +127,6 @@ menuitem.spell-suggestion {
 .menu-accel,
 .menu-iconic-accel {
   color: inherit;
-  -moz-margin-start: 0.74em !important;
-  -moz-margin-end: 1.35em !important;
-}
-
-.menu-iconic-left {
-  min-width: 1.45em;
 }
 
 .menu-iconic-icon {
@@ -98,21 +134,103 @@ menuitem.spell-suggestion {
   height: 16px;
 }
 
-menu.menu-iconic > .menu-iconic-left,
-menuitem.menuitem-iconic > .menu-iconic-left,
-.splitmenu-menuitem[iconic="true"] > .menu-iconic-left {
-  -moz-appearance: menuimage;
-  padding-top: 2px;
-}
-
 /* ..... menu arrow box ..... */
 
 .menu-right {
   -moz-appearance: menuarrow;
-  -moz-margin-end: -2px;
-  list-style-image: none;
-  min-width: 1.28em;
-  padding-top: 1px;
+}
+
+@media (-moz-os-version: gnu-linux),
+       (-moz-os-version: bsd) {
+  .menu-text,
+  .menu-iconic-left,
+  .menu-iconic-text {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    -moz-margin-start: 0px !important;
+    -moz-margin-end: 2px !important;
+  }
+
+  .menu-text {
+    /* This is (18 + the size of end-padding on .menu-iconic-left)px */
+    -moz-margin-start: 21px !important;
+  }
+  
+  .menu-accel,
+  .menu-iconic-accel {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    -moz-margin-start: 7px !important;
+  }
+
+  .menu-accel-container {
+  -moz-box-pack: end;
+  }
+
+  .menu-iconic-left {
+    width: 16px;
+    /* We can only hardcode this, to make the default GTK icon<->label spacing */
+    -moz-padding-end: 3px !important;
+  }
+  
+  .menu-right {
+	margin-top: 0px;
+    margin-bottom: 0px;
+    -moz-margin-start: 6px;
+    -moz-margin-end: 0px;
+    width: 1ex;
+    height: 1ex;
+    /* These next two rules are needed to prevent inheritance and thus ugliness */
+    list-style-image: none;
+    -moz-image-region: auto;
+  }
+}
+
+@media not all and (-moz-os-version: gnu-linux) {
+  @media not all and (-moz-os-version: bsd) {
+	.menu-text {
+      -moz-padding-start: 1.45em !important;
+      -moz-appearance: menuitemtext;
+	}
+	
+	.menu-accel,
+    .menu-iconic-accel,
+    .menu-text,
+    .menu-iconic-text {
+	  margin: 0px !important;
+      padding: 1px 0px;
+	}
+	
+	.menu-text,
+    .menu-iconic-text {
+	  -moz-margin-start: 2px !important;
+      -moz-padding-end: 2px;
+	}
+	
+	.menu-accel,
+    .menu-iconic-accel {
+	  -moz-margin-start: 0.74em !important;
+      -moz-margin-end: 1.35em !important;
+    }
+
+    .menu-iconic-left {
+      min-width: 1.45em;
+    }
+	
+	menu.menu-iconic > .menu-iconic-left,
+    menuitem.menuitem-iconic > .menu-iconic-left,
+    .splitmenu-menuitem[iconic="true"] > .menu-iconic-left {
+      -moz-appearance: menuimage;
+      padding-top: 2px;
+    }
+	
+	.menu-right {
+	  -moz-margin-end: -2px;
+      list-style-image: none;
+      min-width: 1.28em;
+      padding-top: 1px;
+	}
+  }
 }
 
 /* ::::: menu/menuitems in menubar ::::: */
@@ -168,8 +286,29 @@ menubar > menu:-moz-window-inactive {
 }
 
 .menubar-text {
-  margin: 1px 6px 2px 6px !important;
   color: inherit;
+}
+
+@media (-moz-os-version: gnu-linux),
+       (-moz-os-version: bsd) {
+  .menubar-left {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    -moz-margin-start: 0px;
+    -moz-margin-end: 2px;
+  }
+  
+  .menubar-text {
+    margin: 0 1px !important;
+  }
+}
+
+@media not all and (-moz-os-version: gnu-linux) {
+  @media not all and (-moz-os-version: bsd) {
+	.menubar-text {
+      margin: 1px 6px 2px 6px !important;
+	}
+  }
 }
 
 /* ::::: menu/menuitems in popups ::::: */
@@ -274,18 +413,36 @@ menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
 
 menuseparator {
   -moz-appearance: menuseparator;
-  padding: 3px 1px 4px 1px;
   border-top: 1px solid ThreeDShadow;
   border-bottom: 1px solid ThreeDHighlight;
 }
 
 menulist > menupopup > menuseparator,
 .menulist-menupopup > menuseparator {
-  padding: 6px 0 5px 0;
   border-top: 1px solid #000000;
   border-bottom: none;
 }
 
+@media (-moz-os-version: gnu-linux),
+       (-moz-os-version: bsd) {
+  menuseparator {
+	margin: 2px 0;
+  }
+}
+
+@media not all and (-moz-os-version: gnu-linux) {
+  @media not all and (-moz-os-version: bsd) {
+	menuseparator {
+	  padding: 3px 1px 4px 1px;
+	}
+	
+	menulist > menupopup > menuseparator,
+    .menulist-menupopup > menuseparator {
+	  padding: 6px 0 5px 0;
+    }
+  }
+}
+  
 /* ::::: autocomplete ::::: */
 
 .autocomplete-history-popup > menuitem {
