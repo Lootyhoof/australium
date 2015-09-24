@@ -365,11 +365,11 @@ richlistitem[type="download"]:hover > stack > .downloadButton.downloadRetry:acti
   }
 
   #downloads-indicator[attention] > #downloads-indicator-anchor > #downloads-indicator-icon {
-    background-image: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"), 18, 108, 37, 90);
+    background-image: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"), 18, 108, 36, 90);
   }
 
   #downloads-indicator[attention] > #downloads-indicator-anchor > #downloads-indicator-icon:-moz-lwtheme-brighttext {
-    background-image: -moz-image-rect(url("chrome://browser/skin/Toolbar-inverted.png"), 18, 108, 37, 90);
+    background-image: -moz-image-rect(url("chrome://browser/skin/Toolbar-inverted.png"), 18, 108, 36, 90);
   }
 
   /* In the next few rules, we use :not([counter]) as a shortcut that is
@@ -385,11 +385,11 @@ richlistitem[type="download"]:hover > stack > .downloadButton.downloadRetry:acti
   }
 
   #downloads-indicator:not([counter])[attention] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
-    background-image: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"), 18, 108, 37, 90);
+    background-image: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"), 18, 108, 36, 90);
   }
 
   #downloads-indicator:not([counter])[attention] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter:-moz-lwtheme-brighttext {
-    background-image: -moz-image-rect(url("chrome://browser/skin/Toolbar-inverted.png"), 18, 108, 37, 90);
+    background-image: -moz-image-rect(url("chrome://browser/skin/Toolbar-inverted.png"), 18, 108, 36, 90);
   }
 }
 
