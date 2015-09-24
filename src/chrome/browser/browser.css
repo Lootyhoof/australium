@@ -1873,11 +1873,14 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   list-style-image: url("chrome://browser/skin/reload-stop-go.png");
   padding: 0 9px;
   -moz-margin-start: 2px;
-  -moz-border-start: 1px solid hsla(0,0%,16%,.2);
 }
 
 #go-button {
   padding: 0 3px;
+}
+
+#urlbar > toolbarbutton {
+  -moz-border-start: 1px solid hsla(0,0%,16%,.2);
 }
 
 #urlbar-reload-button {
