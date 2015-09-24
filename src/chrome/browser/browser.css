@@ -124,7 +124,7 @@
        (-moz-os-version: windows-win8),
        (-moz-os-version: gnu-linux),
        (-moz-os-version: bsd) {
-  #nav-bar {
+  #main-window[tabsontop=true] #nav-bar {
     border-top: 1px solid hsla(209,67%,12%,0.35) !important;
   }
   @media not all and (-moz-windows-compositor) {
