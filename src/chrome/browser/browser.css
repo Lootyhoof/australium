@@ -2268,7 +2268,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 /* Tabstrip */
 
 #TabsToolbar {
-  min-height: 0;
+  min-height: 31px;
   padding: 0;
   margin-bottom: calc(-1 * 1px); /* overlap the nav-bar's top border */
 }
