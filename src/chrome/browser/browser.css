@@ -863,14 +863,9 @@ menuitem.bookmark-item {
 #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
 #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
   padding: 2px 6px;
-  background: hsla(210,32%,93%,0) padding-box;
-  border-radius: 2px;
   border: 1px solid;
-  border-color: hsla(210,54%,20%,0) hsla(210,54%,20%,0) hsla(210,54%,20%,0);
-  box-shadow: 0 1px hsla(0,0%,100%,0) inset,
-              0 1px hsla(210,54%,20%,0),
-              0 0 2px hsla(210,54%,20%,0);
-  transition-property: background-color, border-color, box-shadow;
+  border-color: transparent;
+  transition-property: background-color, border-color;
   transition-duration: 150ms;
 }
 
@@ -884,6 +879,26 @@ menuitem.bookmark-item {
 #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1[type=menu] > .toolbarbutton-text /* hack for add-ons that forcefully display the label */ {
   -moz-padding-end: 17px;
 }
+
+@media (-moz-os-version: windows-xp),
+       (-moz-os-version: windows-vista),
+       (-moz-os-version: windows-win7) {
+  /* < Win8 */
+  #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-icon,
+  #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-badge-container,
+  #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
+  #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+    background-color: hsla(210,32%,93%,0);
+    background-origin: padding-box;
+    border-radius: 2px;
+    border-color: hsla(210,54%,20%,0) hsla(210,54%,20%,0) hsla(210,54%,20%,0);
+    box-shadow: 0 1px hsla(0,0%,100%,0) inset,
+                0 1px hsla(210,54%,20%,0),
+                0 0 2px hsla(210,54%,20%,0);
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 150ms;
+  }
+}  
 
 #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-menu-dropmarker {
   -moz-margin-start: -15px;
@@ -922,37 +937,53 @@ menuitem.bookmark-item {
   box-shadow: 0 0 0 1px hsla(0,0%,100%,.2);
 }
 
-#navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon:-moz-locale-dir(ltr),
-#navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon:-moz-locale-dir(rtl) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-#navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon:-moz-locale-dir(rtl),
-#navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon:-moz-locale-dir(ltr) {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
 #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1:not([disabled]):-moz-any(:hover,[open]) > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
 #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
 #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1:not([disabled]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-icon,
 #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1:not([disabled]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-badge-container,
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #nav-bar-customizationtarget > #unified-back-forward-button > .toolbarbutton-1:-moz-any([disabled],:not([open]):not([disabled]):not(:active)) > .toolbarbutton-icon {
-  background-image: linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1));
-  border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.2) hsla(210,54%,20%,.25);
-  box-shadow: 0 1px hsla(0,0%,100%,.3) inset,
-              0 1px hsla(210,54%,20%,.03),
-              0 0 2px hsla(210,54%,20%,.1);
+  background-image: hsla(210,4%,10%,.08);
+  border-color: hsla(210,4%,10%,.1);
+  box-shadow: none;
 }
 
-#navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled]):not([open]):not(:active):hover > .toolbarbutton-icon,
-#navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1:not([buttonover]):not([open]):not(:active):hover > .toolbarbutton-menubutton-dropmarker:not([disabled]) > .dropmarker-icon,
-window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #nav-bar-customizationtarget > #unified-back-forward-button > #forward-button:not([open]):not(:active):not([disabled]):hover > .toolbarbutton-icon {
-  border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4);
-  background-color: hsla(210,48%,96%,.75);
-  box-shadow: 0 0 1px hsla(210,54%,20%,.03),
-              0 0 2px hsla(210,54%,20%,.1);
+@media (-moz-os-version: windows-xp),
+       (-moz-os-version: windows-vista),
+       (-moz-os-version: windows-win7),
+       (-moz-unix-theme: gtk2) {
+  /* < Win8 */
+  #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1:not([disabled]):-moz-any(:hover,[open]) > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
+  #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
+  #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1:not([disabled]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-icon,
+  #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1:not([disabled]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-badge-container,
+  window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #nav-bar-customizationtarget > #unified-back-forward-button > .toolbarbutton-1:-moz-any([disabled],:not([open]):not([disabled]):not(:active)) > .toolbarbutton-icon {
+    background-image: linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1));
+    border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.2) hsla(210,54%,20%,.25);
+    box-shadow: 0 1px hsla(0,0%,100%,.3) inset,
+                0 1px hsla(210,54%,20%,.03),
+                0 0 2px hsla(210,54%,20%,.1);
+  }
+  
+  #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon:-moz-locale-dir(ltr),
+  #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon:-moz-locale-dir(rtl) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon:-moz-locale-dir(rtl),
+  #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon:-moz-locale-dir(ltr) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled]):not([open]):not(:active):hover > .toolbarbutton-icon,
+  #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1:not([buttonover]):not([open]):not(:active):hover > .toolbarbutton-menubutton-dropmarker:not([disabled]) > .dropmarker-icon,
+  window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #nav-bar-customizationtarget > #unified-back-forward-button > #forward-button:not([open]):not(:active):not([disabled]):hover > .toolbarbutton-icon {
+    border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4);
+    background-color: hsla(210,48%,96%,.75);
+    box-shadow: 0 0 1px hsla(210,54%,20%,.03),
+                0 0 2px hsla(210,54%,20%,.1);
+  }
 }
 
 #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled]):hover:active > .toolbarbutton-icon,
@@ -1015,8 +1046,6 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large] > :-moz-a
 
 /* unified back/forward button */
 
-/* unified back/forward button */
-
 #back-button {
   -moz-image-region: rect(0, 18px, 18px, 0);
 }
@@ -1045,12 +1074,21 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button > #forward-button > .toolbarbutton-icon {
   /*mask: url(keyhole-forward-mask.svg#mask); XXX: this regresses twinopen */
-  clip-path: url(chrome://browser/content/browser.xul#winstripe-keyhole-forward-clip-path);
+  clip-path: url(chrome://browser/content/browser.xul#windows-keyhole-forward-clip-path);
   -moz-margin-start: -6px !important;
   border-left-style: none;
   border-radius: 0;
   padding-left: 7px;
   padding-right: 3px;
+  border-color: ThreeDShadow !important;
+}
+
+@media (-moz-os-version: windows-win10) {
+  window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button > #forward-button > .toolbarbutton-icon {
+    border-color: hsl(0,0%,80%) !important;
+	padding-top: 4px !important;
+    padding-bottom: 4px !important;
+  }
 }
 
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button:not([switchingtabs]) > #forward-button {
@@ -1084,22 +1122,14 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   border-radius: 10000px;
   padding: 5px;
   border: none;
-  background-image: -moz-linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1));
-  box-shadow: 0 1px 0 hsla(0,0%,100%,.3) inset,
-              0 0 0 1px hsla(0,0%,100%,.3) inset,
-              0 0 0 1px hsla(210,54%,20%,.25),
-              0 1px 0 hsla(210,54%,20%,.35);
+  box-shadow: 0 1px 0 0 hsla(210,4%,10%,.25),
+              0 0 0 1px hsla(210,4%,10%,.25);
   transition-property: background-color, box-shadow;
   transition-duration: 250ms;
 }
 
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button > #back-button:not([disabled="true"]):not([open="true"]):not(:active):hover > .toolbarbutton-icon {
   background-color: hsla(210,48%,96%,.75);
-  box-shadow: 0 1px 0 hsla(0,0%,100%,.3) inset,
-              0 0 0 1px hsla(0,0%,100%,.3) inset,
-              0 0 0 1px hsla(210,54%,20%,.3),
-              0 1px 0 hsla(210,54%,20%,.4),
-              0 0 4px hsla(210,54%,20%,.2);
 }
 
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button > #back-button:not([disabled="true"]):hover:active > .toolbarbutton-icon,
@@ -1112,10 +1142,45 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   transition: none;
 }
 
-window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button > #back-button[disabled] > .toolbarbutton-icon {
-  box-shadow: 0 0 0 1px hsla(210,54%,20%,.55),
-              0 1px 0 hsla(210,54%,20%,.65);
-  transition: none;
+@media (-moz-os-version: windows-xp),
+       (-moz-os-version: windows-vista),
+       (-moz-os-version: windows-win7) {
+  window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button > #back-button > .toolbarbutton-icon {
+    background-image: linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1));
+    box-shadow: 0 1px 0 hsla(0,0%,100%,.3) inset,
+                0 0 0 1px hsla(0,0%,100%,.3) inset,
+                0 0 0 1px hsla(210,54%,20%,.25),
+                0 1px 0 hsla(210,54%,20%,.35);
+  }
+
+  window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button > #back-button:not([disabled="true"]):not([open="true"]):not(:active):hover > .toolbarbutton-icon {
+    background-color: hsla(210,48%,96%,.75);
+    box-shadow: 0 1px 0 hsla(0,0%,100%,.3) inset,
+                0 0 0 1px hsla(0,0%,100%,.3) inset,
+                0 0 0 1px hsla(210,54%,20%,.3),
+                0 1px 0 hsla(210,54%,20%,.4),
+                0 0 4px hsla(210,54%,20%,.2);
+  }
+
+  window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button > #back-button:not([disabled="true"]):hover:active > .toolbarbutton-icon,
+  window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button > #back-button[open="true"] > .toolbarbutton-icon  {
+    background-color: hsla(210,54%,20%,.15);
+    box-shadow: 0 1px 1px hsla(210,54%,20%,.1) inset,
+                0 0 1px hsla(210,54%,20%,.2) inset,
+                0 0 0 1px hsla(210,54%,20%,.4),
+                0 1px 0 hsla(210,54%,20%,.2);
+    transition: none;
+  }
+
+  window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button > #back-button[disabled] > .toolbarbutton-icon {
+    box-shadow: 0 0 0 1px hsla(210,54%,20%,.55),
+                0 1px 0 hsla(210,54%,20%,.65);
+    transition: none;
+  }
+}
+
+#back-button:-moz-locale-dir(rtl) > .toolbarbutton-icon {
+  transform: scaleX(-1);
 }
 
 .unified-nav-back[_moz-menuactive]:-moz-locale-dir(ltr),
@@ -1513,6 +1578,57 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   color: black;
 }
 
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button + #urlbar-container {
+  padding-left: 27px;
+  -moz-margin-start: -27px;
+  position: relative;
+  pointer-events: none;
+}
+
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button + #urlbar-container > #urlbar {
+  -moz-border-start: none;
+  margin-left: 0;
+  pointer-events: all;
+}
+
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button:not([switchingtabs]) + #urlbar-container > #urlbar {
+  transition: margin-left 150ms ease-out;
+}
+
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button + #urlbar-container > #urlbar:-moz-locale-dir(ltr) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button + #urlbar-container > #urlbar:-moz-locale-dir(rtl) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button[forwarddisabled] + #urlbar-container {
+  clip-path: url("chrome://browser/content/browser.xul#windows-urlbar-back-button-clip-path");
+}
+
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button[forwarddisabled] + #urlbar-container > #urlbar {
+  margin-left: -27px;
+}
+
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button[forwarddisabled]:hover:not([switchingtabs]) + #urlbar-container > #urlbar {
+  /* delay the hiding of the forward button when hovered to avoid accidental clicks on the url bar */
+  transition-delay: 100s;
+}
+
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button[forwarddisabled]:not(:hover) + #urlbar-container > #urlbar {
+  /* when not hovered anymore, trigger a new transition to hide the forward button immediately */
+  margin-left: -27.01px;
+}
+
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button + #urlbar-container:-moz-locale-dir(rtl),
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button + #urlbar-container > #urlbar:-moz-locale-dir(rtl) {
+  /* let windows-urlbar-back-button-mask clip the urlbar's right side for RTL */
+  transform: scaleX(-1);
+}
+
 html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
 .searchbar-textbox:-moz-lwtheme > .autocomplete-textbox-container > .textbox-input-box > html|*.textbox-input::-moz-placeholder {
   opacity: 1.0;
@@ -1617,33 +1733,24 @@ html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
   border-radius: 0;
 }
 
-window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button"],#nav-bar:not([currentset])) > #unified-back-forward-button + #urlbar-container > #urlbar > #identity-box {
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button + #urlbar-container > #urlbar > #identity-box {
   border-radius: 0;
 }
 
-window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button"],#nav-bar:not([currentset])) > #unified-back-forward-button[forwarddisabled] + #urlbar-container > #urlbar > #notification-popup-box[hidden] + #identity-box:-moz-locale-dir(ltr) {
-  padding-left: 5px;
-  transition: padding-left;
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button[forwarddisabled] + #urlbar-container > #urlbar > #notification-popup-box[hidden] + #identity-box {
+  -moz-padding-start: 9px;
 }
 
-window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button"],#nav-bar:not([currentset])) > #unified-back-forward-button[forwarddisabled] + #urlbar-container > #urlbar > #notification-popup-box[hidden] + #identity-box:-moz-locale-dir(rtl) {
-  padding-right: 5px;
-  transition: padding-right;
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button[forwarddisabled]:hover:not([switchingtabs]) + #urlbar-container > #urlbar > #notification-popup-box[hidden] + #identity-box {
+  /* Forward button hiding is delayed when hovered, so we should use the same
+     delay for the identity box. We handle both horizontal paddings (for LTR and
+     RTL), the latter two delays here are for padding-left and padding-right. */
+  transition-delay: 0s, 100s, 100s;
 }
 
-window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button"],#nav-bar:not([currentset])) > #unified-back-forward-button[forwarddisabled]:hover:not([switchingtabs]) + #urlbar-container > #urlbar > #notification-popup-box[hidden] + #identity-box {
-  /* forward button hiding is delayed when hovered */
-  transition-delay: 100s;
-}
-
-window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button"],#nav-bar:not([currentset])) > #unified-back-forward-button[forwarddisabled]:not(:hover) + #urlbar-container > #urlbar > #notification-popup-box[hidden] + #identity-box:-moz-locale-dir(ltr) {
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button[forwarddisabled]:not(:hover) + #urlbar-container > #urlbar > #notification-popup-box[hidden] + #identity-box:-moz-locale-dir(ltr) {
   /* when not hovered anymore, trigger a new non-delayed transition to react to the forward button hiding */
-  padding-left: 5.01px;
-}
-
-window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button"],#nav-bar:not([currentset])) > #unified-back-forward-button[forwarddisabled]:not(:hover) + #urlbar-container > #urlbar > #notification-popup-box[hidden] + #identity-box:-moz-locale-dir(rtl) {
-  /* when not hovered anymore, trigger a new non-delayed transition to react to the forward button hiding */
-  padding-right: 5.01px;
+  -moz-padding-start: 9.01px;
 }
 
 #urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain,
