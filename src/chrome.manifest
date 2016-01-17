@@ -84,44 +84,55 @@ override chrome://browser/skin/tabbrowser/tab-background-middle@2x.png chrome://
 override chrome://browser/skin/tabbrowser/tab-background-end.png       chrome://browser/skin/tabbrowser/tab-background-end-preWin10.png       os=Linux
 override chrome://browser/skin/tabbrowser/tab-background-end@2x.png    chrome://browser/skin/tabbrowser/tab-background-end-preWin10@2x.png    os=Linux
 
-override chrome://global/skin/console/console-toolbar.png       chrome://global/skin/console/console-toolbar-XP.png      os=WINNT osversion<6
-override chrome://global/skin/dirListing/folder.png             chrome://global/skin/dirListing/folder-XP.png            os=WINNT osversion<6
-override chrome://global/skin/dirListing/local.png              chrome://global/skin/dirListing/local-XP.png             os=WINNT osversion<6
-override chrome://global/skin/dirListing/remote.png             chrome://global/skin/dirListing/remote-XP.png            os=WINNT osversion<6
-override chrome://global/skin/dirListing/up.png                 chrome://global/skin/dirListing/up-XP.png                os=WINNT osversion<6
-override chrome://global/skin/icons/autoscroll.png              chrome://global/skin/icons/autoscroll-XP.png             os=WINNT osversion<6
-override chrome://global/skin/icons/blacklist_favicon.png       chrome://global/skin/icons/blacklist_favicon-XP.png      os=WINNT osversion<6
-override chrome://global/skin/icons/blacklist_large.png         chrome://global/skin/icons/blacklist_large-XP.png        os=WINNT osversion<6
-override chrome://global/skin/icons/Error.png                   chrome://global/skin/icons/Error-XP.png                  os=WINNT osversion<6
-override chrome://global/skin/icons/error-16.png                chrome://global/skin/icons/error-16-XP.png               os=WINNT osversion<6
-override chrome://global/skin/icons/error-64.png                chrome://global/skin/icons/error-64-XP.png               os=WINNT osversion<6
-override chrome://global/skin/icons/folder-item.png             chrome://global/skin/icons/folder-item-XP.png            os=WINNT osversion<6
-override chrome://global/skin/icons/information-16.png          chrome://global/skin/icons/information-16-XP.png         os=WINNT osversion<6
-override chrome://global/skin/icons/information-24.png          chrome://global/skin/icons/information-24-XP.png         os=WINNT osversion<6
-override chrome://global/skin/icons/information-32.png          chrome://global/skin/icons/information-32-XP.png         os=WINNT osversion<6
-override chrome://global/skin/icons/Print-preview.png           chrome://global/skin/icons/Print-preview-XP.png          os=WINNT osversion<6
-override chrome://global/skin/icons/Portrait.png                chrome://global/skin/icons/Portrait-XP.png               os=WINNT osversion<6
-override chrome://global/skin/icons/Landscape.png               chrome://global/skin/icons/Landscape-XP.png              os=WINNT osversion<6
-override chrome://global/skin/icons/Question.png                chrome://global/skin/icons/Question-XP.png               os=WINNT osversion<6
-override chrome://global/skin/icons/question-16.png             chrome://global/skin/icons/question-16-XP.png            os=WINNT osversion<6
-override chrome://global/skin/icons/question-64.png             chrome://global/skin/icons/question-64-XP.png            os=WINNT osversion<6
-override chrome://global/skin/icons/Search-close.png            chrome://global/skin/icons/Search-close-XP.png           os=WINNT osversion<6
-override chrome://global/skin/icons/Search-glass.png            chrome://global/skin/icons/Search-glass-XP.png           os=WINNT osversion<6
-override chrome://global/skin/icons/sslWarning.png              chrome://global/skin/icons/sslWarning-XP.png             os=WINNT osversion<6
-override chrome://global/skin/icons/Warning.png                 chrome://global/skin/icons/Warning-XP.png                os=WINNT osversion<6
-override chrome://global/skin/icons/warning-large.png           chrome://global/skin/icons/warning-large-XP.png          os=WINNT osversion<6
-override chrome://global/skin/icons/warning-16.png              chrome://global/skin/icons/warning-16-XP.png             os=WINNT osversion<6
-override chrome://global/skin/icons/warning-64.png              chrome://global/skin/icons/warning-64-XP.png             os=WINNT osversion<6
-override chrome://global/skin/icons/windowControls.png          chrome://global/skin/icons/windowControls-XP.png         os=WINNT osversion<6
-override chrome://global/skin/printpreview/arrow-left.png       chrome://global/skin/printpreview/arrow-left-XP.png      os=WINNT osversion<6
-override chrome://global/skin/printpreview/arrow-left-end.png   chrome://global/skin/printpreview/arrow-left-end-XP.png  os=WINNT osversion<6
-override chrome://global/skin/printpreview/arrow-right.png      chrome://global/skin/printpreview/arrow-right-XP.png     os=WINNT osversion<6
-override chrome://global/skin/printpreview/arrow-right-end.png  chrome://global/skin/printpreview/arrow-right-end-XP.png os=WINNT osversion<6
-override chrome://global/skin/toolbar/spring.png                chrome://global/skin/toolbar/spring-XP.png               os=WINNT osversion<6
-override chrome://global/skin/tree/sort-asc.png                 chrome://global/skin/tree/sort-asc-XP.png                os=WINNT osversion<6
-override chrome://global/skin/tree/sort-dsc.png                 chrome://global/skin/tree/sort-dsc-XP.png                os=WINNT osversion<6
-override chrome://global/skin/tree/twisty-clsd.png              chrome://global/skin/tree/twisty-clsd-XP.png             os=WINNT osversion<6
-override chrome://global/skin/tree/twisty-open.png              chrome://global/skin/tree/twisty-open-XP.png             os=WINNT osversion<6
+override chrome://global/skin/console/console-toolbar.png       chrome://global/skin/console/console-toolbar-XP.png         os=WINNT osversion<6
+override chrome://global/skin/dirListing/folder.png             chrome://global/skin/dirListing/folder-XP.png               os=WINNT osversion<6
+override chrome://global/skin/dirListing/local.png              chrome://global/skin/dirListing/local-XP.png                os=WINNT osversion<6
+override chrome://global/skin/dirListing/remote.png             chrome://global/skin/dirListing/remote-XP.png               os=WINNT osversion<6
+override chrome://global/skin/dirListing/up.png                 chrome://global/skin/dirListing/up-XP.png                   os=WINNT osversion<6
+override chrome://global/skin/icons/autoscroll.png              chrome://global/skin/icons/autoscroll-XP.png                os=WINNT osversion<6
+override chrome://global/skin/icons/blacklist_favicon.png       chrome://global/skin/icons/blacklist_favicon-XP.png         os=WINNT osversion<6
+override chrome://global/skin/icons/blacklist_large.png         chrome://global/skin/icons/blacklist_large-XP.png           os=WINNT osversion<6
+override chrome://global/skin/icons/Error.png                   chrome://global/skin/icons/Error-XP.png                     os=WINNT osversion<6
+override chrome://global/skin/icons/error-16.png                chrome://global/skin/icons/error-16-XP.png                  os=WINNT osversion<6
+override chrome://global/skin/icons/error-64.png                chrome://global/skin/icons/error-64-XP.png                  os=WINNT osversion<6
+override chrome://global/skin/icons/folder-item.png             chrome://global/skin/icons/folder-item-XP.png               os=WINNT osversion<6
+override chrome://global/skin/icons/information-16.png          chrome://global/skin/icons/information-16-XP.png            os=WINNT osversion<6
+override chrome://global/skin/icons/information-24.png          chrome://global/skin/icons/information-24-XP.png            os=WINNT osversion<6
+override chrome://global/skin/icons/information-32.png          chrome://global/skin/icons/information-32-XP.png            os=WINNT osversion<6
+override chrome://global/skin/icons/Print-preview.png           chrome://global/skin/icons/Print-preview-XP.png             os=WINNT osversion<6
+override chrome://global/skin/icons/Portrait.png                chrome://global/skin/icons/Portrait-XP.png                  os=WINNT osversion<6
+override chrome://global/skin/icons/Landscape.png               chrome://global/skin/icons/Landscape-XP.png                 os=WINNT osversion<6
+override chrome://global/skin/icons/Question.png                chrome://global/skin/icons/Question-XP.png                  os=WINNT osversion<6
+override chrome://global/skin/icons/question-16.png             chrome://global/skin/icons/question-16-XP.png               os=WINNT osversion<6
+override chrome://global/skin/icons/question-64.png             chrome://global/skin/icons/question-64-XP.png               os=WINNT osversion<6
+override chrome://global/skin/icons/Search-close.png            chrome://global/skin/icons/Search-close-XP.png              os=WINNT osversion<6
+override chrome://global/skin/icons/Search-glass.png            chrome://global/skin/icons/Search-glass-XP.png              os=WINNT osversion<6
+override chrome://global/skin/icons/sslWarning.png              chrome://global/skin/icons/sslWarning-XP.png                os=WINNT osversion<6
+override chrome://global/skin/icons/Warning.png                 chrome://global/skin/icons/Warning-XP.png                   os=WINNT osversion<6
+override chrome://global/skin/icons/warning-large.png           chrome://global/skin/icons/warning-large-XP.png             os=WINNT osversion<6
+override chrome://global/skin/icons/warning-16.png              chrome://global/skin/icons/warning-16-XP.png                os=WINNT osversion<6
+override chrome://global/skin/icons/warning-64.png              chrome://global/skin/icons/warning-64-XP.png                os=WINNT osversion<6
+override chrome://global/skin/icons/windowControls.png          chrome://global/skin/icons/windowControls-XP.png            os=WINNT osversion<6
+override chrome://global/skin/printpreview/arrow-left.png       chrome://global/skin/printpreview/arrow-left-XP.png         os=WINNT osversion<6
+override chrome://global/skin/printpreview/arrow-left-end.png   chrome://global/skin/printpreview/arrow-left-end-XP.png     os=WINNT osversion<6
+override chrome://global/skin/printpreview/arrow-right.png      chrome://global/skin/printpreview/arrow-right-XP.png        os=WINNT osversion<6
+override chrome://global/skin/printpreview/arrow-right-end.png  chrome://global/skin/printpreview/arrow-right-end-XP.png    os=WINNT osversion<6
+override chrome://global/skin/toolbar/spring.png                chrome://global/skin/toolbar/spring-XP.png                  os=WINNT osversion<6
+override chrome://global/skin/tree/sort-asc.png                 chrome://global/skin/tree/sort-asc-XP.png                   os=WINNT osversion<6
+override chrome://global/skin/tree/sort-dsc.png                 chrome://global/skin/tree/sort-dsc-XP.png                   os=WINNT osversion<6
+override chrome://global/skin/tree/twisty.svg#clsd              chrome://global/skin/tree/twisty-Vista78.svg#clsd           os=WINNT osversion<=6.3
+override chrome://global/skin/tree/twisty.svg#clsd-rtl          chrome://global/skin/tree/twisty-Vista78.svg#clsd-rtl       os=WINNT osversion<=6.3
+override chrome://global/skin/tree/twisty.svg#clsd-hover        chrome://global/skin/tree/twisty-Vista78.svg#clsd-hover     os=WINNT osversion<=6.3
+override chrome://global/skin/tree/twisty.svg#clsd-hover-rtl    chrome://global/skin/tree/twisty-Vista78.svg#clsd-hover-rtl os=WINNT osversion<=6.3
+override chrome://global/skin/tree/twisty.svg#open              chrome://global/skin/tree/twisty-Vista78.svg#open           os=WINNT osversion<=6.3
+override chrome://global/skin/tree/twisty.svg#open-rtl          chrome://global/skin/tree/twisty-Vista78.svg#open-rtl       os=WINNT osversion<=6.3
+override chrome://global/skin/tree/twisty.svg#open-hover        chrome://global/skin/tree/twisty-Vista78.svg#open-hover     os=WINNT osversion<=6.3
+override chrome://global/skin/tree/twisty.svg#open-hover-rtl    chrome://global/skin/tree/twisty-Vista78.svg#open-hover-rtl os=WINNT osversion<=6.3
+override chrome://global/skin/tree/twisty.svg#clsd              chrome://global/skin/tree/twisty-Vista78.svg#clsd           os=Linux
+override chrome://global/skin/tree/twisty.svg#open              chrome://global/skin/tree/twisty-Vista78.svg#open           os=Linux
+# to be sure osversion<6 has always higher precedence than osversion<=6.3 we override twisty-Vista78.svg instead of twisty.svg
+override chrome://global/skin/tree/twisty-Vista78.svg#clsd      chrome://global/skin/tree/twisty-XP.svg#clsd                os=WINNT osversion<6
+override chrome://global/skin/tree/twisty-Vista78.svg#open      chrome://global/skin/tree/twisty-XP.svg#open                os=WINNT osversion<6
 
 override chrome://global/skin/icons/close.png                   chrome://global/skin/icons/close-XPVista7.png            os=WINNT osversion<=6.1
 override chrome://global/skin/icons/close@2x.png                chrome://global/skin/icons/close-XPVista7@2x.png         os=WINNT osversion<=6.1
@@ -134,3 +145,18 @@ override chrome://global/skin/icons/close-inverted@2x.png       chrome://global/
 
 override chrome://global/skin/arrow/arrow-lft-hov.gif           chrome://global/skin/arrow/arrow-lft.gif
 override chrome://global/skin/arrow/arrow-rit-hov.gif           chrome://global/skin/arrow/arrow-rit.gif
+
+override chrome://mozapps/skin/downloads/downloadButtons.png            chrome://mozapps/skin/downloads/downloadButtons-XP.png        osversion<6
+override chrome://mozapps/skin/downloads/downloadIcon.png               chrome://mozapps/skin/downloads/downloadIcon-XP.png           osversion<6
+override chrome://mozapps/skin/extensions/category-discover.png         chrome://mozapps/skin/extensions/category-discover-XP.png     osversion<6
+override chrome://mozapps/skin/extensions/category-plugins.png          chrome://mozapps/skin/extensions/category-plugins-XP.png      osversion<6
+override chrome://mozapps/skin/extensions/category-recent.png           chrome://mozapps/skin/extensions/category-recent-XP.png       osversion<6
+override chrome://mozapps/skin/extensions/category-available.png        chrome://mozapps/skin/extensions/category-available-XP.png    osversion<6
+override chrome://mozapps/skin/extensions/themeGeneric.png              chrome://mozapps/skin/extensions/themeGeneric-XP.png          osversion<6
+override chrome://mozapps/skin/extensions/themeGeneric-16.png           chrome://mozapps/skin/extensions/themeGeneric-16-XP.png       osversion<6
+override chrome://mozapps/skin/extensions/localeGeneric.png             chrome://mozapps/skin/extensions/localeGeneric-XP.png         osversion<6
+override chrome://mozapps/skin/plugins/pluginGeneric.png                chrome://mozapps/skin/plugins/pluginGeneric-XP.png            osversion<6
+override chrome://mozapps/skin/plugins/pluginBlocked.png                chrome://mozapps/skin/plugins/pluginBlocked-XP.png            osversion<6
+override chrome://mozapps/skin/plugins/pluginGeneric-16.png             chrome://mozapps/skin/plugins/pluginGeneric-16-XP.png         osversion<6
+override chrome://mozapps/skin/profile/profileicon.png                  chrome://mozapps/skin/profile/profileicon-XP.png              osversion<6
+override chrome://mozapps/skin/update/downloadButtons.png               chrome://mozapps/skin/update/downloadButtons-XP.png           osversion<6
