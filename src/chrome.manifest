@@ -146,6 +146,7 @@ override chrome://mozapps/skin/extensions/category-discover.png         chrome:/
 override chrome://mozapps/skin/extensions/category-plugins.png          chrome://mozapps/skin/extensions/category-plugins-XP.png      osversion<6
 override chrome://mozapps/skin/extensions/category-recent.png           chrome://mozapps/skin/extensions/category-recent-XP.png       osversion<6
 override chrome://mozapps/skin/extensions/category-available.png        chrome://mozapps/skin/extensions/category-available-XP.png    osversion<6
+override chrome://mozapps/skin/extensions/extensionGeneric-16.png       chrome://mozapps/skin/extensions/extensionGeneric-16-XP.png       osversion<6
 override chrome://mozapps/skin/extensions/themeGeneric.png              chrome://mozapps/skin/extensions/themeGeneric-XP.png          osversion<6
 override chrome://mozapps/skin/extensions/themeGeneric-16.png           chrome://mozapps/skin/extensions/themeGeneric-16-XP.png       osversion<6
 override chrome://mozapps/skin/extensions/localeGeneric.png             chrome://mozapps/skin/extensions/localeGeneric-XP.png         osversion<6
