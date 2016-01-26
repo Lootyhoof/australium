@@ -9,7 +9,7 @@
 
   <Description about="urn:mozilla:install-manifest">
     <em:id>{6a2ffbbc-4f20-42f0-b98e-98e62085837f}</em:id>
-    <em:version>1.1.0</em:version>
+    <em:version>2.0.0b5</em:version>
     <em:name>Australium</em:name>
     <em:description>Experience the curved tabs of Australis, now on Pale Moon!</em:description>
     <em:creator>Lootyhoof</em:creator>
@@ -22,7 +22,7 @@
       <Description>
         <!-- Pale Moon -->
         <em:id>{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}</em:id>
-        <em:minVersion>25.6.0</em:minVersion>
+        <em:minVersion>26.0.0b3</em:minVersion>
         <em:maxVersion>26.*</em:maxVersion>
       </Description>
     </em:targetApplication>

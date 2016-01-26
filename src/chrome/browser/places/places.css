@@ -2,10 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-
 /* Sidebars */
 .sidebar-placesTree {
   -moz-appearance: none;
@@ -26,6 +22,28 @@
 
 .sidebar-placesTreechildren::-moz-tree-cell(separator) {
   cursor: default;
+}
+
+/* Style Places sidebars as Vista media collection */
+@media (-moz-windows-default-theme) {
+  @media not all and (-moz-os-version: windows-xp) {
+    .sidebar-placesTree {
+      background-color: transparent;
+      border-top: none;
+    }
+
+    .sidebar-placesTreechildren::-moz-tree-cell-text(leaf, hover) {
+      text-decoration: none;
+    }
+  }
+
+  @media (-moz-os-version: windows-vista),
+         (-moz-os-version: windows-win7) {
+    #bookmarksPanel,
+    #history-panel {
+      background-color: #EEF3FA;
+    }
+  }
 }
 
 /* Trees */
@@ -154,21 +172,4 @@ treechildren::-moz-tree-cell-text(cutting) {
   height: auto;
   width: auto;
   -moz-margin-end: -3px;
-}
-
-/* Style Places sidebars as Vista media collection */
-@media (-moz-windows-default-theme) {
-  #bookmarksPanel,
-  #history-panel {
-    background-color: #EEF3FA;
-  }
-
-  .sidebar-placesTree {
-    background-color: transparent;
-    border-top: none;
-  }
-
-  .sidebar-placesTreechildren::-moz-tree-cell-text(leaf, hover) {
-    text-decoration: none;
-  }
 }

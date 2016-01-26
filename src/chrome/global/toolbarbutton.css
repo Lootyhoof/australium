@@ -2,10 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-
 /* ===== toolbarbutton.css =====================================================
   == Styles used by the XUL button element.
   ======================================================================= */
@@ -31,7 +27,7 @@ toolbarbutton {
 }
 
 .toolbarbutton-text {
-  margin: 0 !important;
+  margin: 0 !important; /* !important for overriding global.css */
   text-align: center;
 }
 
@@ -92,6 +88,13 @@ toolbarbutton[checked="true"]:not([disabled="true"]) {
     color: inherit;
     text-shadow: inherit;
   }
+  
+  @media not all and (-moz-os-version: windows-xp) {
+    toolbarbutton:-moz-lwtheme:not([disabled="true"]) {
+      color: inherit;
+      text-shadow: inherit;
+    }
+  }
 }
 
 @media not all and (-moz-windows-default-theme) {
@@ -149,11 +152,4 @@ toolbarbutton[type="menu-button"][disabled="true"]:hover:active {
   border: none;
   background-color: transparent;
   width: auto;
-}
-
-@media (-moz-windows-default-theme) {
-  toolbarbutton:-moz-lwtheme:not([disabled="true"]) {
-    color: inherit;
-    text-shadow: inherit;
-  }
 }

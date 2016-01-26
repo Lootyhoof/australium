@@ -18,15 +18,25 @@
 #tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab > .tab-stack > .tab-background > .tab-background-end[selected=true]:-moz-lwtheme::before {
   background-attachment: scroll, fixed;
   background-color: transparent;
-  background-image: linear-gradient(transparent, transparent 2px, rgba(254,254,254,0.72) 2px, rgba(254,254,254,0.72) 2px, rgba(250,250,250,0.88) 3px, rgba(250,250,250,0.88) 3px, rgba(254,254,254,0.72) 4px, rgba(254,254,254,0.72) 4px, rgba(253,253,253,0.45));/*, lwtHeader;*/
+  background-image: linear-gradient(transparent 2px, rgba(255,255,255,.4) 2px, rgba(255,255,255,.4));/*, lwtHeader;*/
   background-position: 0 0, right top;
+  background-repeat: repeat-x, no-repeat;
 }
 
 #tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab > .tab-stack > .tab-background > .tab-background-middle[selected=true]:-moz-lwtheme {
   background-attachment: scroll, scroll, fixed;
   background-color: transparent;
-  background-image: url(chrome://browser/skin/tabbrowser/tab-active-middle-lwtheme.png),
-                    linear-gradient(transparent, transparent 2px, rgba(254,254,254,0.72) 2px, rgba(254,254,254,0.72) 2px, rgba(250,250,250,0.88) 3px, rgba(250,250,250,0.88) 3px, rgba(254,254,254,0.72) 4px, rgba(254,254,254,0.72) 4px, rgba(253,253,253,0.45));/*,
+  background-image: url(chrome://browser/skin/tabbrowser/tab-active-middle.png),
+                    linear-gradient(transparent 2px, rgba(255,255,255,.4) 2px, rgba(255,255,255,.4));/*,
                     lwtHeader;*/
   background-position: 0 0, 0 0, right top;
+  background-repeat: repeat-x, repeat-x, no-repeat;
+}
+
+@media (min-resolution: 1.25dppx) {
+  #tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab > .tab-stack > .tab-background > .tab-background-middle[selected=true]:-moz-lwtheme {
+    background-image: url(chrome://browser/skin/tabbrowser/tab-active-middle@2x.png),
+                      linear-gradient(transparent 2px, rgba(255,255,255,.4) 2px, rgba(255,255,255,.4));/*,
+                      lwtHeader;*/
+  }
 }
