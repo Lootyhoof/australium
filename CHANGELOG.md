@@ -1,5 +1,14 @@
 # Changelog
 
+### 2.0.0
+- further Pale Moon 26 compatibility
+- visual parity with modern Firefox versions
+- redesigned add-ons manager
+- Windows 8 and 10-specific styling
+- additional toolbar icons for WinXP, Linux, Win8, Win10
+- added hiDPI toolbar icons (untested)
+- improved Linux styling
+
 ### 1.1.0
 - Pale Moon v26 compatibility
 - fix window borders on Windows 10
