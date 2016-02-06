@@ -1,5 +1,10 @@
 # Changelog
 
+### 2.0.1
+- fix toolbar styling in Aero Basic
+- fix tabs-on-top icons for Windows XP/Windows Classic
+- simulate Australis' tab-overflow-indicator
+
 ### 2.0.0
 - further Pale Moon 26 compatibility
 - visual parity with modern Firefox versions
