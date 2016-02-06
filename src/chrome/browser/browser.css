@@ -4713,10 +4713,8 @@ chatbox {
       border-color: #A9B7C9;
     }
 	
-    #navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar):not(:-moz-lwtheme),
-    #browser-bottombox:not(:-moz-lwtheme),
-	#PersonalToolbar[collapsed=false] ~ #TabsToolbar[tabsontop=false],
-    .browserContainer > findbar {
+    #navigator-toolbox > toolbar:not(:-moz-lwtheme),
+    #browser-bottombox:not(:-moz-lwtheme) {
       background-color: hsl(210,75%,92%);
     }
 
@@ -4738,7 +4736,9 @@ chatbox {
       background-color: hsl(210,75%,92%);
     }
 
-
+    #navigator-toolbox:not(:-moz-lwtheme):after {
+      background-color: #aabccf;
+    }
   }
   
   .sidebar-splitter {
@@ -5281,7 +5281,7 @@ chatbox {
 
 
 @media not all and (-moz-windows-compositor) {
-  @media (-moz-windows-theme: aero) {
+  @media (-moz-windows-default-theme) {
     #main-window {
       background-color: rgb(185,209,234);
     }
