@@ -2868,13 +2868,13 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
   #main-window[tabsintitlebar]:not([inFullscreen]) .tabbrowser-arrowscrollbox > .scrollbutton-up,
   #main-window[tabsintitlebar]:not([inFullscreen]) .tabbrowser-arrowscrollbox > .scrollbutton-down {
-    list-style-image: url(chrome://browser/skin/tabbrowser/tab-arrow-left-inverted.png);
+    list-style-image: url(chrome://browser/skin/tabbrowser/tab-arrow-left-inverted.svg);
   }
 
   #main-window[tabsintitlebar]:not([inFullscreen]) .tabs-newtab-button,
   #main-window[tabsintitlebar]:not([inFullscreen]) #TabsToolbar > #new-tab-button,
   #main-window[tabsintitlebar]:not([inFullscreen]) #TabsToolbar > toolbarpaletteitem > #new-tab-button {
-    list-style-image: url(chrome://browser/skin/tabbrowser/newtab-inverted.png);
+    list-style-image: url(chrome://browser/skin/tabbrowser/newtab-inverted.svg);
   }
 
   #main-window[tabsintitlebar]:not([inFullscreen]) #TabsToolbar > #alltabs-button {
@@ -2885,7 +2885,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
     list-style-image: url(chrome://browser/skin/tabview/tabview-inverted.png);
   }
 
-  #main-window[tabsintitlebar]:not([inFullscreen]) #TabsToolbar .toolbarbutton-1 {
+  #main-window[tabsintitlebar]:not([inFullscreen]) #TabsToolbar :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button, #alltabs-button, #webrtc-status-button):not(:-moz-any(#alltabs-button,#sync-button[status])) > .toolbarbutton-icon:not(:-moz-lwtheme) {
     list-style-image: url("chrome://browser/skin/Toolbar-inverted.png");
   }
   
