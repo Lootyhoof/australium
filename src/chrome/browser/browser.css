@@ -1103,7 +1103,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button > #forward-button > .toolbarbutton-icon {
   /*mask: url(keyhole-forward-mask.svg#mask); XXX: this regresses twinopen */
-  clip-path: url(chrome://browser/content/browser.xul#windows-keyhole-forward-clip-path);
+  clip-path: url(chrome://browser/skin/clip.svg#keyhole-forward-clip-path);
   -moz-margin-start: -6px !important;
   border-left-style: none;
   border-radius: 0;
@@ -1637,9 +1637,9 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 }
 
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button[forwarddisabled] + #urlbar-container {
-  clip-path: url("chrome://browser/content/browser.xul#windows-urlbar-back-button-clip-path");
+  clip-path: url("chrome://browser/skin/clip.svg#urlbar-back-button-clip-path");
 }
-
+  
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button[forwarddisabled] + #urlbar-container > #urlbar {
   margin-left: -27px;
 }
