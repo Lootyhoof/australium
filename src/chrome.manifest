@@ -2,6 +2,8 @@ skin		browser			australium		chrome/browser/
 skin		global			australium		chrome/global/
 skin		mozapps			australium		chrome/mozapps/
 skin		communicator		australium		chrome/communicator/
+skin		os		australium		chrome/os/winnt/		os=WINNT	
+skin		os		australium		chrome/os/linux/		os=Linux
 
 override chrome://browser/skin/aboutSessionRestore-window-icon.png  chrome://browser/skin/preferences/application.png                 os!=WINNT
 override chrome://browser/skin/aboutSessionRestore-window-icon.png  chrome://browser/skin/preferences/application.png                 os=WINNT osversion<6
