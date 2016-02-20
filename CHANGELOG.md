@@ -1,5 +1,10 @@
 # Changelog
 
+### 2.0.2
+- add Linux-specific styling for many global styles
+- Linux: provide correct clip-paths for combined back/forward/urlbar
+- fix nav-bar border overlap with the selected tab when using a persona on non-compositor Windows and Linux
+
 ### 2.0.1
 - fix toolbar styling in Aero Basic
 - fix tabs-on-top icons for Windows XP/Windows Classic
