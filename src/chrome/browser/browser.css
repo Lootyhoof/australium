@@ -918,7 +918,7 @@ menuitem.bookmark-item {
   }
 }  
 
-@media (-moz-os-version: gnu-linux) {
+@media (-moz-os-version: gnu-linux), (-moz-os-version: bsd) {
   #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-icon,
   #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-badge-container,
   #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
@@ -1033,7 +1033,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large] > :-moz-a
   transition: none;
 }
 
-@media (-moz-os-version: gnu-linux) {
+@media (-moz-os-version: gnu-linux), (-moz-os-version: bsd) {
   #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1:not([disabled]):-moz-any(:hover,[open]) > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
   #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
   #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1:not([disabled]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-icon,
