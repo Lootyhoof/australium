@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.0.3
+- re-add twisty PNGs for addon compatibility
+- add autocomplete star
+
 ### 2.0.2
 - add Linux-specific styling for many global styles
 - Linux: provide correct clip-paths for combined back/forward/urlbar
