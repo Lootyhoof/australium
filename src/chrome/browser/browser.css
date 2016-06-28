@@ -2338,70 +2338,9 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 .panel-promo-closebutton {
   -moz-appearance: none;
-  list-style-image: url("chrome://global/skin/icons/close.png");
-  -moz-image-region: rect(0, 20px, 20px, 0);
   border: none;
   -moz-margin-end: -10px;
   margin-top: -5px;
-}
-
-.panel-promo-closebutton:hover {
-  -moz-image-region: rect(0, 40px, 20px, 20px);
-}
-
-.panel-promo-closebutton:hover:active {
-  -moz-image-region: rect(0, 60px, 20px, 40px);
-}
-
-@media (-moz-os-version: windows-xp),
-       (-moz-os-version: windows-vista),
-       (-moz-os-version: windows-win7),
-       (-moz-os-version: gnu-linux),
-       (-moz-os-version: bsd) {
-  .panel-promo-closebutton {
-    -moz-image-region: rect(0, 16px, 16px, 0);
-  }
-
-  .panel-promo-closebutton:hover {
-    -moz-image-region: rect(0, 32px, 16px, 16px);
-  }
-
-  .panel-promo-closebutton:hover:active {
-    -moz-image-region: rect(0, 48px, 16px, 32px);
-  }
-}
-
-@media (min-resolution: 1.1dppx) {
-  .panel-promo-closebutton {
-    list-style-image: url("chrome://global/skin/icons/close@2x.png");
-    -moz-image-region: rect(0, 40px, 40px, 0);
-  }
-
-  .panel-promo-closebutton:hover {
-    -moz-image-region: rect(0, 80px, 40px, 40px);
-  }
-
-  .panel-promo-closebutton:hover:active {
-    -moz-image-region: rect(0, 120px, 40px, 80px);
-  }
-
-  @media (-moz-os-version: windows-xp),
-         (-moz-os-version: windows-vista),
-         (-moz-os-version: windows-win7),
-         (-moz-os-version: gnu-linux),
-         (-moz-os-version: bsd) {
-    .panel-promo-closebutton {
-      -moz-image-region: rect(0, 32px, 32px, 0);
-    }
-
-    .panel-promo-closebutton:hover {
-      -moz-image-region: rect(0, 64px, 32px, 32px);
-    }
-
-    .panel-promo-closebutton:hover:active {
-      -moz-image-region: rect(0, 96px, 32px, 64px);
-    }
-  }
 }
 
 .panel-promo-closebutton > .toolbarbutton-text {
@@ -2544,73 +2483,12 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 /* Tab close button */
 .tab-close-button {
   -moz-appearance: none;
-  -moz-image-region: rect(0, 20px, 20px, 0);
   border: none;
   padding: 0px;
-  list-style-image: url("chrome://global/skin/icons/close.png");
 }
 
 .tabbrowser-tab:not([selected=true]) > * > * > .tab-close-button:-moz-lwtheme-brighttext {
   list-style-image: url("chrome://global/skin/icons/close-inverted.png");
-}
-
-.tab-close-button:hover {
-  -moz-image-region: rect(0, 40px, 20px, 20px);
-}
-
-.tab-close-button:hover:active {
-  -moz-image-region: rect(0, 60px, 20px, 40px);
-}
-
-@media (-moz-os-version: windows-xp),
-       (-moz-os-version: windows-vista),
-       (-moz-os-version: windows-win7),
-       (-moz-os-version: gnu-linux),
-       (-moz-os-version: bsd) {
-  .tab-close-button {
-    -moz-image-region: rect(0, 16px, 16px, 0);
-  }
-
-  .tab-close-button:hover {
-    -moz-image-region: rect(0, 32px, 16px, 16px);
-  }
-
-  .tab-close-button:hover:active {
-    -moz-image-region: rect(0, 48px, 16px, 32px);
-  }
-}
-
-@media (min-resolution: 1.1dppx) {
-  .tab-close-button {
-    list-style-image: url("chrome://global/skin/icons/close@2x.png");
-    -moz-image-region: rect(0, 40px, 40px, 0);
-  }
-
-  .tab-close-button:hover {
-    -moz-image-region: rect(0, 80px, 40px, 40px);
-  }
-
-  .tab-close-button:hover:active {
-    -moz-image-region: rect(0, 120px, 40px, 80px);
-  }
-
-  @media (-moz-os-version: windows-xp),
-         (-moz-os-version: windows-vista),
-         (-moz-os-version: windows-win7),
-         (-moz-os-version: gnu-linux),
-         (-moz-os-version: bsd) {
-    .tab-close-button {
-      -moz-image-region: rect(0, 32px, 32px, 0);
-    }
-
-    .tab-close-button:hover {
-      -moz-image-region: rect(0, 64px, 32px, 32px);
-    }
-
-    .tab-close-button:hover:active {
-      -moz-image-region: rect(0, 96px, 32px, 64px);
-    }
-  }
 }
 
 .tab-background,
@@ -3112,8 +2990,6 @@ toolbarbutton.chevron > .toolbarbutton-icon {
 /* Tabstrip close button */
 .tabs-closebutton {
   -moz-appearance: none;
-  list-style-image: url("chrome://global/skin/icons/close.png");
-  -moz-image-region: rect(0, 20px, 20px, 0);
   padding: 4px 2px;
   margin: 0px;
   border: none;
@@ -3123,65 +2999,6 @@ toolbarbutton.chevron > .toolbarbutton-icon {
   -moz-margin-end: 0px !important;
   -moz-padding-end: 2px !important;
   -moz-padding-start: 2px !important;
-}
-
-.tabs-closebutton:hover {
-  -moz-image-region: rect(0, 40px, 20px, 20px);
-}
-
-.tabs-closebutton:hover:active {
-  -moz-image-region: rect(0, 60px, 20px, 40px);
-}
-
-@media (-moz-os-version: windows-xp),
-       (-moz-os-version: windows-vista),
-       (-moz-os-version: windows-win7),
-       (-moz-os-version: gnu-linux),
-       (-moz-os-version: bsd) {
-  .tabs-closebutton {
-    -moz-image-region: rect(0, 16px, 16px, 0);
-  }
-
-  .tabs-closebutton:hover {
-    -moz-image-region: rect(0, 32px, 16px, 16px);
-  }
-
-  .tabs-closebutton:hover:active {
-    -moz-image-region: rect(0, 48px, 16px, 32px);
-  }
-}
-
-@media (min-resolution: 1.1dppx) {
-  .tabs-closebutton {
-    list-style-image: url("chrome://global/skin/icons/close@2x.png");
-    -moz-image-region: rect(0, 40px, 40px, 0);
-  }
-
-  .tabs-closebutton:hover {
-    -moz-image-region: rect(0, 80px, 40px, 40px);
-  }
-
-  .tabs-closebutton:hover:active {
-    -moz-image-region: rect(0, 120px, 40px, 80px);
-  }
-
-  @media (-moz-os-version: windows-xp),
-         (-moz-os-version: windows-vista),
-         (-moz-os-version: windows-win7),
-         (-moz-os-version: gnu-linux),
-         (-moz-os-version: bsd) {
-    .tabs-closebutton {
-      -moz-image-region: rect(0, 32px, 32px, 0);
-    }
-
-    .tabs-closebutton:hover {
-      -moz-image-region: rect(0, 64px, 32px, 32px);
-    }
-
-    .tabs-closebutton:hover:active {
-      -moz-image-region: rect(0, 96px, 32px, 64px);
-    }
-  }
 }
 
 /* Pale Moon: Feed icon */
@@ -3779,70 +3596,19 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large] > :-moz-a
 #addonbar-closebutton {
   border: none;
   padding: 0 5px;
-  list-style-image: url("chrome://global/skin/icons/close.png");
   -moz-appearance: none;
-  -moz-image-region: rect(0, 20px, 20px, 0);
 }
 
-#addonbar-closebutton:hover {
-  -moz-image-region: rect(0, 40px, 20px, 20px);
-}
-
-#addonbar-closebutton:hover:active {
-  -moz-image-region: rect(0, 60px, 20px, 40px);
-}
-
-@media (-moz-os-version: windows-xp),
-       (-moz-os-version: windows-vista),
-       (-moz-os-version: windows-win7),
-       (-moz-os-version: gnu-linux),
-       (-moz-os-version: bsd) {
-  #addonbar-closebutton {
-    -moz-image-region: rect(0, 16px, 16px, 0);
-  }
-
-  #addonbar-closebutton:hover {
-    -moz-image-region: rect(0, 32px, 16px, 16px);
-  }
-
-  #addonbar-closebutton:hover:active {
-    -moz-image-region: rect(0, 48px, 16px, 32px);
-  }
+#addonbar-closebutton:-moz-lwtheme-brighttext {
+  list-style-image: url("chrome://global/skin/icons/close-inverted.png");
 }
 
 @media (min-resolution: 1.1dppx) {
-  #addonbar-closebutton {
-    list-style-image: url("chrome://global/skin/icons/close@2x.png");
-    -moz-image-region: rect(0, 40px, 40px, 0);
-  }
-
-  #addonbar-closebutton:hover {
-    -moz-image-region: rect(0, 80px, 40px, 40px);
-  }
-
-  #addonbar-closebutton:hover:active {
-    -moz-image-region: rect(0, 120px, 40px, 80px);
-  }
-
-  @media (-moz-os-version: windows-xp),
-         (-moz-os-version: windows-vista),
-         (-moz-os-version: windows-win7),
-         (-moz-os-version: gnu-linux),
-         (-moz-os-version: bsd) {
-    #addonbar-closebutton {
-      -moz-image-region: rect(0, 32px, 32px, 0);
-    }
-
-    #addonbar-closebutton:hover {
-      -moz-image-region: rect(0, 64px, 32px, 32px);
-    }
-
-    #addonbar-closebutton:hover:active {
-      -moz-image-region: rect(0, 96px, 32px, 64px);
-    }
+  #addonbar-closebutton:-moz-lwtheme-brighttext {
+    list-style-image: url("chrome://global/skin/icons/close-inverted@2x.png");
   }
 }
-
+  
 /* Status panel */
 
 .statuspanel-label {
