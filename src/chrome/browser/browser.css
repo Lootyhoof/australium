@@ -4825,6 +4825,10 @@ chatbox {
           #main-window {
             background-color: hsl(0, 0%, 78%);
           }
+          
+          #main-window:not(:-moz-lwtheme):after {
+            color: black !important;
+          }
         }
 		
 		#appmenu-button {
