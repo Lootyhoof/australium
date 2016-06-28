@@ -800,7 +800,7 @@ menuitem.bookmark-item {
   list-style-image: url("chrome://browser/skin/Toolbar.png");
 }
 
-.toolbarbutton-1:-moz-lwtheme-brighttext {
+toolbar[brighttext] .toolbarbutton-1 {
   list-style-image: url("chrome://browser/skin/Toolbar-inverted.png");
 }
 
@@ -809,7 +809,7 @@ menuitem.bookmark-item {
     list-style-image: url("chrome://browser/skin/Toolbar@2x.png");
   }
 
-  .toolbarbutton-1:-moz-lwtheme-brighttext {
+  toolbar[brighttext] .toolbarbutton-1 {
     list-style-image: url("chrome://browser/skin/Toolbar-inverted@2x.png");
   }
 }
@@ -833,8 +833,8 @@ menuitem.bookmark-item {
   list-style-image: url("chrome://browser/skin/toolbarbutton-dropdown-arrow.png");
 }
 
-.toolbarbutton-1 > .toolbarbutton-menu-dropmarker:-moz-lwtheme-brighttext,
-.toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker:-moz-lwtheme-brighttext {
+toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
+toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
   list-style-image: url("chrome://browser/skin/toolbarbutton-dropdown-arrow-inverted.png");
 }
 
@@ -1266,7 +1266,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 #home-button.bookmark-item {
   list-style-image: url("chrome://browser/skin/Toolbar.png");
 }
-#home-button.bookmark-item:-moz-lwtheme-brighttext {
+toolbar[brighttext] #home-button.bookmark-item {
   list-style-image: url("chrome://browser/skin/Toolbar-inverted.png");
 }
   
@@ -1304,7 +1304,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   list-style-image: url("chrome://browser/skin/Toolbar.png");
 }
 
-#bookmarks-menu-button.bookmark-item:-moz-lwtheme-brighttext {
+toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
   list-style-image: url("chrome://browser/skin/Toolbar-inverted.png");
 }
 
@@ -1380,7 +1380,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   #home-button.bookmark-item {
     list-style-image: url("chrome://browser/skin/Toolbar@2x.png");
   }
-  #home-button.bookmark-item:-moz-lwtheme-brighttext {
+  toolbar[brighttext] #home-button.bookmark-item {
     list-style-image: url("chrome://browser/skin/Toolbar-inverted@2x.png");
   }
   
@@ -1418,7 +1418,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
     list-style-image: url("chrome://browser/skin/Toolbar@2x.png");
   }
 
-  #bookmarks-menu-button.bookmark-item:-moz-lwtheme-brighttext {
+  toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
     list-style-image: url("chrome://browser/skin/Toolbar-inverted@2x.png");
   }
 
@@ -2487,10 +2487,6 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   padding: 0px;
 }
 
-.tabbrowser-tab:not([selected=true]) > * > * > .tab-close-button:-moz-lwtheme-brighttext {
-  list-style-image: url("chrome://global/skin/icons/close-inverted.png");
-}
-
 .tab-background,
 .tabs-newtab-button {
   /* overlap the tab curves */
@@ -2709,8 +2705,8 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   opacity: 0.2;
 }
 
-#TabsToolbar:-moz-lwtheme-brighttext > #tabbrowser-tabs > .tabbrowser-tab::before,
-#TabsToolbar:-moz-lwtheme-brighttext > #tabbrowser-tabs > .tabbrowser-tab::after {
+#TabsToolbar[brighttext] > #tabbrowser-tabs > .tabbrowser-tab::before,
+#TabsToolbar[brighttext] > #tabbrowser-tabs > .tabbrowser-tab::after {
   opacity: 0.4;
 }
 
@@ -2808,14 +2804,14 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 /* Invert the unhovered close tab icons on bright-text tabs */
 @media not all and (min-resolution: 1.1dppx) {
   .tab-close-button:-moz-lwtheme-brighttext,
-  #TabsToolbar:-moz-lwtheme-brighttext .tab-close-button:not([selected="true"]) {
+  #TabsToolbar[brighttext] .tab-close-button:not([selected="true"]) {
     list-style-image: url("chrome://global/skin/icons/close-inverted.png");
   }
 }
 
 @media (min-resolution: 1.1dppx) {
   .tab-close-button:-moz-lwtheme-brighttext,
-  #TabsToolbar:-moz-lwtheme-brighttext .tab-close-button:not([selected="true"]) {
+  #TabsToolbar[brighttext] .tab-close-button:not([selected="true"]) {
     list-style-image: url("chrome://global/skin/icons/close-inverted@2x.png");
   }
 }
@@ -2857,8 +2853,8 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   margin: 0 0 1px;
 }
 
-#TabsToolbar:-moz-lwtheme-brighttext > #tabbrowser-tabs > .tabbrowser-arrowscrollbox > .scrollbutton-up,
-#TabsToolbar:-moz-lwtheme-brighttext > #tabbrowser-tabs > .tabbrowser-arrowscrollbox > .scrollbutton-down {
+#TabsToolbar[brighttext] > #tabbrowser-tabs > .tabbrowser-arrowscrollbox > .scrollbutton-up,
+#TabsToolbar[brighttext] > #tabbrowser-tabs > .tabbrowser-arrowscrollbox > .scrollbutton-down {
   list-style-image: url(chrome://browser/skin/tabbrowser/tab-arrow-left-inverted.svg);
 }
 
@@ -2910,9 +2906,9 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   -moz-image-region: auto;
 }
 
-#TabsToolbar:-moz-lwtheme-brighttext .tabs-newtab-button,
-#TabsToolbar:-moz-lwtheme-brighttext > #new-tab-button,
-#TabsToolbar:-moz-lwtheme-brighttext > toolbarpaletteitem > #new-tab-button {
+#TabsToolbar[brighttext] .tabs-newtab-button,
+#TabsToolbar[brighttext] > #new-tab-button,
+#TabsToolbar[brighttext] > toolbarpaletteitem > #new-tab-button {
   list-style-image: url(chrome://browser/skin/tabbrowser/newtab-inverted.svg);
 }
 
@@ -2930,8 +2926,8 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   list-style-image: url("chrome://browser/skin/toolbarbutton-dropdown-arrow.png");
 }
 
-#TabsToolbar:-moz-lwtheme-brighttext > #alltabs-button,
-#TabsToolbar:-moz-lwtheme-brighttext > toolbarpaletteitem > #alltabs-button {
+#TabsToolbar[brighttext] > #alltabs-button,
+#TabsToolbar[brighttext] > toolbarpaletteitem > #alltabs-button {
   list-style-image: url("chrome://browser/skin/toolbarbutton-dropdown-arrow-inverted.png");
 }
 
@@ -2965,7 +2961,7 @@ toolbarbutton.chevron {
   list-style-image: url("chrome://global/skin/toolbar/chevron.gif") !important;
 }
 
-toolbar:-moz-lwtheme-brighttext toolbarbutton.chevron {
+toolbar[brighttext] toolbarbutton.chevron {
   list-style-image: url("chrome://global/skin/toolbar/chevron-inverted.png") !important;
 }
 
@@ -3599,12 +3595,12 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large] > :-moz-a
   -moz-appearance: none;
 }
 
-#addonbar-closebutton:-moz-lwtheme-brighttext {
+toolbar[brighttext] #addonbar-closebutton {
   list-style-image: url("chrome://global/skin/icons/close-inverted.png");
 }
 
 @media (min-resolution: 1.1dppx) {
-  #addonbar-closebutton:-moz-lwtheme-brighttext {
+  toolbar[brighttext] #addonbar-closebutton {
     list-style-image: url("chrome://global/skin/icons/close-inverted@2x.png");
   }
 }
