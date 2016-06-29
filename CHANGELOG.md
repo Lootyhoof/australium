@@ -1,5 +1,10 @@
 # Changelog
 
+### 1.3.0
+- refactor media controls for Pale Moon 26.3
+- use unified close button icons
+- use dark toolbar detection in Pale Moon 26.3 to detect dark system themes
+
 ### 2.0.3
 - re-add twisty PNGs for addon compatibility
 - add autocomplete star
