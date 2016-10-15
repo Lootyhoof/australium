@@ -552,34 +552,30 @@
 }
 
 .addon-view[notification="warning"] {
-  background-image: url("chrome://mozapps/skin/extensions/stripes-warning.png"),
-                    linear-gradient(rgba(255, 255, 0, 0.04),
-                                    rgba(255, 255, 0, 0));
-  background-repeat: repeat-x;
+  background-image: radial-gradient(at 50% 0%,
+                                    #F9F5E5 0%,
+                                    transparent 75%);
 }
 
 .addon-view[notification="error"] {
-  background-image: url("chrome://mozapps/skin/extensions/stripes-error.png"),
-                    linear-gradient(rgba(255, 0, 0, 0.04),
-                                    rgba(255, 0, 0, 0));
-  background-repeat: repeat-x;
+  background-image: radial-gradient(at 50% 0%,
+                                    #FFE8E9 0%,
+                                    transparent 75%);
 }
 
 .addon-view[pending="enable"],
 .addon-view[pending="upgrade"],
 .addon-view[pending="install"] {
-  background-image: url("chrome://mozapps/skin/extensions/stripes-info-positive.png"),
-                    linear-gradient(rgba(0, 255, 0, 0.04),
-                                    rgba(0, 255, 0, 0));
-  background-repeat: repeat-x;
+  background-image: radial-gradient(at 50% 0%,
+                                    #EFFAF2 0%,
+                                    transparent 75%);
 }
 
 .addon-view[pending="disable"],
 .addon-view[pending="uninstall"] {
-  background-image: url("chrome://mozapps/skin/extensions/stripes-info-negative.png"),
-                    linear-gradient(rgba(128, 128, 128, 0.04),
-                                    rgba(128, 128, 128, 0));
-  background-repeat: repeat-x;
+  background-image: radial-gradient(at 50% 0%,
+                                    #F2F2F2 0%,
+                                    transparent 75%);
 }
 
 .addon[selected] {
