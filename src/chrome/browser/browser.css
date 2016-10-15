@@ -899,9 +899,21 @@ toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
   padding: 3px 7px;
 }
 
-#navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1[type=menu]:not(#back-button):not(#forward-button):not(#feed-button):not(#social-provider-button):not(#PanelUI-menu-button) > .toolbarbutton-icon,
+#navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1[type=menu]:not(#back-button):not(#forward-button):not(#feed-button) > .toolbarbutton-icon,
 #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1[type=menu] > .toolbarbutton-text /* hack for add-ons that forcefully display the label */ {
   -moz-padding-end: 17px;
+}
+
+.toolbarbutton-1 > .toolbarbutton-icon,
+.toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon {
+  /* horizontal padding + border + actual icon width */
+  max-width: 32px;
+}
+
+.toolbarbutton-1[type=menu]:not(#back-button):not(#forward-button):not(#feed-button) > .toolbarbutton-icon,
+.toolbarbutton-1[type=menu]:not(#back-button):not(#forward-button):not(#feed-button) > .toolbarbutton-menubutton-button > .toolbarbutton-icon {
+  /* horizontal padding + border + actual icon width */
+  max-width: 43px;
 }
 
 @media (-moz-os-version: windows-xp),
