@@ -4799,6 +4799,27 @@ chatbox {
       background-clip: padding-box;
     }
   }
+  
+  @media (-moz-os-version: windows-win8) {
+    /* On dark window frames, use a light text color instead of fog on Win8 */
+    #main-window[darkwindowframe=true] #toolbar-menubar:not(:-moz-lwtheme),
+    #main-window[darkwindowframe=true] #TabsToolbar[tabsontop=true]:not(:-moz-lwtheme),
+    #main-window[darkwindowframe=true] #nav-bar[tabsontop=false]:not(:-moz-lwtheme),
+    #main-window[darkwindowframe=true] #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child:not(:-moz-lwtheme),
+    #main-window[darkwindowframe=true][tabsontop=true] .tabbrowser-tab:not([selected]) > * > * > .tab-text:not(:-moz-lwtheme),
+    #main-window[darkwindowframe=true] #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child .tabbrowser-tab:not([selected]) > * > * > .tab-text:not(:-moz-lwtheme) {
+	    color: white;
+    }
+    
+    /* Prevent the dark window frame styles from disturbing native menu styling */
+    #main-window[darkwindowframe=true] #main-menubar > menu:not(:-moz-lwtheme) {
+      color: inherit;
+    }
+    
+    #main-window[darkwindowframe=true] #toolbar-menubar:not(:-moz-lwtheme):-moz-window-inactive {
+      color: ThreeDShadow;
+    }
+  }
 
   /* Cover the top border of the adjacent toolbar */
   #TabsToolbar[tabsontop=true] {
