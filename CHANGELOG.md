@@ -1,5 +1,13 @@
 # Changelog
 
+### 2.2.1
+- fix size of HiDPI toolbar icons
+- workaround lack of `gtk-2`/`gnu-linux` media queries in Pale Moon 27
+- Linux: provide inverted hamburger appmenu icon
+- use brighter icons for places all downloads view on non-Vista/Win7
+- use Australis addon notification shading in addons manager
+- use dark window frame detection on Windows 8
+
 ### 2.2.0
 - PM27: add statusbar styling
 - PM27: add styling for downloads panel components
