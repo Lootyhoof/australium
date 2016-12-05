@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.3.0
+- support PM27's devtools
+- drop PM26 support
+
 ### 2.2.1
 - fix size of HiDPI toolbar icons
 - workaround lack of `gtk-2`/`gnu-linux` media queries in Pale Moon 27
