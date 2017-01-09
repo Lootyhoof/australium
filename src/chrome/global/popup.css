@@ -1,9 +1,16 @@
-
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: Variables ::::: */
+.panel-arrowcontent {
+  --panel-arrowcontent-padding: 10px;
+  --panel-arrowcontent-background: -moz-field;
+  --panel-arrowcontent-color: -moz-FieldText;
+  --panel-arrowcontent-border: 1px solid ThreeDShadow;
+}
 
 /* ::::: menupopup ::::: */
 
@@ -49,17 +56,16 @@ panel[type="arrow"][side="right"] {
 }
 
 .panel-arrowcontent {
-  padding: 10px;
-  color: -moz-FieldText;
-  background: -moz-field;
+  padding: var(--panel-arrowcontent-padding);
+  color: var(--panel-arrowcontent-color);
+  background: var(--panel-arrowcontent-background);
   background-clip: padding-box;
-  border: 1px solid ThreeDShadow;
+  border: var(--panel-arrowcontent-border);
   margin: 4px;
 }
 
 @media (-moz-os-version: windows-vista),
        (-moz-os-version: windows-win7) {
-/* < Win8 */
 .panel-arrowcontent {
   border-radius: 4px;
 }
@@ -101,36 +107,10 @@ panel[type="arrow"][side="right"] {
 
 @media (-moz-windows-default-theme) {
   .panel-arrowcontent {
-    border: 1px solid hsla(210,4%,10%,.2);
+    --panel-arrowcontent-border: 1px solid hsla(210,4%,10%,.2);
     box-shadow: 0 0 4px hsla(210,4%,10%,.2);
   }
 
-  .panel-arrowcontainer[panelopen] {
-    transition-duration: 100ms, 75ms;
-    transition-property: opacity, transform;
-    transition-timing-function: ease-out;
-  }
-
-  .panel-arrowcontainer:not([panelopen]) {
-    opacity: 0;
-  }
-  
-  .panel-arrowcontainer:not([panelopen])[side="top"] {
-    transform: translateY(-20px);
-  }
-
-  .panel-arrowcontainer:not([panelopen])[side="bottom"] {
-    transform: translateY(20px);
-  }
-
-  .panel-arrowcontainer:not([panelopen])[side="left"] {
-    transform: translateX(-20px);
-  }
-
-  .panel-arrowcontainer:not([panelopen])[side="right"] {
-    transform: translateX(20px);
-  }
-  
   .panel-arrow[side="top"],
   .panel-arrow[side="bottom"] {
     list-style-image: url("chrome://global/skin/arrow/panelarrow-vertical.svg");
