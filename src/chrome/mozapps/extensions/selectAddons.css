@@ -170,16 +170,14 @@
   color: GrayText;
 }
 
-@media not all and (-moz-os-version: windows-xp) {
-  .progress-label,
-  #footer-label {
-    font-style: italic;
-  }
+.progress-label,
+#footer-label {
+  font-style: italic;
+}
 
-  @media (-moz-windows-default-theme) {
-    #footer {
-      background-color: #f1f5fb;
-      box-shadow: 0px 1px 2px rgb(204,214,234) inset;
-    }
+@media (-moz-windows-default-theme) {
+  #footer {
+    background-color: #f1f5fb;
+    box-shadow: 0px 1px 2px rgb(204,214,234) inset;
   }
 }

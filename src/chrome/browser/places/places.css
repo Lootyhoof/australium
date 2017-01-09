@@ -26,15 +26,13 @@
 
 /* Style Places sidebars as Vista media collection */
 @media (-moz-windows-default-theme) {
-  @media not all and (-moz-os-version: windows-xp) {
-    .sidebar-placesTree {
-      background-color: transparent;
-      border-top: none;
-    }
+  .sidebar-placesTree {
+    background-color: transparent;
+    border-top: none;
+  }
 
-    .sidebar-placesTreechildren::-moz-tree-cell-text(leaf, hover) {
-      text-decoration: none;
-    }
+  .sidebar-placesTreechildren::-moz-tree-cell-text(leaf, hover) {
+    text-decoration: none;
   }
 
   @media (-moz-os-version: windows-vista),

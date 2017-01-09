@@ -107,8 +107,7 @@
   }
 }
 
-@media (-moz-os-version: windows-xp),
-       (-moz-os-version: windows-vista),
+@media (-moz-os-version: windows-vista),
        (-moz-os-version: windows-win7),
        (-moz-os-version: windows-win8) {
   #main-window[tabsontop=true] #nav-bar {
@@ -132,8 +131,7 @@
   background-image: linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,.4));
 }
 
-@media (-moz-os-version: windows-xp),
-       (-moz-os-version: windows-vista),
+@media (-moz-os-version: windows-vista),
        (-moz-os-version: windows-win7) {
   #nav-bar[tabsontop=true]:not(:-moz-lwtheme),
   #nav-bar[tabsontop=true][collapsed=true]:not([customizing]):not(:-moz-lwtheme) + toolbar,
@@ -241,8 +239,7 @@
   background-image: linear-gradient(rgb(93,9,153),rgb(93,9,153));
 }
 
-@media (-moz-os-version: windows-xp),
-       (-moz-os-version: windows-vista),
+@media (-moz-os-version: windows-vista),
        (-moz-os-version: windows-win7) {
 #appmenu-button {
   background-image: linear-gradient(rgb(82,182,247), rgb(10,98,215) 95%);
@@ -901,8 +898,7 @@ toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
   max-width: 43px;
 }
 
-@media (-moz-os-version: windows-xp),
-       (-moz-os-version: windows-vista),
+@media (-moz-os-version: windows-vista),
        (-moz-os-version: windows-win7) {
   /* < Win8 */
   #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-icon,
@@ -968,8 +964,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large] > :-moz-a
   box-shadow: none;
 }
 
-@media (-moz-os-version: windows-xp),
-       (-moz-os-version: windows-vista),
+@media (-moz-os-version: windows-vista),
        (-moz-os-version: windows-win7) {
   /* < Win8 */
   #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1:not([disabled]):-moz-any(:hover,[open]) > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
@@ -1162,8 +1157,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   transition: none;
 }
 
-@media (-moz-os-version: windows-xp),
-       (-moz-os-version: windows-vista),
+@media (-moz-os-version: windows-vista),
        (-moz-os-version: windows-win7) {
   window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button > #back-button > .toolbarbutton-icon {
     background-image: linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1));
@@ -1493,8 +1487,7 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
   margin-top: -1px;
 }
 
-@media (-moz-os-version: windows-xp),
-       (-moz-os-version: windows-vista),
+@media (-moz-os-version: windows-vista),
        (-moz-os-version: windows-win7) {
   #urlbar,
   .searchbar-textbox {
@@ -1536,18 +1529,12 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
     #urlbar:not(:-moz-lwtheme)[focused],
     .searchbar-textbox:not(:-moz-lwtheme)[focused] {
       box-shadow: 0 0 0 1px Highlight inset;
+      border-color: Highlight;
     }
 
     /* overlap the urlbar's border and inset box-shadow */
     #PopupAutoCompleteRichResult:not(:-moz-lwtheme) {
       margin-top: -2px;
-    }
-  }
-
-  @media not all and (-moz-os-version: windows-xp) {
-    #urlbar:not(:-moz-lwtheme)[focused],
-    .searchbar-textbox:not(:-moz-lwtheme)[focused] {
-      border-color: Highlight;
     }
   }
 }
@@ -1922,13 +1909,6 @@ richlistitem[type~="action"][actiontype="searchengine"] > .ac-title-box > .ac-si
 .ac-url-text,
 .ac-action-text {
   color: -moz-nativehyperlinktext;
-}
-
-@media (-moz-os-version: windows-xp) and (-moz-windows-default-theme) {
-  .ac-url-text:not([selected="true"]),
-  .ac-action-text:not([selected="true"]) {
-    color: #008800;
-  }
 }
 
 @media (-moz-os-version: windows-win10) and (-moz-windows-default-theme) {
@@ -2338,13 +2318,6 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   margin-bottom: calc(-1 * 1px); /* overlap the nav-bar's top border */
 }
 
-@media (-moz-os-version: windows-xp) and (-moz-windows-default-theme) {
-  #main-window[sizemode=normal] #TabsToolbar {
-    padding-left: 2px;
-    padding-right: 2px;
-  }
-}
-
 /* image preloading hack */
 #TabsToolbar::before {
   content: '';
@@ -2715,9 +2688,8 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   }
 }
 
-/* Use lighter colors of buttons and text in the titlebar on Windows XP and Windows Classic */
-@media (-moz-os-version: windows-xp),
-       (-moz-windows-classic) {
+/* Use lighter colors of buttons and text in the titlebar on Windows Classic */
+@media (-moz-windows-classic) {
   #main-window[tabsintitlebar] #main-menubar > menu {
     color: white;
   }
@@ -4631,12 +4603,6 @@ chatbox {
 #main-window[privatebrowsingmode=temporary] #toolbar-menubar:-moz-locale-dir(rtl) {
   background-position: top left;
 }
-
-@media not all and (-moz-os-version: windows-xp) {
-/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-
 
 @media not all and (-moz-windows-classic) {
   #main-window[sizemode="normal"] > #titlebar > #titlebar-content > #appmenu-button-container {

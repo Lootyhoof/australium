@@ -32,8 +32,7 @@
   cursor: pointer;
 }
 
-@media (-moz-os-version: windows-xp),
-       (-moz-os-version: windows-vista),
+@media (-moz-os-version: windows-vista),
        (-moz-os-version: windows-win7) {
   #downloadsHistory {
     color: -moz-nativehyperlinktext;
@@ -66,8 +65,7 @@
   box-shadow: 0 2px 0 0 hsla(210,4%,10%,.1) inset;
 }
 
-@media (-moz-os-version: windows-xp),
-       (-moz-os-version: windows-vista),
+@media (-moz-os-version: windows-vista),
        (-moz-os-version: windows-win7) {
   @media (-moz-windows-default-theme) {
     #downloadsFooter {
@@ -81,14 +79,6 @@
     #downloadsFooter:hover:active {
       background-color: #f1f5fb;
       box-shadow: 0px 1px 2px rgb(204,214,234) inset;
-    }
-
-    @media (-moz-os-version: windows-xp) {
-      #downloadsFooter,
-      #downloadsFooter:hover,
-      #downloadsFooter:hover:active {
-        background-color: hsla(216,45%,88%,.98);
-      }
     }
   }
 }
@@ -235,8 +225,7 @@ richlistitem[type="download"]:first-child {
   box-shadow: 0 1px 0 0 hsla(210,4%,10%,.05) inset;
 }
 
-@media (-moz-os-version: windows-xp),
-       (-moz-os-version: windows-vista),
+@media (-moz-os-version: windows-vista),
        (-moz-os-version: windows-win7) {
   #downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"][exists]:hover {
     border-radius: 3px;
