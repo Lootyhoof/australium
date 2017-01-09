@@ -2,8 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import url("chrome://os/skin/newTab.css");
-
 :root {
   -moz-appearance: none;
   font-size: 75%;
@@ -34,7 +32,6 @@
 
 .newtab-undo-button {
   -moz-appearance: none;
-  color: -moz-nativehyperlinktext;
   color: rgb(0,102,204);
   cursor: pointer;
   padding: 0;
@@ -49,20 +46,48 @@
   text-decoration: underline;
 }
 
-.newtab-undo-button:-moz-focusring {
-  outline: 1px dotted;
-}
-
 .newtab-undo-button > .button-box {
   padding: 0;
 }
 
-#newtab-undo-close-button > .toolbarbutton-text {
-  display: none;
+.newtab-undo-button:-moz-focusring {
+  outline: 1px dotted;
 }
 
-#newtab-undo-close-button:-moz-focusring {
-  outline: 1px dotted;
+#newtab-undo-close-button {
+  -moz-appearance: none;
+  padding: 0;
+  border: none;
+}
+
+#newtab-undo-close-button {
+  -moz-appearance: none;
+  padding: 0;
+  border: none;
+  height: 16px;
+  width: 16px;
+  float: right;
+  right: 0;
+  background-image: -moz-image-rect(url(chrome://browser/skin/newtab/close.png), 0, 16, 16, 0);
+  background-color: transparent;
+  list-style-image: none !important;
+  -moz-image-region: auto;
+}
+
+#newtab-undo-close-button:hover {
+  background-image: -moz-image-rect(url(chrome://browser/skin/newtab/close.png), 0, 32, 16, 16);
+  -moz-image-region: auto;
+}
+
+#newtab-undo-close-button:hover:active {
+  background-image: -moz-image-rect(url(chrome://browser/skin/newtab/close.png), 0, 48, 16, 32);
+  -moz-image-region: auto;
+}
+
+#newtab-undo-close-button > .button-icon,
+#newtab-undo-close-button > .button-box > .button-icon,
+#newtab-undo-close-button > .toolbarbutton-icon {
+  width: 16px;
 }
 
 /* TOGGLE */
