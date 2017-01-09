@@ -1,0 +1,65 @@
+#newtab-undo-close-button {
+  -moz-appearance: none;
+  padding: 0;
+  border: none;
+  list-style-image: url("chrome://global/skin/icons/close.png");
+  -moz-image-region: rect(0, 20px, 20px, 0);
+  -moz-user-focus: normal;
+}
+
+#newtab-undo-close-button:hover {
+  -moz-image-region: rect(0, 40px, 20px, 20px);
+}
+
+#newtab-undo-close-button:hover:active {
+  -moz-image-region: rect(0, 60px, 20px, 40px);
+}
+
+@media (-moz-os-version: windows-vista),
+       (-moz-os-version: windows-win7),
+       (-moz-os-version: gnu-linux),
+       (-moz-os-version: bsd) {
+  #newtab-undo-close-button {
+    -moz-image-region: rect(0, 16px, 16px, 0);
+  }
+
+  #newtab-undo-close-button:hover {
+    -moz-image-region: rect(0, 32px, 16px, 16px);
+  }
+
+  #newtab-undo-close-button:hover:active {
+    -moz-image-region: rect(0, 48px, 16px, 32px);
+  }
+}
+
+@media (min-resolution: 1.1dppx) {
+  #newtab-undo-close-button {
+    list-style-image: url("chrome://global/skin/icons/close@2x.png");
+    -moz-image-region: rect(0, 40px, 40px, 0);
+  }
+
+  #newtab-undo-close-button:hover {
+    -moz-image-region: rect(0, 80px, 40px, 40px);
+  }
+
+  #newtab-undo-close-button:hover:active {
+    -moz-image-region: rect(0, 120px, 40px, 80px);
+  }
+
+  @media (-moz-os-version: windows-vista),
+         (-moz-os-version: windows-win7),
+         (-moz-os-version: gnu-linux),
+         (-moz-os-version: bsd) {
+    #newtab-undo-close-button {
+      -moz-image-region: rect(0, 32px, 32px, 0);
+    }
+
+    #newtab-undo-close-button:hover {
+      -moz-image-region: rect(0, 64px, 32px, 32px);
+    }
+
+    #newtab-undo-close-button:hover:active {
+      -moz-image-region: rect(0, 96px, 32px, 64px);
+    }
+  }
+}
