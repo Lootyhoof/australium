@@ -74,3 +74,8 @@ override chrome://global/skin/icons/close-inverted@2x.png       chrome://global/
 
 override chrome://global/skin/arrow/arrow-lft-hov.gif           chrome://global/skin/arrow/arrow-lft.gif
 override chrome://global/skin/arrow/arrow-rit-hov.gif           chrome://global/skin/arrow/arrow-rit.gif
+
+override chrome://browser/skin/notification-icons.svg#geo-windows              chrome://browser/skin/notification-icons.svg#geo-linux             os=Linux
+override chrome://browser/skin/notification-icons.svg#geo-windows-detailed     chrome://browser/skin/notification-icons.svg#geo-linux-detailed    os=Linux
+override chrome://browser/skin/notification-icons.svg#geo-windows              chrome://browser/skin/notification-icons.svg#geo-osx               os=Darwin
+override chrome://browser/skin/notification-icons.svg#geo-windows-detailed     chrome://browser/skin/notification-icons.svg#geo-osx               os=Darwin

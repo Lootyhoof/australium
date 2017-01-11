@@ -1828,11 +1828,16 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 #page-proxy-favicon {
   width: 16px;
   height: 16px;
-  list-style-image: url(chrome://browser/skin/identity-not-secure.svg);
+  list-style-image: url(chrome://browser/skin/identity-icon.svg#normal);
 }
 
 #page-proxy-favicon[pageproxystate="invalid"] {
   opacity: 0.3;
+}
+
+#identity-box:hover > #page-proxy-favicon,
+#identity-box[open=true] > #page-proxy-favicon {
+  list-style-image: url(chrome://browser/skin/identity-icon.svg#hover);
 }
 
 /* autocomplete */
@@ -3053,7 +3058,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 .popup-notification-icon[popupid="geolocation"] {
-  list-style-image: url(chrome://browser/skin/Geolocation-64.png);
+  list-style-image: url(chrome://global/skin/icons/notification-icons.svg#geo-windows-detailed);
 }
 
 .popup-notification-icon[popupid="push"] {
@@ -3091,7 +3096,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 .popup-notification-icon[popupid="web-notifications"] {
-  list-style-image: url(chrome://browser/skin/notification-64.png);
+  list-style-image: url(chrome://global/skin/icons/notification-icons.svg#desktop-notification);
 }
 
 .addon-progress-description {
@@ -3128,12 +3133,12 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 .popup-notification-icon[popupid="indexedDB-permissions-prompt"],
 .popup-notification-icon[popupid="indexedDB-quota-prompt"],
 .popup-notification-icon[popupid*="offline-app-requested"] {
-  list-style-image: url(chrome://global/skin/icons/question-64.png);
+  list-style-image: url(chrome://global/skin/icons/notification-icons.svg#indexedDB);
 }
 
 .popup-notification-icon[popupid="password-save"],
 .popup-notification-icon[popupid="password-change"] {
-  list-style-image: url(chrome://mozapps/skin/passwordmgr/key-64.png);
+  list-style-image: url(chrome://global/skin/icons/notification-icons.svg#login-detailed);
 }
 
 .popup-notification-icon[popupid="webapps-install"] {
@@ -3141,12 +3146,12 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 .popup-notification-icon[popupid="mixed-content-blocked"] {
-  list-style-image: url(chrome://browser/skin/mixed-content-blocked-64.png);
+  list-style-image: url(chrome://browser/skin/mixed-content-blocked.svg#enabled);
 }
 
 .popup-notification-icon[popupid="webRTC-sharingDevices"],
 .popup-notification-icon[popupid="webRTC-shareDevices"] {
-  list-style-image: url(chrome://browser/skin/webRTC-shareDevice-64.png);
+  list-style-image: url(chrome://global/skin/icons/notification-icons.svg#camera);
 }
 
 .popup-notification-icon[popupid="pointerLock"] {
@@ -3197,7 +3202,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large] > :-moz-a
 
 .geo-notification-icon,
 #geo-notification-icon {
-  list-style-image: url(chrome://browser/skin/Geolocation-16.png);
+  list-style-image: url(chrome://global/skin/icons/notification-icons.svg#geo-windows);
 }
 
 #addons-notification-icon {
@@ -3206,11 +3211,11 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large] > :-moz-a
 
 .indexedDB-notification-icon,
 #indexedDB-notification-icon {
-  list-style-image: url(chrome://global/skin/icons/question-16.png);
+  list-style-image: url(chrome://global/skin/icons/notification-icons.svg#indexedDB);
 }
 
 #password-notification-icon {
-  list-style-image: url(chrome://mozapps/skin/passwordmgr/key-16.png);
+  list-style-image: url(chrome://global/skin/icons/notification-icons.svg#login);
 }
 
 #webapps-notification-icon {
@@ -3268,19 +3273,19 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large] > :-moz-a
 }
 
 #mixed-content-blocked-notification-icon {
-  list-style-image: url(chrome://browser/skin/mixed-content-blocked-16.png);
+  list-style-image: url(chrome://browser/skin/mixed-content-blocked.svg#enabled);
 }
 
 #webRTC-shareDevices-notification-icon {
-  list-style-image: url(chrome://browser/skin/webRTC-shareDevice-16.png);
+  list-style-image: url(chrome://global/skin/icons/notification-icons.svg#camera);
 }
 
 #webRTC-sharingDevices-notification-icon {
-  list-style-image: url(chrome://browser/skin/webRTC-sharingDevice-16.png);
+  list-style-image: url(chrome://global/skin/icons/notification-icons.svg#camera-sharing);
 }
 
 #web-notifications-notification-icon {
-  list-style-image: url(chrome://browser/skin/notification-16.png);
+  list-style-image: url(chrome://global/skin/icons/notification-icons.svg#desktop-notification);
 }
 
 #pointerLock-notification-icon {
