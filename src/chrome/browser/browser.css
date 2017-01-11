@@ -1716,22 +1716,7 @@ html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
   overflow: hidden;
   /* The latter two properties have a transition to handle the delayed hiding of
      the forward button when hovered. */
-  transition: background-color 150ms ease, padding-left, padding-right;
-}
-
-#identity-box:hover,
-#identity-box[open=true] {
-  background-color: rgb(231,230,230);
-}
-
-#identity-box:-moz-locale-dir(ltr) {
-  border-top-left-radius: 1.5px;
-  border-bottom-left-radius: 1.5px;
-}
-
-#identity-box:-moz-locale-dir(rtl) {
-  border-top-right-radius: 1.5px;
-  border-bottom-right-radius: 1.5px;
+  transition: padding-left, padding-right;
 }
 
 #notification-popup-box:not([hidden]) + #identity-box {
@@ -2979,19 +2964,19 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 
 /* Popup Icons */
 #identity-popup-icon {
-  height: 64px;
-  width: 64px;
+  height: 32px;
+  width: 32px;
   padding: 0;
-  list-style-image: url("chrome://browser/skin/identity.png");
-  -moz-image-region: rect(0px, 64px, 64px, 0px);
+  margin: 6px 6px 0 10px;
+  list-style-image: url("chrome://browser/skin/identity-not-secure.svg");
 }
 
 #identity-popup.verifiedDomain > #identity-popup-container > #identity-popup-icon {
-  -moz-image-region: rect(64px, 64px, 128px, 0px);
+  list-style-image: url("chrome://browser/skin/identity-domain-secure.svg");
 }
 
 #identity-popup.verifiedIdentity > #identity-popup-container > #identity-popup-icon {
-  -moz-image-region: rect(128px, 64px, 192px, 0px);
+  list-style-image: url("chrome://browser/skin/identity-secure.svg");
 }
 
 /* Popup Body Text */
@@ -3042,7 +3027,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 
 #identity-popup-content-box.verifiedIdentity > #identity-popup-encryption > vbox > #identity-popup-encryption-icon ,
 #identity-popup-content-box.verifiedDomain > #identity-popup-encryption > vbox > #identity-popup-encryption-icon {
-  list-style-image: url(chrome://browser/skin/conn-secure.svg);
+  padding: 12px;
 }
 
 #identity-popup-more-info-button {
