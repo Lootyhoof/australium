@@ -883,7 +883,7 @@ toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
 
 #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1[type=menu]:not(#back-button):not(#forward-button):not(#feed-button) > .toolbarbutton-icon,
 #navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1[type=menu] > .toolbarbutton-text /* hack for add-ons that forcefully display the label */ {
-  -moz-padding-end: 17px;
+  -moz-padding-end: 16px;
 }
 
 .toolbarbutton-1 > .toolbarbutton-icon,
