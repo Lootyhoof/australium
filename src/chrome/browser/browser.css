@@ -1737,6 +1737,11 @@ html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
   transition: padding-left, padding-right;
 }
 
+#identity-box.verifiedDomain,
+#identity-box.verifiedIdentity {
+  padding-right: 0;
+}
+
 #notification-popup-box:not([hidden]) + #identity-box {
   -moz-padding-start: 10px;
   border-radius: 0;
