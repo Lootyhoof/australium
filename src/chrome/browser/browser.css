@@ -1062,6 +1062,10 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large] > :-moz-a
   padding: 0 3px;
 }
 
+#TabsToolbar .toolbarbutton-1 {
+  margin-bottom: var(--tab-toolbar-navbar-overlap);
+}
+
 #TabsToolbar .toolbarbutton-1:not([disabled]):hover,
 #TabsToolbar .toolbarbutton-1[open],
 #TabsToolbar .toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled]):hover,
@@ -2326,9 +2330,17 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 /* Tabstrip */
 
 #TabsToolbar {
-  min-height: 31px;
+  min-height: 0;
   padding: 0;
-  margin-bottom: calc(-1 * 1px); /* overlap the nav-bar's top border */
+  margin-bottom: calc(-1 * var(--tab-toolbar-navbar-overlap)); /* overlap the nav-bar's top border */
+}
+
+:root {
+  --tab-toolbar-navbar-overlap: 1px;
+  --tab-min-height: 31px;
+}
+#TabsToolbar {
+  --tab-stroke-background-size: auto 100%;
 }
 
 /* image preloading hack */
@@ -2342,7 +2354,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 
 #tabbrowser-tabs {
-  min-height: 31px;
+  min-height: var(--tab-min-height);
 }
 
 .tabbrowser-tab,
@@ -2446,7 +2458,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 .tab-background-end,
 .tab-background-end[selected=true]::after,
 .tab-background-end[selected=true]::before {
-  min-height: 31px;
+  min-height: var(--tab-min-height);
   width: 30px;
 }
 
@@ -2523,7 +2535,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
                     linear-gradient(transparent 2px, rgba(255,255,255,.4) 2px, rgba(255,255,255,.4)),
                     none;
   background-repeat: repeat-x;
-  background-size: auto 100%, auto 100%;
+  background-size: var(--tab-stroke-background-size), auto 100%;
   /* The padding-top combined with background-clip: content-box (the bottom-most) ensure the
      background-color doesn't extend above the top border. */
   padding-top: 2px;
@@ -2537,7 +2549,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
                     linear-gradient(transparent 2px, rgba(255,255,255,.4) 2px, rgba(255,255,255,.4));/*,
                     lwtHeader;*/
   /* Don't stretch the LWT header images */
-  background-size: auto 100%, auto 100%, auto auto;
+  background-size: var(--tab-stroke-background-size), auto 100%, auto auto;
 }
 
 /* These LWT styles are normally overridden by browser-lightweightTheme.css */
@@ -2586,29 +2598,17 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
     content: none;
   }
 
-  .tabbrowser-tab[pinned][titlechanged]:not([visuallyselected="true"]) > .tab-stack > .tab-content {
-    background-position: center bottom 0;
-  }
-
-  .tabbrowser-arrowscrollbox > .scrollbutton-up,
-  .tabbrowser-arrowscrollbox > .scrollbutton-down {
-    margin: 0;
-  }
-
   #TabsToolbar {
-    margin-bottom: 0 !important;
+    --tab-stroke-background-size: 0 0;
+  }
+
+  :root {
+    --tab-toolbar-navbar-overlap: 0px;
   }
 
   #nav-bar {
-    border-top: none !important;
-  }
-
-  .tab-background-middle[selected=true] {
-    background-size: 0 0, auto 100%;
-  }
-
-  .tab-background-middle[selected=true]:-moz-lwtheme {
-    background-size: 0 0, auto 100%, auto auto;
+    border-top-style: none !important;
+    box-shadow: none;
   }
 }
 
@@ -2622,7 +2622,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 .tabbrowser-tab[pinned][titlechanged]:not([selected="true"]) > .tab-stack > .tab-content {
   background-image: radial-gradient(farthest-corner at center bottom, rgb(255,255,255) 3%, rgba(186,221,251,0.75) 20%, rgba(127,179,255,0.25) 40%, transparent 70%);
-  background-position: center bottom 1px;
+  background-position: center bottom var(--tab-toolbar-navbar-overlap);
   background-repeat: no-repeat;
   background-size: 85% 100%;
 }
@@ -2631,12 +2631,20 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 .tabbrowser-tab::after,
 .tabbrowser-tab::before {
-  width: 1px;
   -moz-margin-start: -1px;
-  background-image: linear-gradient(transparent 5px,
-                                    currentColor 5px,
-                                    currentColor calc(100% - 4px),
-                                    transparent calc(100% - 4px));
+  /* Vertical margin doesn't work here for positioned pinned tabs, see
+     bug 1198236 and bug 1300410. We're using linear-gradient instead
+     to cut off the border at the top and at the bottom. */
+  border-left: 1px solid;
+  border-image: linear-gradient(transparent 6px,
+                                currentColor 6px,
+                                currentColor calc(100% - 5px),
+                                transparent calc(100% - 5px));
+  border-image-slice: 1;
+  /* The 1px border and negative margin may amount to a different number of
+     device pixels (bug 477157), so we also set a width to match the margin. */
+  width: 1px;
+  box-sizing: border-box;
   opacity: 0.2;
 }
 
@@ -2661,7 +2669,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 
 @media (min-resolution: 1.1dppx) {
-  /* image preloading hack from shared/tabs.inc.css */
+  /* image preloading hack from like lowdpi styles */
   #tabbrowser-tabs::before {
     background-image:
       url(chrome://browser/skin/tabbrowser/tab-background-end@2x.png),
@@ -2694,6 +2702,10 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
   .tab-throbber[busy] {
     list-style-image: url("chrome://browser/skin/tabbrowser/connecting@2x.png");
+  }
+
+  .tab-icon-image {
+    list-style-image: url("chrome://mozapps/skin/places/defaultFavicon@2x.png");
   }
 
   .tab-throbber[progress] {
@@ -2784,7 +2796,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 .tabbrowser-arrowscrollbox > .scrollbutton-up,
 .tabbrowser-arrowscrollbox > .scrollbutton-down {
   list-style-image: url("chrome://browser/skin/tabbrowser/tab-arrow-left.svg");
-  margin: 0 0 1px;
+  margin: 0 0 var(--tab-toolbar-navbar-overlap);
 }
 
 #TabsToolbar[brighttext] > #tabbrowser-tabs > .tabbrowser-arrowscrollbox > .scrollbutton-up,
@@ -4786,10 +4798,6 @@ chatbox {
     #appmenu-button {
       margin-top: -1px !important;
       margin-bottom: 5px !important;
-    }
-
-    #tabbrowser-tabs {
-      min-height: 28px;
     }
 
     #titlebar-buttonbox,
