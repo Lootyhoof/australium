@@ -180,6 +180,12 @@ toolbar:-moz-lwtheme {
   }
 }
 
+@media not all and (-moz-windows-compositor) {
+  #main-window[tabsontop=true] > #TabsToolbar[collapsed="true"] + #nav-bar {
+    border-top-style: none !important;
+  }
+}
+
 #navigator-toolbox[tabsontop=true] > toolbar:not(#toolbar-menubar):not(#TabsToolbar) {
   background-clip: padding-box;
   background-image: linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,.4));
@@ -187,10 +193,10 @@ toolbar:-moz-lwtheme {
 
 @media (-moz-os-version: windows-vista),
        (-moz-os-version: windows-win7) {
-  #nav-bar[tabsontop=true]:not(:-moz-lwtheme),
-  #nav-bar[tabsontop=true][collapsed=true]:not([customizing]):not(:-moz-lwtheme) + toolbar,
-  #nav-bar[tabsontop=true][collapsed=true]:not([customizing]):not(:-moz-lwtheme) + #customToolbars + #PersonalToolbar {
-    background-image: linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,0)) !important;
+  #nav-bar[tabsontop=true],
+  #nav-bar[tabsontop=true][collapsed=true]:not([customizing]) + toolbar,
+  #nav-bar[tabsontop=true][collapsed=true]:not([customizing]) + #customToolbars + #PersonalToolbar {
+    background-image: linear-gradient(rgba(255,255,255,.4), transparent) !important;
   }
   
   #navigator-toolbox[tabsontop=true] > toolbar:not(#toolbar-menubar):not(#TabsToolbar):not(#nav-bar) {
@@ -2606,7 +2612,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
     --tab-toolbar-navbar-overlap: 0px;
   }
 
-  #nav-bar {
+  #main-window[tabsontop=true] #nav-bar {
     border-top-style: none !important;
     box-shadow: none;
   }
@@ -5158,11 +5164,6 @@ chatbox {
     #main-window[darkwindowframe=true] #toolbar-menubar:not(:-moz-lwtheme):-moz-window-inactive {
       color: ThreeDShadow;
     }
-  }
-
-  /* Cover the top border of the adjacent toolbar */
-  #TabsToolbar[tabsontop=true] {
-    margin-bottom: -1px;
   }
 
   #navigator-toolbox[tabsontop=false] > #PersonalToolbar {
