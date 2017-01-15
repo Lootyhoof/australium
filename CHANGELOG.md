@@ -1,5 +1,18 @@
 # Changelog
 
+### 3.0.0
+- fix download progress meter on HiDPI
+- sync main browser styling with Firefox 52
+- sync about:addons with Firefox 52
+- sync identity panel and urlbar with Firefox 52
+- use newtab close button from Firefox 52
+- sync various global styles from Firefox 52
+- remove support for Windows XP
+- ensure the history menu button icon is correctly sized
+- sync devtools with Pale Moon default theme
+- ensure about:config can be viewed correctly
+- Linux: feel more system-native
+
 ### 2.3.0
 - support PM27's devtools
 - drop PM26 support
