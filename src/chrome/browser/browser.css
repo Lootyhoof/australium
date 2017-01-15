@@ -19,16 +19,6 @@
   --toolbarbutton-vertical-inner-padding: 2px;
   --toolbarbutton-vertical-outer-padding: 8px;
 
-  --toolbarbutton-hover-background: rgba(0,0,0,.1);
-  --toolbarbutton-hover-bordercolor: rgba(0,0,0,.2);
-  --toolbarbutton-hover-boxshadow: none;
-
-  --toolbarbutton-active-background: rgba(0,0,0,.15);
-  --toolbarbutton-active-bordercolor: rgba(0,0,0,.3);
-  --toolbarbutton-active-boxshadow: 0 0 0 1px rgba(0,0,0,.15) inset;
-
-  --toolbarbutton-checkedhover-backgroundcolor: rgba(0,0,0,.1);
-
   --urlbar-dropmarker-url: url("chrome://browser/skin/urlbar-history-dropmarker.png");
   --urlbar-dropmarker-region: rect(0px, 11px, 14px, 0px);
   --urlbar-dropmarker-hover-region: rect(0px, 22px, 14px, 11px);
@@ -38,7 +28,6 @@
   --urlbar-dropmarker-hover-2x-region: rect(0, 44px, 28px, 22px);
   --urlbar-dropmarker-active-2x-region: rect(0, 66px, 28px, 44px);
 
-  --urlbar-separator-color: ThreeDLightShadow;
 }
 
 toolbar[brighttext] {

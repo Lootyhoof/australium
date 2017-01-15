@@ -1,6 +1,18 @@
-@import url("chrome://appver/skin/browser.css");
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-@namespace html url("http://www.w3.org/1999/xhtml");
+
+:root {
+  --toolbarbutton-hover-background: rgba(0,0,0,.1);
+  --toolbarbutton-hover-bordercolor: rgba(0,0,0,.2);
+  --toolbarbutton-hover-boxshadow: none;
+
+  --toolbarbutton-active-background: rgba(0,0,0,.15);
+  --toolbarbutton-active-bordercolor: rgba(0,0,0,.3);
+  --toolbarbutton-active-boxshadow: 0 0 0 1px rgba(0,0,0,.15) inset;
+
+  --toolbarbutton-checkedhover-backgroundcolor: rgba(0,0,0,.1);
+  
+  --urlbar-separator-color: ThreeDLightShadow;
+}
 
 #main-window[sizemode="normal"] #toolbar-menubar,
 /* We want a 4px gap between the TabsToolbar and the toolbar-menubar when the

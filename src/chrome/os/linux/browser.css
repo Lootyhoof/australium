@@ -1,5 +1,19 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+:root {
+  --toolbarbutton-hover-background: rgba(255,255,255,.5) linear-gradient(rgba(255,255,255,.5), transparent);
+  --toolbarbutton-hover-bordercolor: rgba(0,0,0,.25);
+  --toolbarbutton-hover-boxshadow: none;
+
+  --toolbarbutton-active-background: rgba(154,154,154,.5) linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.4));
+  --toolbarbutton-active-bordercolor: rgba(0,0,0,.3);
+  --toolbarbutton-active-boxshadow: 0 1px 1px rgba(0,0,0,.1) inset, 0 0 1px rgba(0,0,0,.3) inset;
+
+  --toolbarbutton-checkedhover-backgroundcolor: rgba(200,200,200,.5);
+
+  --urlbar-separator-color: ThreeDShadow;
+}
+
 /* Appmenu */
 
 #appmenu-toolbar-button > .toolbarbutton-icon {
@@ -33,42 +47,6 @@ toolbar[brighttext] #appmenu-toolbar-button > .toolbarbutton-icon {
 #navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar) {
   padding-top: 1px;
   padding-bottom: 1px;
-}
-
-#navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-icon,
-#navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-badge-container,
-#navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
-#navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
-  -moz-margin-end: 0;
-  padding: 2px 6px;
-  border: 1px solid transparent;
-  border-radius: 2px;
-  transition-property: background-color, border-color;
-  transition-duration: 150ms;
-}
-
-#navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1:not([disabled]):-moz-any(:hover,[open]) > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
-#navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
-#navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1:not([disabled]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-icon,
-#navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1:not([disabled]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-badge-container,
-window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #nav-bar-customizationtarget > #unified-back-forward-button > .toolbarbutton-1:-moz-any([disabled],:not([open]):not([disabled]):not(:active)) > .toolbarbutton-icon {
-  background-image: hsla(0,0%,100%,.3) linear-gradient(hsla(0,0%,100%,.7), hsla(0,0%,100%,.2));
-  border-color: rgb(154,154,154);
-  box-shadow: 0 1px 0 hsla(0,0%,100%,.3) inset, 
-            0 0 0 1px hsla(0,0%,100%,.2) inset, 
-      0 1px 0 hsla(0,0%,0%,.03);
-}
-
-#navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled]):hover:active > .toolbarbutton-icon,
-#navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1[open] > .toolbarbutton-menubutton-dropmarker:not([disabled]) > .dropmarker-icon,
-#navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1:not([disabled]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-icon,
-#navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1:not([disabled]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-badge-container {
-  background-image: linear-gradient(hsla(0,0%,100%,.7), hsla(0,0%,100%,.4));
-  background-color: rgba(154,154,154,.5);
-  border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4);
-  box-shadow: 0 1px 1px hsla(0,0%,0%,.1) inset, 
-            0 0 1px hsla(0,0%,0%,.3) inset;
-  transition: 10ms;
 }
 
 #main-window[tabsontop=true] #nav-bar {
@@ -109,8 +87,31 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large] > :-moz-a
   -moz-margin-start: 0 !important;
 }
 
-/* urlbar */
+/* Location bar */
+#main-window {
+  --urlbar-border-color: ThreeDShadow;
+}
+
+#navigator-toolbox:-moz-lwtheme {
+  --urlbar-border-color: rgba(0,0,0,.3);
+}
+
 #urlbar,
 .searchbar-textbox {
   border-radius: 2px;
+}
+
+.urlbar-history-dropmarker {
+  -moz-appearance: toolbarbutton-dropdown !important;
+  list-style-image: none !important;
+  -moz-image-region: auto !important;
+}
+
+/* Keyhole-style back-forward */
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button > #forward-button > .toolbarbutton-icon { {
+  padding-left: calc(var(--backbutton-urlbar-overlap) + 3px);
+  padding-right: 3px;
+  border-left-style: none;
+  border-radius: 0;
+  max-width: calc(var(--forwardbutton-width) + var(--backbutton-urlbar-overlap));
 }
