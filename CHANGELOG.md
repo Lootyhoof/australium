@@ -1,5 +1,9 @@
 # Changelog
 
+### 3.0.1
+- fix popup notification close button margins on Win8/10
+- allow extensions to style their own toolbarbutton-badge
+
 ### 3.0.0
 - fix download progress meter on HiDPI
 - sync main browser styling with Firefox 52
