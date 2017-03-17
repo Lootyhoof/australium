@@ -173,7 +173,11 @@ XXX: apply styles to all themes until bug 509642 is fixed
   }
 /*}*/
 
-.popup-notification-closebutton {
-  -moz-margin-end: -14px;
-  margin-top: -10px;
+@media not all and (-moz-os-version: windows-win8) {
+  @media not all and (-moz-os-version: windows-win10) {
+    .popup-notification-closebutton {
+      -moz-margin-end: -14px;
+      margin-top: -10px;
+    }
+  }
 }
