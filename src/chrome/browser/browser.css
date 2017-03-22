@@ -2577,20 +2577,6 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   background-size: 30px 100%, calc(100% - (2 * 30px)) 100%, 30px 100%;
 }
 
-/* Tab pointer-events */
-.tabbrowser-tab {
-  pointer-events: none;
-}
-
-.tab-background-middle,
-.tabs-newtab-button,
-.tab-icon-overlay[soundplaying],
-.tab-icon-overlay[muted]:not([crashed]),
-.tab-icon-sound,
-.tab-close-button {
-  pointer-events: auto;
-}
-
 /* Remove border between tab strip and navigation toolbar on Windows 10+ */
 @media (-moz-os-version: windows-win10) {
   .tab-background-end[selected=true]::after,
