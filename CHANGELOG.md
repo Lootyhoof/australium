@@ -1,5 +1,8 @@
 # Changelog
 
+### 3.0.2
+- fix clickability of tab contents
+
 ### 3.0.1
 - fix popup notification close button margins on Win8/10
 - allow extensions to style their own toolbarbutton-badge
