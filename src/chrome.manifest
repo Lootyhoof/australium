@@ -4,6 +4,7 @@ skin		mozapps			australium		chrome/mozapps/
 skin		communicator		australium		chrome/communicator/
 skin		os		australium		chrome/os/winnt/		os=WINNT	
 skin		os		australium		chrome/os/linux/		os=Linux
+skin		os		australium		chrome/os/darwin/		os=Darwin
 
 override chrome://browser/skin/aboutSessionRestore-window-icon.png  chrome://browser/skin/preferences/application.png                 os!=WINNT
 override chrome://browser/skin/aboutSessionRestore-window-icon.png  chrome://browser/skin/preferences/application.png                 os=WINNT osversion<6
@@ -28,6 +29,16 @@ override chrome://browser/skin/places/autocomplete-star.png         chrome://bro
 override chrome://browser/skin/tabbrowser/newtab.svg                chrome://browser/skin/tabbrowser/newtab-XPVista7.svg              os=Linux
 override chrome://browser/skin/tabbrowser/newtab-inverted.svg       chrome://browser/skin/tabbrowser/newtab-inverted-XPVista7.svg     os=Linux
 override chrome://browser/skin/tabbrowser/tab-arrow-left.svg        chrome://browser/skin/tabbrowser/tab-arrow-left-XPVista7.svg      os=Linux
+override chrome://browser/skin/actionicon-tab.png                   chrome://browser/skin/actionicon-tab-XPVista7.png                 os=Darwin
+override chrome://browser/skin/reload-stop-go.png                   chrome://browser/skin/reload-stop-go-XPVista7.png                 os=Darwin
+override chrome://browser/skin/reload-stop-go@2x.png                chrome://browser/skin/reload-stop-go-XPVista7@2x.png              os=Darwin
+override chrome://browser/skin/toolbarbutton-dropdown-arrow.png     chrome://browser/skin/toolbarbutton-dropdown-arrow-XPVista7.png   os=Darwin
+override chrome://browser/skin/urlbar-history-dropmarker.png        chrome://browser/skin/urlbar-history-dropmarker-XPVista7.png      os=Darwin
+override chrome://browser/skin/urlbar-history-dropmarker@2x.png     chrome://browser/skin/urlbar-history-dropmarker-XPVista7@2x.png   os=Darwin
+override chrome://browser/skin/places/autocomplete-star.png         chrome://browser/skin/places/autocomplete-star-XPVista7.png       os=Darwin
+override chrome://browser/skin/tabbrowser/newtab.svg                chrome://browser/skin/tabbrowser/newtab-XPVista7.svg              os=Darwin
+override chrome://browser/skin/tabbrowser/newtab-inverted.svg       chrome://browser/skin/tabbrowser/newtab-inverted-XPVista7.svg     os=Darwin
+override chrome://browser/skin/tabbrowser/tab-arrow-left.svg        chrome://browser/skin/tabbrowser/tab-arrow-left-XPVista7.svg      os=Darwin
 
 override chrome://browser/skin/Toolbar@2x.png                       chrome://browser/skin/Toolbar-aero@2x.png                         os=WINNT osversion=6
 override chrome://browser/skin/Toolbar@2x.png                       chrome://browser/skin/Toolbar-aero@2x.png                         os=WINNT osversion=6.1
@@ -38,6 +49,7 @@ override chrome://browser/skin/Toolbar.png                          chrome://bro
 override chrome://browser/skin/Toolbar.png                          chrome://browser/skin/Toolbar-win8.png                            os=WINNT osversion=6.2
 override chrome://browser/skin/Toolbar.png                          chrome://browser/skin/Toolbar-win8.png                            os=WINNT osversion=6.3
 override chrome://browser/skin/Toolbar.png                          chrome://browser/skin/Toolbar-linux.png                           os=Linux
+override chrome://browser/skin/Toolbar.png                          chrome://browser/skin/Toolbar-linux.png                           os=Darwin
 
 override chrome://browser/skin/tabbrowser/tab-background-start.png     chrome://browser/skin/tabbrowser/tab-background-start-preWin10.png     os=WINNT osversion<=6.3
 override chrome://browser/skin/tabbrowser/tab-background-start@2x.png  chrome://browser/skin/tabbrowser/tab-background-start-preWin10@2x.png  os=WINNT osversion<=6.3
@@ -51,6 +63,12 @@ override chrome://browser/skin/tabbrowser/tab-background-middle.png    chrome://
 override chrome://browser/skin/tabbrowser/tab-background-middle@2x.png chrome://browser/skin/tabbrowser/tab-background-middle-preWin10@2x.png os=Linux
 override chrome://browser/skin/tabbrowser/tab-background-end.png       chrome://browser/skin/tabbrowser/tab-background-end-preWin10.png       os=Linux
 override chrome://browser/skin/tabbrowser/tab-background-end@2x.png    chrome://browser/skin/tabbrowser/tab-background-end-preWin10@2x.png    os=Linux
+override chrome://browser/skin/tabbrowser/tab-background-start.png     chrome://browser/skin/tabbrowser/tab-background-start-preWin10.png     os=Darwin
+override chrome://browser/skin/tabbrowser/tab-background-start@2x.png  chrome://browser/skin/tabbrowser/tab-background-start-preWin10@2x.png  os=Darwin
+override chrome://browser/skin/tabbrowser/tab-background-middle.png    chrome://browser/skin/tabbrowser/tab-background-middle-preWin10.png    os=Darwin
+override chrome://browser/skin/tabbrowser/tab-background-middle@2x.png chrome://browser/skin/tabbrowser/tab-background-middle-preWin10@2x.png os=Darwin
+override chrome://browser/skin/tabbrowser/tab-background-end.png       chrome://browser/skin/tabbrowser/tab-background-end-preWin10.png       os=Darwin
+override chrome://browser/skin/tabbrowser/tab-background-end@2x.png    chrome://browser/skin/tabbrowser/tab-background-end-preWin10@2x.png    os=Darwin
 
 override chrome://global/skin/tree/twisty.svg#clsd              chrome://global/skin/tree/twisty-Vista78.svg#clsd           os=WINNT osversion<=6.3
 override chrome://global/skin/tree/twisty.svg#clsd-rtl          chrome://global/skin/tree/twisty-Vista78.svg#clsd-rtl       os=WINNT osversion<=6.3
@@ -71,6 +89,10 @@ override chrome://global/skin/icons/close.png                   chrome://global/
 override chrome://global/skin/icons/close@2x.png                chrome://global/skin/icons/close-XPVista7@2x.png         os=Linux
 override chrome://global/skin/icons/close-inverted.png          chrome://global/skin/icons/close-inverted-XPVista7.png   os=Linux
 override chrome://global/skin/icons/close-inverted@2x.png       chrome://global/skin/icons/close-inverted-XPVista7@2x.png os=Linux
+override chrome://global/skin/icons/close.png                   chrome://global/skin/icons/close-XPVista7.png            os=Darwin
+override chrome://global/skin/icons/close@2x.png                chrome://global/skin/icons/close-XPVista7@2x.png         os=Darwin
+override chrome://global/skin/icons/close-inverted.png          chrome://global/skin/icons/close-inverted-XPVista7.png   os=Darwin
+override chrome://global/skin/icons/close-inverted@2x.png       chrome://global/skin/icons/close-inverted-XPVista7@2x.png os=Darwin
 
 override chrome://global/skin/arrow/arrow-lft-hov.gif           chrome://global/skin/arrow/arrow-lft.gif
 override chrome://global/skin/arrow/arrow-rit-hov.gif           chrome://global/skin/arrow/arrow-rit.gif

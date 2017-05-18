@@ -855,12 +855,7 @@ toolbar[brighttext] .toolbarbutton-1 {
     list-style-image: url("chrome://browser/skin/Toolbar-inverted@2x.png");
   }
 }
-  
-@media (-moz-windows-theme: luna-silver) and (max-resolution: 1dppx) {
-  .toolbarbutton-1 {
-    list-style-image: url("chrome://browser/skin/Toolbar-lunaSilver.png");
-  }
-}
+ 
 
 .toolbarbutton-1[disabled=true] > .toolbarbutton-icon,
 .toolbarbutton-1[disabled=true] > .toolbarbutton-menu-dropmarker,
@@ -868,16 +863,6 @@ toolbar[brighttext] .toolbarbutton-1 {
 .toolbarbutton-1[disabled=true] > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
 .toolbarbutton-1 > .toolbarbutton-menubutton-button[disabled] > .toolbarbutton-icon {
   opacity: .4;
-}
-
-.toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
-.toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
-  list-style-image: url("chrome://browser/skin/toolbarbutton-dropdown-arrow.png");
-}
-
-toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
-toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
-  list-style-image: url("chrome://browser/skin/toolbarbutton-dropdown-arrow-inverted.png");
 }
 
 .toolbarbutton-1 > .toolbarbutton-icon,

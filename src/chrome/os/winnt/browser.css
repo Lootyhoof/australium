@@ -26,3 +26,13 @@
   border-style: none;
   background-color: -moz-Dialog;
 }
+
+.toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
+.toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+  list-style-image: url("chrome://browser/skin/toolbarbutton-dropdown-arrow.png");
+}
+
+toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
+toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+  list-style-image: url("chrome://browser/skin/toolbarbutton-dropdown-arrow-inverted.png");
+}
