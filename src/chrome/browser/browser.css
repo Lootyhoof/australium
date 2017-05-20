@@ -3015,7 +3015,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 .popup-notification-icon[popupid="pointerLock"] {
-  list-style-image: url(chrome://browser/skin/pointerLock-64.png);
+  list-style-image: url(chrome://global/skin/icons/notification-icons.svg#pointer);
 }
 
 /* Notification icon box */
@@ -3149,7 +3149,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large] > :-moz-a
 }
 
 #pointerLock-notification-icon {
-  list-style-image: url(chrome://browser/skin/pointerLock-16.png);
+  list-style-image: url(chrome://global/skin/icons/notification-icons.svg#pointer);
 }
 #pointerLock-cancel {
   margin: 0px;

@@ -112,7 +112,7 @@
   list-style-image: url(chrome://global/skin/icons/notification-icons.svg#fullscreen);
 }
 .pref-icon[type="pointerLock"] {
-  list-style-image: url(chrome://browser/skin/pointerLock-64.png);
+  list-style-image: url(chrome://global/skin/icons/notification-icons.svg#pointer);
 }
 
 .pref-title {
