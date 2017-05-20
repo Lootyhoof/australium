@@ -590,7 +590,6 @@ xul|radio[disabled="true"] > xul|*.radio-check {
 }
 
 xul|*.radio-label-box {
-  -moz-margin-start: -1px; /* negative margin for the transparent border */
   -moz-margin-end: 10px;
   -moz-padding-start: 0;
 }
