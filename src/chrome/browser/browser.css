@@ -973,7 +973,7 @@ toolbar[mode=full] .toolbarbutton-1[type=menu] > .toolbarbutton-icon {
 
 #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
   padding-top: calc(var(--toolbarbutton-vertical-inner-padding) + 6px);
-  padding-bottom: calc(var(--toolbarbutton-vertical-inner-padding) + 6px);
+  padding-bottom: calc(var(--toolbarbutton-vertical-inner-padding) + 5px);
 }
 
 #navigator-toolbox[iconsize=large][mode=icons] > #nav-bar .toolbarbutton-1:not(:hover):not(:active):not([open]) > .toolbarbutton-menubutton-dropmarker::before {
