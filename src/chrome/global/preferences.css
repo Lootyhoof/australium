@@ -8,6 +8,16 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+:root {
+  --pref-pane-text: #c1c1c1;
+  --pref-pane-border-focus: 1px dotted #fff;
+  --pref-pane-border-highlight: #ff9500;
+  --pref-pane-text-selected: #f2f2f2;
+  --pref-pane-background: #424f5a;
+  --pref-pane-background-hover: #5e6972;
+  --pref-pane-background-active: #343f48;
+}
+
 /* ::::: dialog ::::: */
 
 prefwindow {
@@ -50,11 +60,10 @@ radio[pane] {
 }
 
 .paneSelector {
-  border-bottom: 2px groove ThreeDFace;
   margin: 0px;
   -moz-padding-start: 10px;
-  background-color: -moz-Field;
-  color: -moz-FieldText;
+  background-color: var(--pref-pane-background);
+  color: var(--pref-pane-text);
 }
 
 .paneButtonIcon {
@@ -63,14 +72,20 @@ radio[pane] {
 }
 
 radio[pane]:hover {
-  background-color: #E0E8F6;
-  color: black;
+  background-color: var(--pref-pane-background-hover);
+  color: var(--pref-pane-text);
   -moz-appearance: none;
 }
 
 radio[pane][selected="true"] {
-  background-color: #C1D2EE;
-  color: black; 
+  background-color: var(--pref-pane-background-active);
+  border-bottom: 4px solid var(--pref-pane-border-highlight);
+  color: var(--pref-pane-text-selected); 
   -moz-appearance: none;
+}
+
+radio[pane]:-moz-focusring {
+  border-left: var(--pref-pane-border-focus);
+  border-right: var(--pref-pane-border-focus);
 }
 
