@@ -1,5 +1,23 @@
 # Changelog
 
+### 4.0.0
+- improve styling for each platform
+- add new feed icon
+- add image document favicon for when viewing standalone images
+- make preferences windows look more like Firefox's in-content preferences dialogs
+- add new plugin and theme icons
+- make the add-ons manager (about:addons) icons more consistent with other Firefox in-content icons
+- Windows: make the appmenu more closely resemble Firefox's menupanel
+- sync permissions manager styling with default
+- sync about:support styling with default
+- sync classic in-content styling with default
+- fix in-content radio label margins
+- fix appearance of icons+text mode
+- fix padding of menubutton dropmarkers when hovered
+- fix "learn more" links in notification popups
+- remove Social API components
+- cleanup of redundant icons
+
 ### 3.0.2
 - fix clickability of tab contents
 
