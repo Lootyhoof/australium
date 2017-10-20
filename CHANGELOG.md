@@ -1,5 +1,9 @@
 # Changelog
 
+### 4.0.1
+- fix statusbar progressmeter
+- sync devtools styling with default
+
 ### 4.0.0
 - improve styling for each platform
 - add new feed icon
