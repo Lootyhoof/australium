@@ -24,6 +24,13 @@
   border: none !important;
 }
 
+@media (-moz-os-version: windows-win8),
+       (-moz-os-version: windows-win10) {
+  .messageCloseButton {
+    margin: 0px;
+  }
+}
+
 .popup-notification-menubutton {
   -moz-appearance: none;
   border-radius: 3px;
