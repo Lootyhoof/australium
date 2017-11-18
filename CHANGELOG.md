@@ -1,5 +1,10 @@
 # Changelog
 
+### 4.0.2
+- improve click-to-play plugin notification popup appearance
+- use more theme-native RSS icon in subscription window
+- preserve add-on bar close button in text mode
+
 ### 4.0.1
 - fix statusbar progressmeter
 - sync devtools styling with default
