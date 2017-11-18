@@ -3392,6 +3392,16 @@ toolbar[brighttext] #addonbar-closebutton {
     list-style-image: url("chrome://global/skin/icons/close-inverted@2x.png");
   }
 }
+
+toolbar[mode="text"] #addonbar-closebutton {
+  padding: 0 0 0 5px;
+  margin-left: 0px;
+  margin-right: -5px;
+}
+
+toolbar[mode="text"] #addonbar-closebutton > .toolbarbutton-icon {
+  display: -moz-box;
+}
   
 /* Status panel */
 
