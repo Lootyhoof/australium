@@ -1797,7 +1797,8 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 }
 
 .ac-result-type-bookmark,
-.autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage) {
+.autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage),
+.private-autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage) {
   list-style-image: url("chrome://browser/skin/places/autocomplete-star.png");
   -moz-image-region: rect(0 16px 16px 0);
   width: 16px;
@@ -1806,7 +1807,8 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 @media (min-resolution: 1.1dppx) {
   .ac-result-type-bookmark,
-  .autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage) {
+  .autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage),
+  .private-autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage)  {
     list-style-image: url("chrome://browser/skin/places/autocomplete-star@2x.png");
     -moz-image-region: rect(0 32px 32px 0);
   }
@@ -1814,6 +1816,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 .ac-result-type-keyword,
 .autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage),
+.private-autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage),
 richlistitem[type~="action"][actiontype="searchengine"] > .ac-title-box > .ac-site-icon {
   list-style-image: url(chrome://global/skin/icons/autocomplete-search.svg#search-icon);
   width: 16px;
@@ -1823,19 +1826,22 @@ richlistitem[type~="action"][actiontype="searchengine"] > .ac-title-box > .ac-si
 @media not all and (-moz-os-version: windows-vista) and (-moz-windows-default-theme) {
   @media not all and (-moz-os-version: windows-win7) and (-moz-windows-default-theme) {
     richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-bookmark,
-    .autocomplete-treebody::-moz-tree-image(selected, current, bookmark, treecolAutoCompleteImage) {
+    .autocomplete-treebody::-moz-tree-image(selected, current, bookmark, treecolAutoCompleteImage),
+    .private-autocomplete-treebody::-moz-tree-image(selected, current, bookmark, treecolAutoCompleteImage) {
       -moz-image-region: rect(0 32px 16px 16px);
     }
 
     @media (min-resolution: 1.1dppx) {
       richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-bookmark,
-      .autocomplete-treebody::-moz-tree-image(selected, current, bookmark, treecolAutoCompleteImage) {
+      .autocomplete-treebody::-moz-tree-image(selected, current, bookmark, treecolAutoCompleteImage),
+      .private-autocomplete-treebody::-moz-tree-image(selected, current, bookmark, treecolAutoCompleteImage) {
         -moz-image-region: rect(0 64px 32px 32px);
       }
     }
 
     .ac-result-type-keyword[selected="true"],
     .autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage, selected),
+    .private-autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage, selected),
     richlistitem[type~="action"][actiontype="searchengine"][selected="true"] > .ac-title-box > .ac-site-icon {
       list-style-image: url(chrome://global/skin/icons/autocomplete-search.svg#search-icon-inverted);
     }
@@ -1843,7 +1849,8 @@ richlistitem[type~="action"][actiontype="searchengine"] > .ac-title-box > .ac-si
 }
 
 .ac-result-type-tag,
-.autocomplete-treebody::-moz-tree-image(tag, treecolAutoCompleteImage) {
+.autocomplete-treebody::-moz-tree-image(tag, treecolAutoCompleteImage),
+.private-autocomplete-treebody::-moz-tree-image(tag, treecolAutoCompleteImage) {
   list-style-image: url("chrome://browser/skin/places/tag.png");
   width: 16px;
   height: 16px;
@@ -1910,18 +1917,22 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   }
 }
 
-.autocomplete-treebody::-moz-tree-cell-text(treecolAutoCompleteComment) {
+.autocomplete-treebody::-moz-tree-cell-text(treecolAutoCompleteComment),
+.private-autocomplete-treebody::-moz-tree-cell-text(treecolAutoCompleteComment) {
   color: GrayText;
 }
 
 .autocomplete-treebody::-moz-tree-cell-text(suggesthint, treecolAutoCompleteComment),
-.autocomplete-treebody::-moz-tree-cell-text(suggestfirst, treecolAutoCompleteComment)
+.autocomplete-treebody::-moz-tree-cell-text(suggestfirst, treecolAutoCompleteComment),
+.private-autocomplete-treebody::-moz-tree-cell-text(suggesthint, treecolAutoCompleteComment),
+.private-autocomplete-treebody::-moz-tree-cell-text(suggestfirst, treecolAutoCompleteComment)
 {
   color: GrayText;
   font-size: smaller;
 }
 
-.autocomplete-treebody::-moz-tree-cell(suggesthint) {
+.autocomplete-treebody::-moz-tree-cell(suggesthint),
+.private-autocomplete-treebody::-moz-tree-cell(suggesthint) {
   border-top: 1px solid GrayText;
 }
 
@@ -2951,6 +2962,10 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 
 .popup-notification-icon[popupid="click-to-play-plugins"] {
   list-style-image: url(chrome://mozapps/skin/plugins/pluginBlocked.svg);
+}
+
+.popup-notification-icon[popupid="addon-theme-change"] {
+  list-style-image: url(chrome://mozapps/skin/extensions/themeGeneric.svg);
 }
 
 .popup-notification-icon[popupid="plugins-not-found"] {
@@ -4072,38 +4087,37 @@ html|*#gcli-output-frame {
 
 /* Badge toolbar item */
 
-.toolbarbutton-badge-container {
+.toolbarbutton-badge-container,
+.toolbarbutton-badge-stack {
   margin: 0;
   padding: 0;
   position: relative;
 }
 
-#navigator-toolbox[iconsize=large] > #nav-bar .toolbarbutton-1 > .toolbarbutton-badge-container {
+#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar .toolbarbutton-1 > .toolbarbutton-badge-container,
+#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar .toolbarbutton-1 > .toolbarbutton-badge-stack {
   padding: 2px 5px;
 }
 
-.toolbarbutton-1 > .toolbarbutton-badge-container > .toolbar-icon {
+.toolbarbutton-1 > .toolbarbutton-badge-container > .toolbar-icon,
+.toolbarbutton-1 > .toolbarbutton-badge-stack > .toolbar-icon {
   position: absolute;
   top: 2px;
   right: 2px;
 }
 
-.toolbarbutton-badge-container > .toolbarbutton-icon[label]:not([label=""]) {
+.toolbarbutton-badge-container > .toolbarbutton-icon[label]:not([label=""]),
+.toolbarbutton-badge-stack > .toolbarbutton-icon[label]:not([label=""]) {
   -moz-margin-end: 0;
 }
 
-#navigator-toolbox[iconsize=large] > #nav-bar *|* > .toolbarbutton-badge[badge]:not([badge=""])::after {
+#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar *|* > .toolbarbutton-badge[badge]:not([badge=""])::after {
   top: 1px;
   right: 1px;
 }
 
 .toolbarbutton-badge[badge]:not([badge=""]):-moz-locale-dir(rtl)::after {
   left: 0;
-  right: auto;
-}
-
-#navigator-toolbox[iconsize=large] > #nav-bar *|* > .toolbarbutton-badge[badge]:not([badge=""]):-moz-locale-dir(rtl)::after {
-  left: 1px;
   right: auto;
 }
 
