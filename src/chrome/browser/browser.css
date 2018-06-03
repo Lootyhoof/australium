@@ -2208,6 +2208,8 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 #TabsToolbar {
   --tab-stroke-background-size: auto 100%;
+  --tab-curve-width: 30px;
+  --tab-curve-half-width: 15px;
 }
 
 /* image preloading hack */
@@ -2256,9 +2258,10 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   -moz-box-flex: 1;
   background-clip: padding-box;
   background-color: transparent;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  margin: 0 -15px;
+  /* Deliberately create a 1px overlap left/right to cover rounding gaps */
+  border-left: calc(var(--tab-curve-half-width) - 1px) solid transparent;
+  border-right: calc(var(--tab-curve-half-width) - 1px) solid transparent;
+  margin: 0 calc(-1 * var(--tab-curve-half-width));
 }
 
 .tab-content {
@@ -2310,13 +2313,13 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 .tab-background,
 .tabs-newtab-button {
   /* overlap the tab curves */
-  -moz-margin-end: -15px;
-  -moz-margin-start: -15px;
+  -moz-margin-end: calc(-1 * var(--tab-curve-half-width));
+  -moz-margin-start: calc(-1 * var(--tab-curve-half-width));
 }
 
 .tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox {
-  -moz-padding-end: 15px;
-  -moz-padding-start: 15px;
+  -moz-padding-end: var(--tab-curve-half-width);
+  -moz-padding-start: var(--tab-curve-half-width);
 }
 
 .tab-background-start[selected=true]::after,
@@ -2326,7 +2329,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 .tab-background-end[selected=true]::after,
 .tab-background-end[selected=true]::before {
   min-height: var(--tab-min-height);
-  width: 30px;
+  width: var(--tab-curve-width);
 }
 
 .tabbrowser-tab:not([selected=true]),
@@ -2348,7 +2351,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 .tab-background-start[selected=true]::after,
 .tab-background-end[selected=true]::after {
   /* position ::after on top of its parent */
-  -moz-margin-start: -30px;
+  -moz-margin-start: calc(-1 * var(--tab-curve-width));
   background-size: 100% 100%;
   content: "";
   display: -moz-box;
@@ -2439,9 +2442,9 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   background-image: url(chrome://browser/skin/tabbrowser/tab-background-start.png),
                     url(chrome://browser/skin/tabbrowser/tab-background-middle.png),
                     url(chrome://browser/skin/tabbrowser/tab-background-end.png);
-  background-position: left bottom, 30px bottom, right bottom;
+  background-position: left bottom, var(--tab-curve-width) bottom, right bottom;
   background-repeat: no-repeat;
-  background-size: 30px 100%, calc(100% - (2 * 30px)) 100%, 30px 100%;
+  background-size: var(--tab-curve-width) 100%, calc(100% - (2 * var(--tab-curve-width))) 100%, var(--tab-curve-width) 100%;
 }
 
 /* Remove border between tab strip and navigation toolbar on Windows 10+ */
@@ -2518,7 +2521,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 /* New tab button */
 
 .tabs-newtab-button {
-  width: calc(36px + 30px);
+  width: calc(36px + var(--tab-curve-width));
 }
 
 @media (min-resolution: 1.1dppx) {
