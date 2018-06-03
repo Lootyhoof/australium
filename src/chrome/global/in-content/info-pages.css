@@ -1,25 +1,22 @@
 
 @import url("chrome://global/skin/in-content/common.css");
-
-:root {
-  --in-content-container-min-width: 13em;
-  --in-content-container-max-width: 52em;
-}
-
 /* Body and container */
 body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   min-height: 100vh;
-  padding: 0 48px;
+  padding-top: 0;
+  padding-bottom: 0;
+  -moz-padding-start: calc(48px + 4.6em);
+  -moz-padding-end: 48px;
   align-items: center;
   justify-content: center;
 }
 
 .container {
-  min-width: var(--in-content-container-min-width);
-  max-width: var(--in-content-container-max-width);
+  min-width: 13em;
+  max-width: 52em;
 }
 
 .container.restore-chosen {
@@ -37,20 +34,24 @@ body {
   background-size: 1.6em;
   -moz-margin-start: -2.3em;
   -moz-padding-start: 2.3em;
-  font-size: 2.2em;
+  font-size: 2.5em;
 }
 
-.title:-moz-locale-dir(rtl),
 .title:dir(rtl) {
   background-position: right 0;
 }
 
 .title-text {
+  border-bottom: 1px solid #C1C1C1;
   font-size: inherit;
   padding-bottom: 0.4em;
 }
 
-@media (max-width: 970px) {
+@media (max-width: 675px) {
+  body {
+    padding: 0 48px;
+  }
+
   .title {
     background-image: none !important;
     -moz-padding-start: 0;
@@ -81,9 +82,8 @@ ul {
   margin-top: 1.2em;
 }
 
-button {
-  padding: 0 1.5em;
-  border-radius: 0;
+.button-container > button {
+  min-width: 150px;
 }
 
 .button-container > button:first-child {
