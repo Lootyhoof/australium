@@ -25,14 +25,6 @@
   --menu-button: url("chrome://browser/skin/hamburger-win10.png");
 }
 
-#toolbarize-menu-button-toolbar-button dropmarker {
-  display: none !important;
-}
-
-#toolbarize-menu-button-toolbar-button .toolbarbutton-icon {
-  padding-right: 5px !important;
-}
-
 #toolbarize-menu-button-toolbar-button {
   list-style-image: var(--menu-button) !important;
 }
