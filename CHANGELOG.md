@@ -1,5 +1,11 @@
 # Changelog
 
+### 4.1.0
+- add initial Pale Moon 28 support
+- sync Windows 10 titlebar styling with Basilisk
+- fix tab curve appearance in in HiDPI
+- improve tab alignment
+
 ### 4.0.2
 - improve click-to-play plugin notification popup appearance
 - use more theme-native RSS icon in subscription window
