@@ -1,15 +1,16 @@
 /* Style to integrate "Toolbarize Menu Button" better with Australium:
  * https://addons.palemoon.org/addon/toolbarize-menu-button/
  *
- * This will override any styling currently on this button (for example selected within the extension)
- * and remove any dropmarkers present. This makes the menu button look like the Firefox "Australis" menu button. 
+ * This will override any styling currently on this button (for example selected within the extension).
+ * This makes the menu button look like the Firefox "Australis" menu button. 
  * As this introduces some empty space where the appmenu was on Windows, this also removes the titlebar text
  * and moves the tab bar up to be in line with how this is presented on Australis. If you don't want that,
  * simply remove the @media section at the bottom of this style.
  *
  * To change the menu icon (default is Windows 10-style), change the "--menu-button" variable below.
  *
- * Apply using either userChrome.css or via the Stylish extension. */
+ * Apply using either userChrome.css or via the Stylish extension.
+ */
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
@@ -20,8 +21,9 @@
    * url("chrome://browser/skin/hamburger-win10.png");
    * url("chrome://browser/skin/hamburger-linux.png");
    * 
-   * Copy them as you would like into the variable below. This will update the icon accordingly. */
-  
+   * Copy them as you would like into the variable below. This will update the icon accordingly.
+   */
+
   --menu-button: url("chrome://browser/skin/hamburger-win10.png");
 }
 
@@ -37,7 +39,18 @@ toolbar[brighttext] #toolbarize-menu-button-toolbar-button {
   /* Removes titlebar text and moves tab bar up in non-maximized windows on Windows */
   #main-window[chromemargin][sizemode="normal"] #TabsToolbar[tabsontop="true"] {
     margin-top: -18px !important;
-    -moz-margin-end: 145px !important;
+  }
+  
+  @media (-moz-os-version: windows-win10) {
+    #main-window[chromemargin][sizemode="normal"] #TabsToolbar[tabsontop="true"] {
+      -moz-margin-end: 145px !important;
+    }
+  }
+  
+  @media not all and (-moz-os-version: windows-win10) {
+    #main-window[chromemargin][sizemode="normal"] #TabsToolbar[tabsontop="true"] {
+      -moz-margin-end: 110px !important;
+    }
   }
   
   #main-window::after {
