@@ -2249,7 +2249,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   -moz-box-flex: 1;
   background-clip: padding-box;
   background-color: transparent;
-  margin: 0 calc(-1 * var(--tab-curve-half-width));
+  margin: 0 -4px;
 }
 
 .tab-background-middle:not(:-moz-lwtheme) {
