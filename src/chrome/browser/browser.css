@@ -2246,16 +2246,18 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 
 .tab-background-middle {
+  --tab-border: calc(var(--tab-curve-half-width) - 1px);
+  --tab-margin: calc(-1 * var(--tab-curve-half-width));
   -moz-box-flex: 1;
   background-clip: padding-box;
   background-color: transparent;
-  margin: 0 -4px;
+  margin: 0 var(--tab-margin);
 }
 
 .tab-background-middle:not(:-moz-lwtheme) {
   /* Deliberately create a 1px overlap left/right to cover rounding gaps */
-  border-left: calc(var(--tab-curve-half-width) - 1px) solid transparent;
-  border-right: calc(var(--tab-curve-half-width) - 1px) solid transparent;
+  border-left: var(--tab-border) solid transparent;
+  border-right: var(--tab-border) solid transparent;
 }
 
 .tab-background-middle:-moz-lwtheme {
