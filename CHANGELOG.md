@@ -1,9 +1,12 @@
 # Changelog
 
+### 4.1.1
+- fix tab curves in PM27
+
 ### 4.1.0
 - add initial Pale Moon 28 support
 - sync Windows 10 titlebar styling with Basilisk
-- fix tab curve appearance in in HiDPI
+- fix tab curve appearance in HiDPI
 - improve tab alignment
 
 ### 4.0.2
