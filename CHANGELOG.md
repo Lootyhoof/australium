@@ -1,5 +1,9 @@
 # Changelog
 
+### 4.1.2
+- fix download status icon appearance
+- improve download icon appearance in bright text toolbars
+
 ### 4.1.1
 - fix tab curves in PM27
 
