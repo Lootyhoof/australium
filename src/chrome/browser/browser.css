@@ -1087,24 +1087,13 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button > #forward-button > .toolbarbutton-icon {
   /*mask: url(keyhole-forward-mask.svg#mask); XXX: this regresses twinopen */
   clip-path: url(chrome://browser/skin/clip.svg#keyhole-forward-clip-path);
-  border-color: var(--urlbar-border-color-hover) !important;
+  border-color: var(--urlbar-border-color-hover);
   -moz-margin-start: -8px !important;
   border-left-style: none !important;
   border-radius: 0 !important;
   padding-left: calc(var(--backbutton-urlbar-overlap) + 3px) !important;
   padding-right: 3px !important;
   max-width: calc(var(--forwardbutton-width) + var(--backbutton-urlbar-overlap)) !important;
-}
-
-@media (-moz-os-version: windows-win10) {
-  window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button > #forward-button > .toolbarbutton-icon {
-    clip-path: url("chrome://browser/skin/clip.svg#urlbar-back-button-clip-path-win10");
-    -moz-margin-start: -9px !important;
-  }
-
-  :root {
-    --backbutton-urlbar-overlap: 8px;
-  }
 }
 
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button:not([switchingtabs]) > #forward-button {
@@ -1143,7 +1132,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button > #back-button > .toolbarbutton-icon {
   border-radius: 10000px !important;
   padding: 6px !important;
-  border-color: var(--urlbar-border-color-hover) !important;
+  border-color: var(--urlbar-border-color-hover);
   max-width: 32px !important; /* icon width + horizontal padding + border */
 }
 
@@ -1567,6 +1556,16 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button[forwarddisabled] + #urlbar-container {
   clip-path: url("chrome://browser/skin/clip.svg#urlbar-back-button-clip-path");
 }
+
+@media (-moz-os-version: windows-win10) {
+  window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button[forwarddisabled] + #urlbar-container {
+    clip-path: url("chrome://browser/skin/clip.svg#urlbar-back-button-clip-path-win10");
+  }
+
+  :root {
+    --backbutton-urlbar-overlap: 4px;
+  }
+}
   
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button[forwarddisabled] + #urlbar-container > #urlbar {
   margin-left: -27px;
@@ -1586,6 +1585,10 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button + #urlbar-container > #urlbar:-moz-locale-dir(rtl) {
   /* let windows-urlbar-back-button-mask clip the urlbar's right side for RTL */
   transform: scaleX(-1);
+}
+
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button[forwarddisabled] > #forward-button:not(:hover):not(:active) .toolbarbutton-icon {
+  opacity: 0;
 }
 
 html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
@@ -4726,23 +4729,64 @@ html|*#gcli-output-frame {
     #main-menubar > menu:not(:-moz-lwtheme) {
       color: inherit;
     }
+  }
 
-    /* Use a different color only on Windows 8 and higher for inactive windows.
-     * On aero, the menubar fog disappears for inactive windows, and renders gray
-     * illegible.
-     */
-    @media not all and (-moz-os-version: windows-win7) {
-      #toolbar-menubar:not(:-moz-lwtheme):-moz-window-inactive {
-        color: ThreeDShadow;
+/* ==== Windows Vista/7 (true glass) styling ==== */
+
+  @media (-moz-os-version: windows-vista),
+         (-moz-os-version: windows-win7) {
+    #main-window[tabsontop=false] #toolbar-menubar:not(:-moz-lwtheme),
+    #nav-bar[tabsontop=false]:not(:-moz-lwtheme),
+    #nav-bar[tabsontop=false]:not(:-moz-lwtheme) .toolbarbutton-text,
+    #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child:not(:-moz-lwtheme) {
+      text-shadow: 0 0 .5em white, 0 0 .5em white, 0 1px 0 rgba(255,255,255,.4);
+    }
+  
+    #main-window[tabsontop=false] #main-menubar:not(:-moz-lwtheme):not(:-moz-window-inactive) {
+      background-color: rgba(255,255,255,.7);
+      border-radius: 2.5px;
+      color: black;
+    }
+
+    :-moz-any(#toolbar-menubar, #nav-bar[tabsontop=false]) :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button, #alltabs-button):not(:-moz-any(#alltabs-button,#sync-button[status])) > .toolbarbutton-icon:not(:-moz-lwtheme),
+    :-moz-any(#toolbar-menubar, #nav-bar[tabsontop=false]) :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button, #alltabs-button) > toolbarbutton > .toolbarbutton-icon:not(:-moz-lwtheme),
+    #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button, #alltabs-button):not(:-moz-any(#alltabs-button,#new-tab-button,#sync-button[status])) > .toolbarbutton-icon:not(:-moz-lwtheme),
+    #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button, #alltabs-button) > toolbarbutton > .toolbarbutton-icon:not(:-moz-lwtheme) {
+      list-style-image: url("chrome://browser/skin/Toolbar-inverted.png");
+    }
+    
+    @media (min-resolution: 1.1dppx) {
+      :-moz-any(#toolbar-menubar, #nav-bar[tabsontop=false]) :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button, #alltabs-button):not(:-moz-any(#alltabs-button,#sync-button[status])) > .toolbarbutton-icon:not(:-moz-lwtheme),
+      :-moz-any(#toolbar-menubar, #nav-bar[tabsontop=false]) :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button, #alltabs-button) > toolbarbutton > .toolbarbutton-icon:not(:-moz-lwtheme),
+      #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button, #alltabs-button):not(:-moz-any(#alltabs-button,#new-tab-button,#sync-button[status])) > .toolbarbutton-icon:not(:-moz-lwtheme),
+      #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button, #alltabs-button) > toolbarbutton > .toolbarbutton-icon:not(:-moz-lwtheme) {
+        list-style-image: url("chrome://browser/skin/Toolbar-inverted@2x.png");
       }
+    }
+
+    #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child .toolbarbutton-1 > .toolbarbutton-menu-dropmarker:not(:-moz-lwtheme),
+    #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker:not(:-moz-lwtheme) {
+      list-style-image: url("chrome://browser/skin/toolbarbutton-dropdown-arrow-inverted.png");
+    }
+  }
+ 
+/* ==== Windows 8/10 (flat color) styling ==== */
+
+  @media (-moz-os-version: windows-win8) {
+    /* Use a light text styling on dark window frames */
+    :root[darkwindowframe="true"]:not(:-moz-lwtheme):not(:-moz-window-inactive) {
+      --titlebar-text-color: white;
     }
   }
 
-  #main-window[darkwindowframe="true"] #toolbar-menubar:not(:-moz-lwtheme):not(:-moz-window-inactive),
-  #main-window[darkwindowframe="true"] #TabsToolbar:not(:-moz-lwtheme):not(:-moz-window-inactive) {
-    color: white;
+  @media (-moz-os-version: windows-win8),
+         (-moz-os-version: windows-win10) {
+    /* Fade text stylings on window inactivity */
+    :root:not(:-moz-lwtheme):-moz-window-inactive {
+      --titlebar-text-color: rgba(0, 0, 0, 0.6);
+    }
   }
-  
+
 /* ==== ==== */
 
   #main-window[sizemode=fullscreen]:not(:-moz-lwtheme) {
@@ -4881,6 +4925,18 @@ html|*#gcli-output-frame {
     background-color: rgba(255,255,255,.725);
     border-color: rgba(0,0,0,.32);
     color: black;
+  }
+  
+  window:not([chromehidden~=toolbar]) #navigator-toolbox[tabsontop=false][iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button > #back-button > .toolbarbutton-icon,
+  window:not([chromehidden~=toolbar]) #navigator-toolbox[tabsontop=false][iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button > #forward-button .toolbarbutton-icon {
+    border-color: rgba(0,0,0,.32);
+  }
+  
+  @media (-moz-os-version: windows-win8),
+         (-moz-os-version: windows-win10) {
+    #main-window[tabsontop=false] .urlbar-history-dropmarker:not(:hover):not(:active) {
+      filter: contrast(10%);
+    }
   }
 
   #navigator-toolbox[tabsontop=false] html|*.urlbar-input:not(:-moz-lwtheme)::-moz-placeholder,

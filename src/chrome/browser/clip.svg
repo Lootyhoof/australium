@@ -17,11 +17,11 @@
 	</clipPath>
 	
 	<clipPath id="urlbar-back-button-clip-path" clipPathUnits="userSpaceOnUse">
-		<path d="M 0,0 0,7.8 C 2.5,11 4,14 4,18 4,22 2.5,25 0,28 l 0,22 10000,0 0,-50 L 0,0 z" />
+		<path d="M0,0v9.8C2.5,13,4,16,4,20s-1.5,7-4,10v22h10000V2L0,0z"/>
 	</clipPath>
   
   <clipPath id="urlbar-back-button-clip-path-win10">
-    <path d="M -6,-2 l 0,1 a 15 15 0 0,1 0,30 l 0,1 l 10000,0 l 0,-32 l -10000,0 z" />
+    <path d="M0,0v6.688L2,9.8C4.5,13,6,16,6,20s-1.5,7-4,10l-2,1.813V52h10002V2L0,0z"/>
   </clipPath>
 	
   <clipPath id="keyhole-forward-clip-path" clipPathUnits="objectBoundingBox">
