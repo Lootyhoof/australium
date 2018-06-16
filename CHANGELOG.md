@@ -1,5 +1,10 @@
 # Changelog
 
+### 4.1.3
+- improve unified back/forward/urlbar appearance
+- improve tabs-on-bottom styling on Windows 7
+- Linux: fix tab margins
+
 ### 4.1.2
 - fix download status icon appearance
 - improve download icon appearance in bright text toolbars
