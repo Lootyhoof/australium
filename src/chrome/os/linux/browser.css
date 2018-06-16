@@ -49,12 +49,12 @@ toolbar[brighttext] #appmenu-toolbar-button > .toolbarbutton-icon {
   padding-bottom: 1px;
 }
 
-#main-window[tabsontop=true] #nav-bar {
-  border-top: 1px solid hsla(209,67%,12%,0.35) !important;
+#main-window[tabsontop=true] #TabsToolbar {
+  box-shadow: 0 -3px hsla(209,67%,12%,0.35) inset;
 }
 
 #TabsToolbar[tabsontop=false] {
-  border-bottom: 1px solid ThreeDShadow !important;
+  box-shadow: 0 -2px ThreeDShadow inset;
 }
 
 #TabsToolbar[collapsed="true"] + #nav-bar,
