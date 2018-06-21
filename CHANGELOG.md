@@ -1,5 +1,8 @@
 # Changelog
 
+### 4.1.4
+- fix inverted download icon appearance
+
 ### 4.1.3
 - improve unified back/forward/urlbar appearance
 - improve tabs-on-bottom styling on Windows 7
