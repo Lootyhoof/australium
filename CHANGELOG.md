@@ -1,5 +1,12 @@
 # Changelog
 
+### 4.2.0
+- add PM28 newtab styling
+- add tabbrowser findbar styling
+- improve about:permissions sizing
+- fix disappearing titlebar in private and lwtheme modes on macOS
+- fix favicon sizes in password manager
+
 ### 4.1.4
 - fix inverted download icon appearance
 
