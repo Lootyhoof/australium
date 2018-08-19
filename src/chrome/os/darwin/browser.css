@@ -100,7 +100,7 @@
 
 .bookmark-item > .toolbarbutton-icon[label]:not([label=""]),
 .bookmark-item > .toolbarbutton-icon[type="menu"] {
-  -moz-margin-end: 5px;
+  margin-inline-end: 5px;
 }
 
 .bookmark-item > .toolbarbutton-menu-dropmarker {

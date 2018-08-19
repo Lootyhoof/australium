@@ -21,8 +21,8 @@
   -moz-image-region: rect(0px, 18px, 18px, 0px);
   margin: 0;
   padding: 0;
-  -moz-padding-start: 2px;
-  -moz-padding-end: 1px;
+  padding-inline-start: 2px;
+  padding-inline-end: 1px;
 }
 
 toolbar[brighttext] #appmenu-toolbar-button > .toolbarbutton-icon {
@@ -83,7 +83,7 @@ toolbar[brighttext] #appmenu-toolbar-button > .toolbarbutton-icon {
 
 /* S4E fix */
 #notification-popup-box {
-  -moz-margin-start: 0 !important;
+  margin-inline-start: 0 !important;
 }
 
 /* Location bar */
