@@ -1,5 +1,13 @@
 # Changelog
 
+### 4.3.0
+- add icons for Reader View extension
+- sync global stylings with Pale Moon 28
+- remove redundant devtools styling
+- use non-prefixed -inline syntax
+- update media controls
+- mark as compatible with Pale Moon 28 only
+
 ### 4.2.0
 - add PM28 newtab styling
 - add tabbrowser findbar styling
