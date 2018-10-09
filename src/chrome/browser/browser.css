@@ -2479,6 +2479,18 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   }
 }
 
+/* Tab pointer-events */
+.tabbrowser-tab {
+  pointer-events: none;
+}
+
+.tab-background-middle,
+.tabs-newtab-button,
+.tab-close-button,
+.tab-content > * {
+  pointer-events: auto;
+}
+
 /* Pinned tabs */
 
 /* Pinned tab separators need position: absolute when positioned (during overflow). */
