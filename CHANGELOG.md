@@ -1,5 +1,9 @@
 # Changelog
 
+### 4.3.1
+- improve tab clickable regions
+- update in-browser developer tools
+
 ### 4.3.0
 - add icons for Reader View extension
 - sync global stylings with Pale Moon 28
