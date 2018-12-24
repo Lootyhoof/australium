@@ -1,5 +1,8 @@
 # Changelog
 
+### 4.4.0
+- add tab audio indicators for Pale Moon 28.3.0+
+
 ### 4.3.1
 - improve tab clickable regions
 - update in-browser developer tools
