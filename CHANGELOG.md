@@ -1,5 +1,9 @@
 # Changelog
 
+### 4.4.1
+- fix inverted new window icon
+- Linux: don't use a transparent urlbar
+
 ### 4.4.0
 - add tab audio indicators for Pale Moon 28.3.0+
 
