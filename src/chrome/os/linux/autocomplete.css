@@ -14,7 +14,6 @@
 textbox[enablehistory="true"] {
   -moz-appearance: none;
   border: 0;
-  background-color: transparent;
 }
 
 textbox[enablehistory="true"] > .autocomplete-textbox-container
