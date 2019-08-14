@@ -1,5 +1,9 @@
 # Changelog
 
+### 4.5.0
+- update Reader View styling to reflect changes in Pale Moon 28.6.0+
+- macOS: improve tab audio indicator visibility
+
 ### 4.4.1
 - fix inverted new window icon
 - Linux: don't use a transparent urlbar
