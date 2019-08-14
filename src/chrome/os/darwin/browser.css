@@ -117,7 +117,9 @@
   background: ThreeDDarkShadow !important;
 }
 
-.tabbrowser-tab[selected="true"]:not(:-moz-lwtheme) > * > * > .tab-text {
+.tabbrowser-tab[selected="true"]:not(:-moz-lwtheme),
+.tabbrowser-tab[selected="true"]:not(:-moz-lwtheme) > * > * > .tab-text,
+.tabbrowser-tab[selected="true"]:not(:-moz-lwtheme) > * > * > .tab-icon-sound {
   color: black;
   text-shadow: none;
 }
