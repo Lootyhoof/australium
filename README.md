@@ -1,5 +1,5 @@
 # Australium
-![Preview](http://i67.tinypic.com/2lvbz10.png)
+![Preview](https://i.imgur.com/OkfGLiO.png)
 
 Port of the Australis theme from Firefox 29 and above to Pale Moon.
 
