@@ -1,0 +1,528 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+#tabs-toolbar {
+  --tabHeight: 31px;
+  --tabCurveWidth: 30px;
+  --tabCurveWidthNegative: -30px;
+  --tabCurveHalfWidth: 15px;
+  --tabCurveHalfWidthNegative: -15px;
+  --tabBackgroundImage: url("chrome://messenger/skin/tabs/background-start.png"),
+                        url("chrome://messenger/skin/tabs/background-middle.png"),
+                        url("chrome://messenger/skin/tabs/background-end.png");
+  --tab-stroke-background-size: auto 100%;
+  --tab-separator-opacity: 0.2;
+}
+
+#tabs-toolbar[brighttext] {
+  --tab-separator-opacity: 0.4;
+}
+
+/* image preloading hack */
+#tabs-toolbar::before {
+  /* Because of bug 853415, we need to ordinal this to the first position: */
+  -moz-box-ordinal-group: 0;
+  content: '';
+  display: block;
+  background-image: var(--tabBackgroundImage);
+}
+
+.tabmail-tab {
+  -moz-appearance: none;
+  -moz-box-align: stretch;
+  background-color: transparent;
+  border-radius: 0;
+  border-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* The selected tab should appear above adjacent tabs and the highlight
+   of #tabs-toolbar */
+.tabmail-tab[selected=true] {
+  position: relative;
+  z-index: 2;
+}
+
+.tabmail-tab[type="preferencesTab"] {
+  list-style-image: url("chrome://mozapps/skin/extensions/utilities.svg#utilities");
+}
+
+.tab-background-middle {
+  -moz-box-flex: 1;
+  background-clip: padding-box;
+  border-left: var(--tabCurveHalfWidth) solid transparent;
+  border-right: var(--tabCurveHalfWidth) solid transparent;
+  margin: 0 var(--tabCurveHalfWidthNegative);
+}
+
+.tab-content {
+  padding-inline-end: 9px;
+  padding-inline-start: 9px;
+}
+
+.tab-throbber,
+.tab-icon-image,
+.tab-close-button {
+  margin-top: 1px;
+}
+
+.tab-throbber,
+.tab-icon-image {
+  height: 16px;
+  width: 16px;
+}
+
+.tab-throbber,
+.tab-icon-image {
+  margin-inline-end: 6px;
+}
+
+.tab-label {
+  margin-inline-end: 0;
+  margin-inline-start: 0;
+}
+
+.tab-content > .tab-close-button {
+  margin-inline-start: 4px;
+  margin-inline-end: -2px;
+  padding: 0;
+}
+
+.tab-background {
+  /* overlap the tab curves */
+  margin-inline-end: var(--tabCurveHalfWidthNegative);
+  margin-inline-start: var(--tabCurveHalfWidthNegative);
+}
+
+.tabmail-arrowscrollbox > scrollbox {
+  padding-inline-end: var(--tabCurveHalfWidth);
+  padding-inline-start: var(--tabCurveHalfWidth);
+}
+
+.tab-background-start[selected=true]::after,
+.tab-background-start[selected=true]::before,
+.tab-background-start,
+.tab-background-end,
+.tab-background-end[selected=true]::after,
+.tab-background-end[selected=true]::before {
+  min-height: var(--tabHeight);
+  width: var(--tabCurveWidth);
+}
+
+.tabmail-tab:-moz-lwtheme {
+  color: inherit;
+}
+
+/* Selected tab */
+
+/*
+ Tab background pseudo-elements which are positioned above
+ .tab-background-start/end:
+   - ::before - provides the fill of the tab curve and is clipped to the tab
+                shape. This is where pointer events go for the curve.
+   - ::after  - provides the border/stroke of the tab curve and is overlayed
+                above ::before.  Pointer events go through to ::before to get
+                the proper shape.
+ */
+
+
+.tab-background-start[selected=true]::after,
+.tab-background-end[selected=true]::after {
+  /* position ::after on top of its parent */
+  margin-inline-start: var(--tabCurveWidthNegative);
+  background-size: 100% 100%;
+  content: '';
+  display: -moz-box;
+  position: relative;
+}
+
+.tab-background-start[selected=true]::before,
+.tab-background-end[selected=true]::before {
+  /* all ::before pseudo elements */
+  content: '';
+  display: -moz-box;
+}
+
+.tab-background-start[selected=true]:-moz-locale-dir(ltr)::after,
+.tab-background-end[selected=true]:-moz-locale-dir(rtl)::after {
+  background-image: url("chrome://messenger/skin/tabs/stroke-start.png");
+}
+
+.tab-background-end[selected=true]:-moz-locale-dir(ltr)::after,
+.tab-background-start[selected=true]:-moz-locale-dir(rtl)::after {
+  background-image: url("chrome://messenger/skin/tabs/stroke-end.png");
+}
+
+.tab-background-middle[selected=true] {
+  background-clip: padding-box, padding-box, content-box;
+  background-color: var(--fgTabBackgroundColor);
+  background-image: url("chrome://messenger/skin/tabs/active-middle.png"),
+                    var(--fgTabTexture),
+                    none;
+  background-repeat: repeat-x;
+  background-size: var(--tab-stroke-background-size), auto 100%;
+  /* The padding-top combined with background-clip: content-box
+     (the bottom-most) ensure the background-color doesn't extend
+     above the top border. */
+  padding-top: 2px;
+}
+
+@media (min-resolution: 1.1dppx) {
+  #tabs-toolbar {
+    --tabBackgroundImage: url(chrome://messenger/skin/tabs/background-start@2x.png),
+                          url(chrome://messenger/skin/tabs/background-middle@2x.png),
+                          url(chrome://messenger/skin/tabs/background-end@2x.png);
+  }
+
+  .tab-background-middle[selected=true] {
+    background-image: url(chrome://messenger/skin/tabs/active-middle@2x.png),
+                      var(--fgTabTexture),
+                      none;
+  }
+
+  .tab-background-start[selected=true]:-moz-locale-dir(ltr)::after,
+  .tab-background-end[selected=true]:-moz-locale-dir(rtl)::after {
+    background-image: url(chrome://messenger/skin/tabs/stroke-start@2x.png);
+  }
+
+  .tab-background-end[selected=true]:-moz-locale-dir(ltr)::after,
+  .tab-background-start[selected=true]:-moz-locale-dir(rtl)::after {
+    background-image: url(chrome://messenger/skin/tabs/stroke-end@2x.png);
+  }
+}
+
+/* End selected tab */
+
+/* new tab button border and gradient on hover */
+.tabmail-tab:hover > .tab-stack > .tab-background:not([selected=true]) {
+  background-image: var(--tabBackgroundImage);
+  background-position: left bottom, var(--tabCurveWidth) bottom, right bottom;
+  background-repeat: no-repeat;
+  background-size: var(--tabCurveWidth) 100%,
+                   calc(100% - (2 * var(--tabCurveWidth))) 100%,
+                   var(--tabCurveWidth) 100%;
+}
+
+/* Tab pointer-events */
+.tabmail-tab {
+  pointer-events: none;
+}
+
+.tab-background-middle,
+.tab-close-button {
+  pointer-events: auto;
+}
+
+/* Tab separators */
+.tabmail-tab::before {
+  margin-top: 5px;
+  margin-bottom: 4px;
+  margin-inline-start: -1px;
+  border-left: 1px solid currentColor;
+  opacity: 0;
+  content: '';
+  display: -moz-box;
+}
+
+.tabmail-tab:not([selected]):not(:hover) +
+.tabmail-tab:not([selected]):not(:hover)::before {
+  opacity: var(--tab-separator-opacity);
+  transition: opacity 100ms ease;
+}
+
+/* Tab Overflow */
+.tabmail-arrowscrollbox > .arrowscrollbox-overflow-start-indicator:not([collapsed]),
+.tabmail-arrowscrollbox > .arrowscrollbox-overflow-end-indicator:not([collapsed]) {
+  background-image: url("chrome://messenger/skin/tabs/overflow-indicator.png");
+  background-size: 100% 100%;
+  width: 14px;
+  margin-bottom: 1px;
+  pointer-events: none;
+  position: relative;
+  z-index: 3; /* the selected tab's z-index + 1 */
+}
+
+.tabmail-arrowscrollbox > .arrowscrollbox-overflow-start-indicator:-moz-locale-dir(rtl),
+.tabmail-arrowscrollbox > .arrowscrollbox-overflow-end-indicator:-moz-locale-dir(ltr) {
+  transform: scaleX(-1);
+}
+
+.tabmail-arrowscrollbox > .arrowscrollbox-overflow-start-indicator:not([collapsed]) {
+  margin-inline-start: -2px;
+  margin-inline-end: -12px;
+}
+
+.tabmail-arrowscrollbox > .arrowscrollbox-overflow-end-indicator:not([collapsed]) {
+  margin-inline-start: -12px;
+  margin-inline-end: -2px;
+}
+
+.tabmail-arrowscrollbox > .arrowscrollbox-overflow-start-indicator[collapsed],
+.tabmail-arrowscrollbox > .arrowscrollbox-overflow-end-indicator[collapsed] {
+  opacity: 0;
+}
+
+.tabmail-arrowscrollbox > .arrowscrollbox-overflow-start-indicator,
+.tabmail-arrowscrollbox > .arrowscrollbox-overflow-end-indicator {
+  transition: opacity 150ms ease;
+}
+
+/* Content Tabs */
+.contentTabToolbox {
+  height: 0px;
+}
+
+.contentTabInstance[disablechrome] .contentTabToolbox {
+  display: none;
+}
+
+.contentTabToolbar {
+  height: 0px;
+  min-height: 0px;
+  padding: 0px;
+}
+
+/**
+ * Tabmail Tabs
+ */
+
+#tabpanelcontainer:-moz-lwtheme {
+  color: inherit;
+}
+
+.tabmail-arrowscrollbox {
+  margin-bottom: -1px;
+}
+
+/**
+ * Tab
+ */
+
+@media (-moz-windows-default-theme) and (-moz-os-version: windows-win7) {
+  .tab-background-middle[selected=true]:not(:-moz-lwtheme) {
+    background-color: var(--customToolbarColor);
+  }
+}
+
+@media (min-resolution: 1.1dppx) {
+  .tab-throbber {
+    list-style-image: url("chrome://global/skin/icons/loading@2x.png") !important;
+  }
+}
+
+.tabmail-tab[busy],
+.tabmail-tab[thinking] {
+  list-style-image: url("chrome://global/skin/icons/loading.png") !important;
+  -moz-image-region: auto !important;
+}
+
+.tabmail-tab[type="glodaSearch"] {
+  list-style-image: url("chrome://global/skin/icons/Search-glass.png");
+}
+
+.tabmail-tab {
+  list-style-image: url("chrome://global/skin/icons/folder-item.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+tabpanels {
+  -moz-appearance: none;
+  background-color: transparent;
+}
+
+/* tabmail-tab focus ring */
+.tabmail-tab > .tab-stack > .tab-content > .tab-text {
+  border: 1px dotted transparent;
+}
+
+.tabmail-tab:focus > .tab-stack > .tab-content > .tab-text {
+  border: 1px dotted -moz-DialogText;
+}
+
+/* Tab DnD indicator */
+.tab-drop-indicator {
+  list-style-image: url(tabs/dragIndicator.png);
+  margin-bottom: -11px;
+}
+
+/**
+ * close buttons
+ */
+
+.tabs-closebutton,
+.tab-close-button {
+  -moz-appearance: none;
+  border: none;
+}
+
+/* Invert the unhovered close tab icons on bright-text tabs */
+@media not all and (min-resolution: 1.1dppx) {
+  .tab-close-button:-moz-lwtheme-brighttext,
+  .tabs-closebutton:-moz-lwtheme-brighttext,
+  #tabs-toolbar[brighttext] .tabs-closebutton,
+  #tabs-toolbar[brighttext] .tab-close-button:not([selected=true]) {
+    list-style-image: url("chrome://global/skin/icons/close-inverted.png");
+  }
+}
+
+@media (min-resolution: 1.1dppx) {
+  .tab-close-button:-moz-lwtheme-brighttext,
+  .tabs-closebutton:-moz-lwtheme-brighttext,
+  #tabs-toolbar[brighttext] .tabs-closebutton,
+  #tabs-toolbar[brighttext] .tab-close-button:not([selected=true]) {
+    list-style-image: url("chrome://global/skin/icons/close-inverted@2x.png");
+  }
+}
+
+.tabs-closebutton-box > .tabs-closebutton {
+  margin-top: 1px;
+  padding: 0 2px;
+}
+
+.tabs-closebutton:focus {
+  outline: none !important;
+}
+
+/**
+ * Tab Scrollbox Arrow Buttons
+ */
+
+.tabs-left {
+  display: none;
+}
+
+.tabmail-arrowscrollbox > .scrollbutton-up,
+.tabmail-arrowscrollbox > stack > .scrollbutton-down {
+  list-style-image: url(tabs/arrow-left.svg);
+}
+
+#tabs-toolbar[brighttext] .tabmail-arrowscrollbox > .scrollbutton-up,
+#tabs-toolbar[brighttext] .tabmail-arrowscrollbox > stack > .scrollbutton-down {
+  list-style-image: url(tabs/arrow-left-inverted.svg);
+}
+
+.tabmail-arrowscrollbox > .scrollbutton-up[disabled],
+.tabmail-arrowscrollbox > stack > .scrollbutton-down[disabled] {
+  opacity: .4;
+}
+
+.tabmail-arrowscrollbox > .scrollbutton-up:-moz-locale-dir(rtl),
+.tabmail-arrowscrollbox > stack > .scrollbutton-down:-moz-locale-dir(ltr) {
+  transform: scaleX(-1);
+}
+
+.tabmail-arrowscrollbox > .scrollbutton-up,
+.tabmail-arrowscrollbox > stack > .scrollbutton-down {
+  margin: 0;
+  margin-inline-end: 1px;
+  border-radius: 0;
+}
+
+.tabmail-arrowscrollbox > .scrollbutton-up:-moz-locale-dir(rtl),
+.tabmail-arrowscrollbox > stack > .scrollbutton-down:-moz-locale-dir(ltr) {
+  margin-inline-start: 1px;
+  margin-inline-end: 0;
+}
+
+/**
+ * All Tabs Button
+ */
+
+.tabs-alltabs-button,
+.tabmail-tabs toolbarbutton {
+  -moz-appearance: none;
+  border-style: none;
+  padding: 0 3px;
+}
+
+.tabs-alltabs-button:hover,
+.tabs-alltabs-button[open],
+.tabs-alltabs-button:hover:active,
+.tabmail-arrowscrollbox > .scrollbutton-up:not([disabled]):hover,
+.tabmail-arrowscrollbox > stack > .scrollbutton-down:not([disabled]):hover {
+  background-image: linear-gradient(rgba(255, 255, 255, 0),
+                    rgba(255, 255, 255, .5)),
+                    linear-gradient(transparent, rgba(0, 0, 0, .25) 30%),
+                    linear-gradient(transparent, rgba(0, 0, 0, .25) 30%);
+  background-position: 1px -1px, 0 -1px, 100% -1px;
+  background-size: calc(100% - 2px) 100%, 1px 100%, 1px 100%;
+  background-repeat: no-repeat;
+}
+
+.tabs-alltabs-button {
+  margin-bottom: -1px;
+  width: 18px;
+  list-style-image: url(icons/dropmarker.svg#win);
+}
+
+#tabs-toolbar[brighttext] .tabs-alltabs-button {
+  list-style-image: url(icons/dropmarker.svg#win-inverted);
+}
+
+.tabs-alltabs-button > .toolbarbutton-icon {
+  width: 9px;
+  height: 7px;
+  margin: 3px 0;
+}
+
+.tabs-alltabs-button > .toolbarbutton-menu-dropmarker {
+  display: none;
+}
+
+@media (-moz-os-version: windows-win8),
+       (-moz-os-version: windows-win10) {
+  .tabs-alltabs-button {
+    list-style-image: url(icons/dropmarker.svg#win8);
+  }
+
+  #tabs-toolbar[brighttext] .tabs-alltabs-button {
+    list-style-image: url(icons/dropmarker.svg#win8-inverted);
+  }
+
+  .tabs-closebutton > .toolbarbutton-icon,
+  .tab-close-button > .toolbarbutton-icon {
+    width: 20px;
+  }
+}
+
+@media (-moz-windows-default-theme) and (-moz-os-version: windows-win8) {
+  #messengerWindow[darkwindowframe="true"]
+  #tabs-toolbar:not(:-moz-lwtheme):not(:-moz-window-inactive),
+  #messengerWindow[darkwindowframe="true"]
+  .tabmail-tab:not([selected="true"]):not(:-moz-lwtheme):not(:-moz-window-inactive) {
+    color: white;
+  }
+
+  #messengerWindow[darkwindowframe="true"]
+  .tabs-alltabs-button:not(:-moz-lwtheme):-moz-window-inactive {
+    padding-inline-start: 5px;
+    padding-inline-end: 5px;
+  }
+
+  .tabs-alltabs-button > .toolbarbutton-icon {
+    margin: 4px 0 0;
+  }
+}
+
+.tabs-alltabs-button > .toolbarbutton-text {
+  display: none;
+}
+
+/**
+ * All Tabs Menupopup
+ */
+
+.alltabs-item {
+  list-style-image: url("chrome://global/skin/icons/folder-item.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+.alltabs-item[selected="true"] {
+  font-weight: bold;
+}
+
+.alltabs-item[busy] {
+  list-style-image: url("chrome://global/skin/icons/loading.png") !important;
+}

@@ -1,5 +1,8 @@
 skin		browser			australium		chrome/browser/
+skin		editor			australium		chrome/editor/
 skin		global			australium		chrome/global/
+skin		messenger		australium		chrome/messenger/
+skin		messenger-newsblog		australium		chrome/messenger-newsblog/
 skin		mozapps			australium		chrome/mozapps/
 skin		communicator		australium		chrome/communicator/
 skin		os		australium		chrome/os/winnt/		os=WINNT	
