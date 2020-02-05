@@ -149,8 +149,13 @@ button.warning {
 /*** category selector ***/
 
 #categories {
-  padding-top: 50px;
-  margin-top: -90px;
+  padding-top: 70px;
+  margin-top: -110px;
+  pointer-events: none;
+}
+
+.category {
+  pointer-events: auto;
 }
 
 .category[selected="true"]:hover {
@@ -294,7 +299,7 @@ button.warning {
 .nav-button {
   list-style-image: url(chrome://mozapps/skin/extensions/navigation.png);
   margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   border-color: transparent;
 }
 
