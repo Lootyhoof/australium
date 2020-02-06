@@ -63,22 +63,10 @@ treechildren::-moz-tree-image(nameColumn2, nntp) {
   -moz-image-region: rect(0 80px 16px 64px);
 }
 
-@media (-moz-os-version: windows-xp) {
-  treechildren::-moz-tree-image(nameColumn) {
-    list-style-image: url("chrome://messenger/skin/icons/folder-XP.png");
-  }
-
-  .subscribeMenuItem {
-    list-style-image: url("chrome://messenger/skin/icons/server-XP.png");
-  }
+treechildren::-moz-tree-image(nameColumn) {
+  list-style-image: url("chrome://messenger/skin/icons/folder.png");
 }
 
-@media not all and (-moz-os-version: windows-xp) {
-  treechildren::-moz-tree-image(nameColumn) {
-    list-style-image: url("chrome://messenger/skin/icons/folder.png");
-  }
-
-  .subscribeMenuItem {
-    list-style-image: url("chrome://messenger/skin/icons/server.png");
-  }
+.subscribeMenuItem {
+  list-style-image: url("chrome://messenger/skin/icons/server.png");
 }

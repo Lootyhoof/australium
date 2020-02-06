@@ -17,13 +17,6 @@
   list-style-image: url("chrome://browser/skin/Toolbar.png");
 }
 
-@media (-moz-windows-theme: luna-silver) {
-  #back-button,
-  #forward-button {
-    list-style-image: url("chrome://browser/skin/Toolbar-lunaSilver.png");
-  }
-}
-
 #back-button {
   -moz-image-region: rect(0, 18px, 18px, 0);
 }
@@ -184,8 +177,7 @@
   }
 }
 
-@media (-moz-windows-default-theme) and (-moz-os-version: windows-vista),
-       (-moz-windows-default-theme) and (-moz-os-version: windows-win7) {
+@media (-moz-windows-default-theme) and (-moz-os-version: windows-win7) {
   #placesView,
   #infoPane,
   #placesList,

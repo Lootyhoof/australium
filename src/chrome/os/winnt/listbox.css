@@ -154,8 +154,7 @@ listheader[sortable="true"]:hover:active {
     outline: none;
   }
 
-  @media (-moz-os-version: windows-vista),
-         (-moz-os-version: windows-win7) {
+  @media (-moz-os-version: windows-win7) {
     listitem {
       --listitem-selectedBottomBorder: var(--listitem-selectedColor);
       --listitem-selectedBackground: rgba(190,190,190,.15);

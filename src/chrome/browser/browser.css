@@ -85,8 +85,7 @@ toolbar:-moz-lwtheme {
 }
 
 @media (-moz-windows-default-theme) {
-  @media (-moz-os-version: windows-vista),
-         (-moz-os-version: windows-win7) {
+  @media (-moz-os-version: windows-win7) {
     #navigator-toolbox:not(:-moz-lwtheme)::after {
       background-color: #aabccf;
     }
@@ -150,8 +149,7 @@ toolbar:-moz-lwtheme {
   }
 }
 
-@media (-moz-os-version: windows-vista),
-       (-moz-os-version: windows-win7),
+@media (-moz-os-version: windows-win7),
        (-moz-os-version: windows-win8) {
   #main-window[tabsontop=true] #nav-bar {
     border-top: 1px solid hsla(209,67%,12%,0.35) !important;
@@ -180,8 +178,7 @@ toolbar:-moz-lwtheme {
   background-image: linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,.4));
 }
 
-@media (-moz-os-version: windows-vista),
-       (-moz-os-version: windows-win7) {
+@media (-moz-os-version: windows-win7) {
   #nav-bar[tabsontop=true],
   #nav-bar[tabsontop=true][collapsed=true]:not([customizing]) + toolbar,
   #nav-bar[tabsontop=true][collapsed=true]:not([customizing]) + #customToolbars + #PersonalToolbar {
@@ -239,8 +236,7 @@ toolbar:-moz-lwtheme {
   }
 }
 
-@media (-moz-os-version: windows-vista),
-       (-moz-os-version: windows-win7) {
+@media (-moz-os-version: windows-win7) {
   @media (-moz-windows-theme: aero),
          (-moz-windows-glass) {
     #appmenu-button {
@@ -280,8 +276,7 @@ toolbar:-moz-lwtheme {
   background-image: linear-gradient(rgb(93,9,153),rgb(93,9,153));
 }
 
-@media (-moz-os-version: windows-vista),
-       (-moz-os-version: windows-win7) {
+@media (-moz-os-version: windows-win7) {
   #appmenu-button {
     background-image: linear-gradient(rgb(82,182,247), rgb(10,98,215) 95%);
     border-radius: 0 0 4px 4px;
@@ -330,8 +325,7 @@ toolbar:-moz-lwtheme {
 }
 
 @media (-moz-windows-compositor) {
-  @media not all and (-moz-os-version: windows-vista) {
-    @media not all and (-moz-os-version: windows-win7) {
+  @media not all and (-moz-os-version: windows-win7) {
 	  #appmenu-button {
 		border-style: none;
 	  }
@@ -340,7 +334,6 @@ toolbar:-moz-lwtheme {
 		list-style-image: url(appmenu-dropmarker-flat.png) !important;
 	  }
 	}
-  }
 }
 
 #appmenu-button > .button-box {
@@ -940,8 +933,7 @@ toolbar[mode=full] .toolbarbutton-1[type=menu] > .toolbarbutton-icon {
   max-width: 43px;
 }
 
-@media (-moz-os-version: windows-vista),
-       (-moz-os-version: windows-win7) {
+@media (-moz-os-version: windows-win7) {
   /* < Win8 */
   :root {
     --toolbarbutton-hover-background: linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1));
@@ -1406,8 +1398,7 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 }
 
 @media (-moz-windows-default-theme) {
-  @media (-moz-os-version: windows-vista),
-         (-moz-os-version: windows-win7),
+  @media (-moz-os-version: windows-win7),
          (-moz-os-version: windows-win8) {
     #main-window:not(:-moz-lwtheme) {
       --urlbar-border-color: hsla(210,54%,20%,.25) hsla(210,54%,20%,.27) hsla(210,54%,20%,.3);
@@ -1449,8 +1440,7 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
     border-color: Highlight;
   }
 
-  @media (-moz-os-version: windows-vista),
-         (-moz-os-version: windows-win7),
+  @media (-moz-os-version: windows-win7),
          (-moz-os-version: windows-win8) {
     #urlbar:not(:-moz-lwtheme),
     .searchbar-textbox:not(:-moz-lwtheme) {
@@ -1825,28 +1815,26 @@ richlistitem[type~="action"][actiontype="searchengine"] > .ac-title-box > .ac-si
   height: 16px;
 }
 
-@media not all and (-moz-os-version: windows-vista) and (-moz-windows-default-theme) {
-  @media not all and (-moz-os-version: windows-win7) and (-moz-windows-default-theme) {
+@media not all and (-moz-os-version: windows-win7) and (-moz-windows-default-theme) {
+  richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-bookmark,
+  .autocomplete-treebody::-moz-tree-image(selected, current, bookmark, treecolAutoCompleteImage),
+  .private-autocomplete-treebody::-moz-tree-image(selected, current, bookmark, treecolAutoCompleteImage) {
+    -moz-image-region: rect(0 32px 16px 16px);
+  }
+
+  @media (min-resolution: 1.1dppx) {
     richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-bookmark,
     .autocomplete-treebody::-moz-tree-image(selected, current, bookmark, treecolAutoCompleteImage),
     .private-autocomplete-treebody::-moz-tree-image(selected, current, bookmark, treecolAutoCompleteImage) {
-      -moz-image-region: rect(0 32px 16px 16px);
+      -moz-image-region: rect(0 64px 32px 32px);
     }
+  }
 
-    @media (min-resolution: 1.1dppx) {
-      richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-bookmark,
-      .autocomplete-treebody::-moz-tree-image(selected, current, bookmark, treecolAutoCompleteImage),
-      .private-autocomplete-treebody::-moz-tree-image(selected, current, bookmark, treecolAutoCompleteImage) {
-        -moz-image-region: rect(0 64px 32px 32px);
-      }
-    }
-
-    .ac-result-type-keyword[selected="true"],
-    .autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage, selected),
-    .private-autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage, selected),
-    richlistitem[type~="action"][actiontype="searchengine"][selected="true"] > .ac-title-box > .ac-site-icon {
-      list-style-image: url(chrome://global/skin/icons/autocomplete-search.svg#search-icon-inverted);
-    }
+  .ac-result-type-keyword[selected="true"],
+  .autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage, selected),
+  .private-autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage, selected),
+  richlistitem[type~="action"][actiontype="searchengine"][selected="true"] > .ac-title-box > .ac-site-icon {
+    list-style-image: url(chrome://global/skin/icons/autocomplete-search.svg#search-icon-inverted);
   }
 }
 
@@ -1897,25 +1885,22 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   }
 }
 
-@media not all and (-moz-os-version: windows-vista),
-       not all and (-moz-windows-default-theme) {
-  @media not all and (-moz-os-version: windows-win7),
-         not all and (-moz-windows-default-theme) {
+@media not all and (-moz-os-version: windows-win7),
+        not all and (-moz-windows-default-theme) {
+  richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-box > .ac-action-icon {
+    -moz-image-region: rect(11px, 16px, 22px, 0);
+  }
+
+  @media (min-resolution: 1.1dppx) {
     richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-box > .ac-action-icon {
-      -moz-image-region: rect(11px, 16px, 22px, 0);
+      -moz-image-region: rect(22px, 32px, 44px, 0);
     }
+  }
 
-    @media (min-resolution: 1.1dppx) {
-      richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-box > .ac-action-icon {
-        -moz-image-region: rect(22px, 32px, 44px, 0);
-      }
-    }
-
-    .ac-comment[selected="true"],
-    .ac-url-text[selected="true"],
-    .ac-action-text[selected="true"] {
-      color: inherit !important;
-    }
+  .ac-comment[selected="true"],
+  .ac-url-text[selected="true"],
+  .ac-action-text[selected="true"] {
+    color: inherit !important;
   }
 }
 
@@ -3768,8 +3753,7 @@ toolbar[mode="text"] #addonbar-closebutton > .toolbarbutton-icon {
     margin-top: 1px;
   }
 
-  @media (-moz-os-version: windows-vista),
-         (-moz-os-version: windows-win7) {
+  @media (-moz-os-version: windows-win7) {
     #appmenu-button {
       border-width: 2px;
       -moz-border-left-colors: rgba(255,255,255,.5) rgba(83,42,6,.9);
@@ -3832,8 +3816,7 @@ toolbar[mode="text"] #addonbar-closebutton > .toolbarbutton-icon {
     color: graytext;
   }
 
-  @media (-moz-os-version: windows-vista),
-         (-moz-os-version: windows-win7) {
+  @media (-moz-os-version: windows-win7) {
     .sidebar-header,
     #sidebar-header {
       background-color: #EEF3FA;
@@ -4297,10 +4280,9 @@ toolbar[mode="text"] #addonbar-closebutton > .toolbarbutton-icon {
     }
   }
 
-/* ==== Windows Vista/7 (true glass) styling ==== */
+/* ==== Windows 7 (true glass) styling ==== */
 
-  @media (-moz-os-version: windows-vista),
-         (-moz-os-version: windows-win7) {
+  @media (-moz-os-version: windows-win7) {
     #main-window[tabsontop=false] #toolbar-menubar:not(:-moz-lwtheme),
     #nav-bar[tabsontop=false]:not(:-moz-lwtheme),
     #nav-bar[tabsontop=false]:not(:-moz-lwtheme) .toolbarbutton-text,
@@ -4370,9 +4352,8 @@ toolbar[mode="text"] #addonbar-closebutton > .toolbarbutton-icon {
     border-right-style: none !important;
   }
 
-  /* Show toolbar borders on vista through win8, but not on win10 and later: */
-  @media (-moz-os-version: windows-vista),          
-  (-moz-os-version: windows-win7),          
+  /* Show toolbar borders on win7 through win8, but not on win10 and later: */
+  @media (-moz-os-version: windows-win7),          
   (-moz-os-version: windows-win8) {
      /* Vertical toolbar border */
     #main-window[sizemode=normal] #navigator-toolbox::after,
@@ -4398,9 +4379,8 @@ toolbar[mode="text"] #addonbar-closebutton > .toolbarbutton-icon {
     }
   }
 
-  /* Round top corners on Vista/7/8, but not Win10 because it's flush against the window edge */
-  @media (-moz-os-version: windows-vista),
-  (-moz-os-version: windows-win7),
+  /* Round top corners on 7/8, but not Win10 because it's flush against the window edge */
+  @media (-moz-os-version: windows-win7),
   (-moz-os-version: windows-win8) {
     #main-window[sizemode=normal][tabsontop=false] #PersonalToolbar:not(:-moz-lwtheme) {
       border-top-left-radius: 2.5px;
@@ -4655,8 +4635,7 @@ toolbar[mode="text"] #addonbar-closebutton > .toolbarbutton-icon {
   transform: scaleX(-1);
 }
 
-@media (-moz-os-version: windows-vista),
-       (-moz-os-version: windows-win7) {
+@media (-moz-os-version: windows-win7) {
 /* ::::: splitmenu highlight style that imitates Windows 7 start menu ::::: */
 @media (-moz-windows-default-theme) {
   .splitmenu-menuitem,

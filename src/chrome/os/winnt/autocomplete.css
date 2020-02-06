@@ -46,8 +46,7 @@ panel[type="private-autocomplete-richlistbox"],
   color: HighlightText;
 }
 
-@media (-moz-os-version: windows-vista) and (-moz-windows-default-theme),
-       (-moz-os-version: windows-win7) and (-moz-windows-default-theme) {
+@media (-moz-os-version: windows-win7) and (-moz-windows-default-theme) {
   .autocomplete-richlistitem[selected="true"],
   .private-autocomplete-richlistitem[selected="true"]  {
     color: inherit;

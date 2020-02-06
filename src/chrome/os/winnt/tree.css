@@ -424,8 +424,7 @@ treechildren:-moz-locale-dir(rtl)::-moz-tree-twisty(hover, open) {
     color: -moz-DialogText;
   }
 
-  @media (-moz-os-version: windows-vista),
-         (-moz-os-version: windows-win7) {
+  @media (-moz-os-version: windows-win7) {
     treechildren {
       --treechildren-outline: 1px solid var(--treechildren-2ndBorderColor);
       --treechildren-2ndBottomBorderColor: rgba(255,255,255,.6);

@@ -203,112 +203,56 @@ activity-warning .statusText {
   list-style-image: url(chrome://messenger/skin/activity/defaultEventIcon.png);
 }
 
-@media (-moz-os-version: windows-xp) {
-  .blockedIcon {
-    list-style-image: url(chrome://global/skin/icons/Error-XP.png);
-  }
-
-  .processIconBox image {
-    list-style-image: url(chrome://messenger/skin/activity/defaultProcessIcon-XP.png);
-  }
-
-  .warningIconBox image {
-    list-style-image: url(chrome://messenger/skin/activity/defaultWarningIcon-XP.png);
-  }
-
-  image.syncMail {
-    list-style-image: url(chrome://messenger/skin/activity/syncMailIcon-XP.png);
-  }
-
-  image.sendMail {
-    list-style-image: url(chrome://messenger/skin/activity/sendMailIcon-XP.png);
-  }
-
-  image.copyMail {
-    list-style-image: url(chrome://messenger/skin/activity/copyMailIcon-XP.png);
-  }
-
-  image.moveMail {
-    list-style-image: url(chrome://messenger/skin/activity/moveMailIcon-XP.png);
-  }
-
-  image.deleteMail {
-    list-style-image: url(chrome://messenger/skin/activity/deleteMailIcon-XP.png);
-  }
-
-  image.addItem {
-    list-style-image: url(chrome://messenger/skin/activity/addItemIcon-XP.png);
-  }
-
-  image.removeItem {
-    list-style-image: url(chrome://messenger/skin/activity/removeItemIcon-XP.png);
-  }
-
-  image.undo {
-    list-style-image: url(chrome://messenger/skin/activity/undoIcon-XP.png);
-  }
-
-  image.indexMail {
-    list-style-image: url(chrome://messenger/skin/activity/indexMailIcon-XP.png);
-  }
-
-  image.compactMail {
-    list-style-image: url(chrome://messenger/skin/activity/compactMailIcon-XP.png);
-  }
+.blockedIcon {
+  list-style-image: url(chrome://global/skin/icons/Error.png);
 }
 
-@media not all and (-moz-os-version: windows-xp) {
-  .blockedIcon {
-    list-style-image: url(chrome://global/skin/icons/Error.png);
-  }
+.processIconBox image {
+  list-style-image: url(chrome://messenger/skin/activity/defaultProcessIcon.png);
+}
 
-  .processIconBox image {
-    list-style-image: url(chrome://messenger/skin/activity/defaultProcessIcon.png);
-  }
+.warningIconBox image {
+  list-style-image: url(chrome://global/skin/icons/Warning.png);
+}
 
-  .warningIconBox image {
-    list-style-image: url(chrome://global/skin/icons/Warning.png);
-  }
+image.syncMail {
+  list-style-image: url(chrome://messenger/skin/activity/syncMailIcon.png);
+}
 
-  image.syncMail {
-    list-style-image: url(chrome://messenger/skin/activity/syncMailIcon.png);
-  }
+image.sendMail {
+  list-style-image: url(chrome://messenger/skin/activity/sendMailIcon.png);
+}
 
-  image.sendMail {
-    list-style-image: url(chrome://messenger/skin/activity/sendMailIcon.png);
-  }
+image.copyMail {
+  list-style-image: url(chrome://messenger/skin/activity/copyMailIcon.png);
+}
 
-  image.copyMail {
-    list-style-image: url(chrome://messenger/skin/activity/copyMailIcon.png);
-  }
+image.moveMail {
+  list-style-image: url(chrome://messenger/skin/activity/moveMailIcon.png);
+}
 
-  image.moveMail {
-    list-style-image: url(chrome://messenger/skin/activity/moveMailIcon.png);
-  }
+image.deleteMail {
+  list-style-image: url(chrome://messenger/skin/activity/deleteMailIcon.png);
+}
 
-  image.deleteMail {
-    list-style-image: url(chrome://messenger/skin/activity/deleteMailIcon.png);
-  }
+image.addItem {
+  list-style-image: url(chrome://messenger/skin/activity/addItemIcon.png);
+}
 
-  image.addItem {
-    list-style-image: url(chrome://messenger/skin/activity/addItemIcon.png);
-  }
+image.removeItem {
+  list-style-image: url(chrome://messenger/skin/activity/removeItemIcon.png);
+}
 
-  image.removeItem {
-    list-style-image: url(chrome://messenger/skin/activity/removeItemIcon.png);
-  }
+image.undo {
+  list-style-image: url(chrome://messenger/skin/activity/undoIcon.png);
+}
 
-  image.undo {
-    list-style-image: url(chrome://messenger/skin/activity/undoIcon.png);
-  }
+image.indexMail {
+  list-style-image: url(chrome://messenger/skin/activity/indexMailIcon.png);
+}
 
-  image.indexMail {
-    list-style-image: url(chrome://messenger/skin/activity/indexMailIcon.png);
-  }
-
-  image.compactMail {
-    list-style-image: url(chrome://messenger/skin/activity/compactMailIcon.png);
-  }
+image.compactMail {
+  list-style-image: url(chrome://messenger/skin/activity/compactMailIcon.png);
 }
 
 /* prevent flickering when changing states */

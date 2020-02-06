@@ -77,46 +77,30 @@
   padding-inline-start: 2px;
 }
 
-@media (-moz-os-version: windows-xp) {
-  .remote-gloda-search-container {
-    padding-top: 6px;
-    padding-bottom: 5px;
-  }
-
-  .searchBox,
-  #view-task-edit-field,
-  #unifinder-task-edit-field {
-    min-height: 22px;
-  }
+.searchBox,
+#view-task-edit-field,
+#unifinder-task-edit-field {
+  background-clip: padding-box;
+  min-height: 24px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  width: 25em;
 }
 
-@media not all and (-moz-os-version: windows-xp) {
-  .searchBox,
-  #view-task-edit-field,
-  #unifinder-task-edit-field {
-    background-clip: padding-box;
-    min-height: 24px;
-    margin-top: 1px;
-    margin-bottom: 1px;
-    width: 25em;
-  }
-
-  #searchInput,
-  #IMSearchInput,
-  #peopleSearchInput {
-    margin-top: -1px;
-    margin-bottom: -1px;
-  }
-
-  .searchBox[focused],
-  #view-task-edit-field[focused],
-  #unifinder-task-edit-field[focused] {
-    border-color: Highlight;
-  }
+#searchInput,
+#IMSearchInput,
+#peopleSearchInput {
+  margin-top: -1px;
+  margin-bottom: -1px;
 }
 
-@media (-moz-windows-default-theme) and (-moz-os-version: windows-vista),
-       (-moz-windows-default-theme) and (-moz-os-version: windows-win7) {
+.searchBox[focused],
+#view-task-edit-field[focused],
+#unifinder-task-edit-field[focused] {
+  border-color: Highlight;
+}
+
+@media (-moz-windows-default-theme) and (-moz-os-version: windows-win7) {
   .searchBox,
   #view-task-edit-field,
   #unifinder-task-edit-field {
@@ -124,8 +108,7 @@
   }
 }
 
-@media (-moz-windows-default-theme) and (-moz-os-version: windows-vista),
-       (-moz-windows-default-theme) and (-moz-os-version: windows-win7),
+@media (-moz-windows-default-theme) and (-moz-os-version: windows-win7),
        (-moz-windows-default-theme) and (-moz-os-version: windows-win8) {
   .searchBox,
   #view-task-edit-field,
