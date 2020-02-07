@@ -145,6 +145,16 @@
   display: -moz-box;
 }
 
+.tab-background-start[selected=true]:-moz-locale-dir(ltr)::before,
+.tab-background-end[selected=true]:-moz-locale-dir(rtl)::before {
+  background-image: url("chrome://messenger/skin/tabs/selected-start.svg");
+}
+
+.tab-background-end[selected=true]:-moz-locale-dir(ltr)::before,
+.tab-background-start[selected=true]:-moz-locale-dir(rtl)::before {
+  background-image: url("chrome://messenger/skin/tabs/selected-end.svg");
+}
+
 .tab-background-start[selected=true]:-moz-locale-dir(ltr)::after,
 .tab-background-end[selected=true]:-moz-locale-dir(rtl)::after {
   background-image: url("chrome://messenger/skin/tabs/stroke-start.png");
@@ -299,12 +309,6 @@
 /**
  * Tab
  */
-
-@media (-moz-windows-default-theme) and (-moz-os-version: windows-win7) {
-  .tab-background-middle[selected=true]:not(:-moz-lwtheme) {
-    background-color: var(--customToolbarColor);
-  }
-}
 
 @media (min-resolution: 1.1dppx) {
   .tab-throbber {

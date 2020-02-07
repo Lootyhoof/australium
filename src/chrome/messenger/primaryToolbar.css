@@ -20,13 +20,13 @@
 }
 
 #tabs-toolbar {
+  margin-bottom: -2px;
   border-bottom-width: 0;
   background-image: linear-gradient(to top, hsla(209, 67%, 12%, 0.35) 1px,
                                     transparent 1px);
 }
 
-.mail-toolbox::after,
-.contentTabToolbox::after {
+#navigation-toolbox::after {
   content: "";
   display: -moz-box;
   height: 1px;
@@ -225,12 +225,12 @@ toolbar[mode="text"] .button-appmenu .toolbarbutton-icon {
   padding: 1px;
 }
 
-.mail-toolbox > toolbar:not(:-moz-lwtheme),
-#navigation-toolbox > toolbar:not(:-moz-lwtheme),
-.contentTabToolbox:not(:-moz-lwtheme) > toolbar:not(:-moz-lwtheme) {
+.mail-toolbox > toolbar,
+#navigation-toolbox > toolbar,
+.contentTabToolbox:not(:-moz-lwtheme) > toolbar {
   -moz-appearance: none;
   border-style: none;
-  background-color: transparent;
+  background-color: -moz-dialog;
 }
 
 .chromeclass-toolbar {
@@ -543,29 +543,8 @@ toolbar[iconsize="large"]:not([mode="text"]) .badgeButton-badge {
 }
 
 @media not all and (-moz-windows-compositor) {
-  #mail-toolbar-menubar2 {
-    background-color: transparent !important
-  }
-
   #print-preview-toolbar:not(:-moz-lwtheme) {
     -moz-appearance: -moz-win-browsertabbar-toolbox;
-  }
-
-  @media (-moz-windows-default-theme) {
-    #messengerWindow {
-      background-color: rgb(185, 209, 234);
-    }
-    #messengerWindow:-moz-window-inactive {
-      background-color: rgb(215, 228, 242);
-    }
-
-    #mail-toolbar-menubar2:not([autohide=true]):not(:-moz-lwtheme),
-    #tabs-toolbar:not(:-moz-lwtheme) {
-      background-color: transparent;
-    }
-    #mail-toolbar-menubar2[autohide=true] {
-      background-color: transparent !important;
-    }
   }
 }
 
@@ -731,9 +710,6 @@ toolbar[iconsize="large"]:not([mode="text"]) .badgeButton-badge {
   }
 
   #mail-toolbar-menubar2 {
-    background-image: linear-gradient(var(--toolbarHighlight),
-                                      var(--toolbarHighlight));
-    box-shadow: 0 1px 0 rgba(253, 253, 253, 0.45) inset;
     padding-bottom: 1px !important;
     padding-top: 2px;
   }
@@ -744,48 +720,12 @@ toolbar[iconsize="large"]:not([mode="text"]) .badgeButton-badge {
   }
 }
 
-@media (-moz-windows-glass) {
-  .mail-toolbox::after,
-  .contentTabToolbox::after {
-    background-color: #aabccf;
-  }
-
-  #navigation-toolbox > #mail-toolbar-menubar2:not(:-moz-lwtheme) {
-    background-color: hsl(210, 75%, 92%);
-    border-bottom: 1px solid #AABCCF;
-  }
-
-  #tabs-toolbar:not(:-moz-lwtheme) {
-    position: relative;
-  }
-
-  #tabs-toolbar:not(:-moz-lwtheme)::before {
-    box-shadow: 0 0 30px 30px rgba(174, 189, 204, 0.85);
-    content: "";
-    display: -moz-box;
-    height: 0;
-    margin: 0 60px; /* (30px + 30px) from box-shadow */
-    position: absolute;
-    pointer-events: none;
-    top: 50%;
-    width: -moz-available;
-    z-index: -1;
-  }
-}
-
 @media (-moz-os-version: windows-win7) {
   @media (-moz-windows-default-theme) {
     #appmenuSecondaryPane {
       --appMenu-bg-color: #f1f5fb;
       --appMenu-bg-box-shadow: rgb(204, 214, 234);
     }
-  }
-}
-
-@media (-moz-windows-default-theme) and (-moz-os-version: windows-win7) {
-  .mail-toolbox:not(:-moz-lwtheme),
-  .contentTabToolbox:not(:-moz-lwtheme) {
-    background-color: hsl(210, 75%, 92%);
   }
 }
 
@@ -815,11 +755,6 @@ toolbar[iconsize="large"]:not([mode="text"]) .badgeButton-badge {
 
 @media (-moz-windows-default-theme) and (-moz-os-version: windows-win8),
        (-moz-windows-default-theme) and (-moz-os-version: windows-win10) {
-  .mail-toolbox::after,
-  .contentTabToolbox::after {
-    background-color: #c2c2c2;
-  }
-
   #button-getmsg {
     list-style-image: url("chrome://messenger/skin/icons/mail-toolbar.svg#getmsg-flat");
   }

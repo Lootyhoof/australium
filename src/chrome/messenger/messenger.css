@@ -14,9 +14,6 @@
   --fgTabTexture: linear-gradient(transparent, transparent 2px, var(--toolbarHighlight) 2px, var(--toolbarHighlight));
   --fgTabBackgroundColor: -moz-dialog;
   --fgTabTextureLWT: var(--fgTabTexture);
-
-  /* Aero-only variables */
-  --customToolbarColor: hsl(210, 75%, 92%);
 }
 
 toolbox:-moz-lwtheme {
