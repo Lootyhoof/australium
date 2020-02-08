@@ -1,5 +1,11 @@
 # Changelog
 
+### 5.0.0
+- initial Interlink support
+- fix nav buttons in about:addons
+- Pale Moon: fix flipped tab scroll button on Linux
+- cleanup redundant styling
+
 ### 4.5.1
 - small version bump for Pale Moon 29.0 compatibility (no code changes)
 
