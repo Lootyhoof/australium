@@ -306,44 +306,6 @@ toolbox > toolbar:last-of-type {
   border-top: 1px solid ThreeDShadow;
 }
 
-@media (-moz-windows-glass) {
-  #ab-toolbox:not(:-moz-lwtheme) {
-    color: black;
-    text-shadow: 0 0 .7em white, 0 0 .7em white, 0 1px 0 rgba(255, 255, 255, .4);
-    border-bottom-color: #aabccf;
-  }
-}
-
-@media (-moz-os-version: windows-win7) {
-  #ab-toolbox:not(:-moz-lwtheme) {
-  background-image: linear-gradient(rgba(255, 255, 255, .5),
-                    rgba(255, 255, 255, 0));
-  }
-}
-
-@media (-moz-windows-default-theme) and (-moz-os-version: windows-win7) {
-  #ab-toolbox:not(:-moz-lwtheme) {
-    background-color: hsl(210, 75%, 92%);
-  }
-
-  #dirTree {
-    background-color: #eef3fa;
-  }
-
-  #status-bar {
-    -moz-appearance: none;
-    border: none;
-    border-top: 1px solid ThreeDShadow;
-    background-color: hsl(210, 75%, 92%);
-  }
-}
-
-@media (-moz-windows-default-theme) and (-moz-os-version: windows-win10) {
-  #dirTree {
-    background-color: #fafafa;
-  }
-}
-
 @media (-moz-windows-default-theme) and (-moz-os-version: windows-win8),
        (-moz-windows-default-theme) and (-moz-os-version: windows-win10) {
   #button-newcard {
