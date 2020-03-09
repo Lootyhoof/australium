@@ -1,5 +1,9 @@
 # Changelog
 
+### 5.0.1
+- Pale Moon (29): clarify the status of Firefox extensions in the Add-ons Manager
+- Interlink: improve address book appearance
+
 ### 5.0.0
 - initial Interlink support
 - fix nav buttons in about:addons
