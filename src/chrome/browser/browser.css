@@ -2195,6 +2195,27 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   margin-bottom: calc(-1 * var(--tab-toolbar-navbar-overlap)); /* overlap the nav-bar's top border */
 }
 
+@media not all and (-moz-os-version: windows-win10) {
+  #TabsToolbar:not(:-moz-lwtheme) {
+    box-shadow: 0px -2px 0px -1px rgba(102, 102, 102, 0.4) inset;
+  }
+
+  @media (-moz-os-version: windows-win7),
+         (-moz-os-version: windows-win8) {
+    .tabbrowser-arrowscrollbox:not(:-moz-lwtheme) {
+      margin-bottom: -1px;
+    }
+  }
+
+  @media not all and (-moz-os-version: windows-win7) {
+    @media  not all and (-moz-os-version: windows-win8) {
+      #main-window[tabsontop=false] .tabbrowser-arrowscrollbox:not(:-moz-lwtheme) {
+        margin-bottom: -1px;
+      }
+    }
+  }
+}
+
 :root {
   --tab-toolbar-navbar-overlap: 1px;
   --navbar-tab-toolbar-highlight-overlap: 1px;
@@ -2204,6 +2225,9 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   --tab-stroke-background-size: auto 100%;
   --tab-curve-width: 30px;
   --tab-curve-half-width: 15px;
+}
+#navigator-toolbox[tabsontop=false] {
+  --tab-toolbar-navbar-overlap: 0px;
 }
 
 /* image preloading hack */

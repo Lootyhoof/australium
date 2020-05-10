@@ -49,12 +49,8 @@ toolbar[brighttext] #appmenu-toolbar-button > .toolbarbutton-icon {
   padding-bottom: 1px;
 }
 
-#main-window[tabsontop=true] #TabsToolbar {
-  box-shadow: 0 -3px hsla(209,67%,12%,0.35) inset;
-}
-
-#TabsToolbar[tabsontop=false] {
-  box-shadow: 0 -2px ThreeDShadow inset;
+#TabsToolbar[tabsontop=true]:not(:-moz-lwtheme) {
+  box-shadow: 0px -4px 0px -1px rgba(102, 102, 102, 0.4) inset;
 }
 
 #TabsToolbar[collapsed="true"] + #nav-bar,
@@ -75,10 +71,6 @@ toolbar[brighttext] #appmenu-toolbar-button > .toolbarbutton-icon {
 
 #TabsToolbar[tabsontop=true]:not(:-moz-lwtheme):-moz-system-metric(menubar-drag) {
   -moz-binding: url("chrome://global/content/bindings/toolbar.xml#toolbar-drag");
-}
-
-#TabsToolbar[tabsontop=false] {
-  background-image: linear-gradient(to top, rgba(0,0,0,.3) 1px, rgba(0,0,0,.05) 1px, transparent 50%);
 }
 
 /* S4E fix */

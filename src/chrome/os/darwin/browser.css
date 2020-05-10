@@ -113,8 +113,12 @@
 }
 
 /* Tab fixes */
-#TabsToolbar[tabsontop="true"]:not(:-moz-lwtheme) {
-  background: ThreeDDarkShadow !important;
+#TabsToolbar[tabsontop=true]:not(:-moz-lwtheme) {
+  box-shadow: 0px -4px 0px -1px rgba(102, 102, 102, 0.4) inset;
+}
+
+#main-window[tabsontop=true] .tabbrowser-arrowscrollbox:-moz-lwtheme {
+  margin-bottom: 1px;
 }
 
 .tabbrowser-tab[selected="true"]:not(:-moz-lwtheme),
