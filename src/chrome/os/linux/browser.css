@@ -16,6 +16,10 @@
 
 /* Appmenu */
 
+#appmenu-toolbar-button {
+  margin-right: -10px;
+}
+
 #appmenu-toolbar-button > .toolbarbutton-icon {
   list-style-image: url("chrome://browser/skin/hamburger-linux.png");
   -moz-image-region: rect(0px, 18px, 18px, 0px);
