@@ -56,6 +56,7 @@
 #folderPane-toolbar {
   border-bottom-width: 1px !important;
   border-bottom-color: ThreeDShadow;
+  margin-top: 1px;
 }
 
 /* Give viewPickerPopup a menu look */
@@ -358,45 +359,6 @@ treechildren::-moz-tree-cell-text(container, closed, hasUnread, read) {
 #viewPicker > .menulist-label-box > .menulist-icon,
 #locationFolders > .menulist-label-box > .menulist-icon {
   min-height: 16px;
-}
-
-@media (-moz-windows-default-theme) and (-moz-os-version: windows-win7) {
-  menulist {
-    border-radius: 2px;
-  }
-
-  menulist[open="true"] {
-    text-shadow: none;
-    transition: none;
-  }
-
-  #viewPickerPopup menu,
-  #viewPickerPopup menuitem {
-    border-radius: 2px;
-  }
-
-  #viewPickerPopup menu[_moz-menuactive="true"],
-  #viewPickerPopup menuitem[_moz-menuactive="true"] {
-    color: -moz-DialogText;
-    border-color: rgb(184, 214, 251);
-    background-image: linear-gradient(rgba(131, 183, 249, .05), rgba(131, 183, 249, .16));
-    background-color: transparent;
-  }
-
-@media (-moz-windows-default-theme) and (-moz-os-version: windows-win8) {
-  #viewPickerPopup menu[_moz-menuactive="true"],
-  #viewPickerPopup menuitem[_moz-menuactive="true"] {
-    color: -moz-DialogText;
-    border-color: rgb(132, 172, 221);
-    background-color: rgba(131, 183, 249, .16);
-  }
-}
-
-@media (-moz-windows-default-theme) and (-moz-os-version: windows-win10) {
-  #viewPickerPopup menu[_moz-menuactive="true"],
-  #viewPickerPopup menuitem[_moz-menuactive="true"] {
-    background-color: #91c9f7;
-  }
 }
 
 #viewPicker > .menulist-label-box > .menulist-icon,
