@@ -12,6 +12,8 @@
   --toolbarbutton-checkedhover-backgroundcolor: rgba(200,200,200,.5);
 
   --urlbar-separator-color: ThreeDShadow;
+
+  --toolbox-after-color: ThreeDShadow;
 }
 
 /* Appmenu */
@@ -103,10 +105,71 @@ toolbar[brighttext] #appmenu-toolbar-button > .toolbarbutton-icon {
 }
 
 /* Keyhole-style back-forward */
-window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button > #forward-button > .toolbarbutton-icon { {
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button > #forward-button > .toolbarbutton-icon {
   padding-left: calc(var(--backbutton-urlbar-overlap) + 3px);
   padding-right: 3px;
   border-left-style: none;
   border-radius: 0;
   max-width: calc(var(--forwardbutton-width) + var(--backbutton-urlbar-overlap));
+}
+
+/* ::::: fullscreen window controls ::::: */
+
+#window-controls {
+  -moz-box-align: start;
+  /* Make sure the window controls are always last on the toolbar */
+  -moz-box-ordinal-group: 100;
+  margin-inline-start: 4px;
+}
+
+#minimize-button,
+#restore-button,
+#close-button {
+  -moz-appearance: none;
+  border-style: none;
+  list-style-image: url("chrome://global/skin/icons/windowControls.png");
+  margin: 0;
+  padding: 0;
+}
+
+#minimize-button {
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+#minimize-button:hover {
+  -moz-image-region: rect(16px, 16px, 32px, 0);
+}
+
+#minimize-button:hover:active {
+  -moz-image-region: rect(32px, 16px, 48px, 0);
+}
+
+#restore-button {
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+#restore-button:hover {
+  -moz-image-region: rect(16px, 32px, 32px, 16px);
+}
+
+#restore-button:hover:active {
+  -moz-image-region: rect(32px, 32px, 48px, 16px);
+}
+
+#close-button {
+  -moz-image-region: rect(0, 49px, 16px, 32px);
+}
+
+#close-button:hover {
+  -moz-image-region: rect(16px, 49px, 32px, 32px);
+}
+
+#close-button:hover:active {
+  -moz-image-region: rect(32px, 49px, 48px, 32px);
+}
+
+#minimize-button:-moz-locale-dir(rtl),
+#restore-button:-moz-locale-dir(rtl),
+#close-button:-moz-locale-dir(rtl) {
+  transform: scaleX(-1);
 }
