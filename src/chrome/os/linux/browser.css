@@ -173,3 +173,20 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 #close-button:-moz-locale-dir(rtl) {
   transform: scaleX(-1);
 }
+
+/* Private browsing indicator */
+
+#main-window[privatebrowsingmode=temporary] #toolbar-menubar[autohide="false"] ~ #TabsToolbar::before {
+  display: -moz-box;
+  content: "";
+  background: url("chrome://browser/skin/privatebrowsing-dark.png") center no-repeat;
+  width: 40px;
+  margin-right: -10px;
+}
+
+#main-window[privatebrowsingmode=temporary] #toolbar-menubar[autohide="true"] ~ #TabsToolbar::after {
+  display: -moz-box;
+  content: "";
+  background: url("chrome://browser/skin/privatebrowsing-dark.png") center no-repeat;
+  width: 40px;
+}
