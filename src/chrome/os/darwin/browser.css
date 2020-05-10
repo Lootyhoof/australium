@@ -151,6 +151,14 @@ toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
   transform: scaleX(-1);
 }
 
+/* Blend the topmost toolbar with the titlebar */
+
+#main-window[tabsontop=false] #nav-bar:not(:-moz-lwtheme),
+#main-window[tabsontop=false] #PersonalToolbar[collapsed=true] ~ #TabsToolbar:not(:-moz-lwtheme),
+#main-window[tabsontop=true] #TabsToolbar:not(:-moz-lwtheme) {
+  -moz-appearance: toolbar;
+}
+
 /* Private browsing indicator */
 
 #main-window[privatebrowsingmode=temporary] #TabsToolbar::before {
@@ -158,4 +166,5 @@ toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
   content: "";
   background: url("chrome://browser/skin/privatebrowsing-dark.png") center no-repeat;
   width: 30px;
+  margin-right: -10px;
 }
