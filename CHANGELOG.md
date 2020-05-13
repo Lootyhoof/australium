@@ -1,5 +1,17 @@
 # Changelog
 
+### 5.1.0
+- show a shadow on the tab bar when tabs have one
+- improve integration with macOS
+- support other GTK-based operating systems
+- provide platform-specific custom statusbar styling to ensure it works in all platforms
+- Windows/Linux: improve styling of fullscreen interface
+- Linux: add private browsing indicator
+- Linux: improve appmenu margins with nearest tab
+- Interlink: remove sidebar grippy icon to be like Australis
+- Interlink: remove out-of-place Windows-specific toolbar styling
+- Interlink: add profile manager styling
+
 ### 5.0.1
 - Pale Moon (29): clarify the status of Firefox extensions in the Add-ons Manager
 - Interlink: improve address book appearance

@@ -9,7 +9,7 @@
 
   <Description about="urn:mozilla:install-manifest">
     <em:id>{6a2ffbbc-4f20-42f0-b98e-98e62085837f}</em:id>
-    <em:version>5.0.1</em:version>
+    <em:version>5.1.0</em:version>
     <em:name>Australium</em:name>
     <em:description>Experience the curved tabs of Australis on UXP.</em:description>
     <em:creator>Lootyhoof</em:creator>
