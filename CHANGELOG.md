@@ -1,5 +1,11 @@
 # Changelog
 
+### 5.2.0
+- add mixed-mode SSL indicator
+- improve findbar textbox appearance
+- use OS-specific alert styling
+- support Pale Moon 30
+
 ### 5.1.0
 - show a shadow on the tab bar when tabs have one
 - improve integration with macOS
