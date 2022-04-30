@@ -368,6 +368,7 @@ body.compact .newtab-control-pin:dir(rtl) {
   background: linear-gradient(hsla(0,0%,100%,.8), hsla(0,0%,100%,.1)) padding-box;
   padding: 0 9px;
   border: 1px solid;
+  color: #5c5c5c;
   border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.17) hsla(210,54%,20%,.2);
   border-inline-start: 1px solid transparent;
   border-radius: 0 2.5px 2.5px 0;
