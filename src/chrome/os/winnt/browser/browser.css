@@ -38,7 +38,8 @@
   }
 
   @media (-moz-os-version: windows-win8),
-         (-moz-os-version: windows-win10) {
+         (-moz-os-version: windows-win10),
+         (-moz-os-version: windows-win11) {
     :root {
       --toolbox-after-color: #c2c2c2;
     }
@@ -586,7 +587,8 @@ toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
   transform: scaleX(-1);
 }
 
-@media (-moz-os-version: windows-win10) {
+@media (-moz-os-version: windows-win10),
+       (-moz-os-version: windows-win11) {
   #window-controls {
     margin-inline-start: 0;
   }
@@ -754,8 +756,9 @@ toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
     -moz-appearance: -moz-win-exclude-glass;
   }
 
-  @media (-moz-os-version: windows-win10) {
-    /* Draw XUL caption buttons and background on Windows 10 */
+  @media (-moz-os-version: windows-win10),
+         (-moz-os-version: windows-win11) {
+    /* Draw XUL caption buttons and background on Win10/11 */
     @media (-moz-windows-default-theme) {
       #main-window {
         background-color: hsl(0, 0%, 78%);
@@ -907,7 +910,7 @@ toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
           transition: none;
         }
       }
-    } /* Windows 10 accent color applies */
+    } /* Windows 10/11 accent color applies */
 
     @media not all and (-moz-windows-default-theme) {
       #main-window {
@@ -1172,7 +1175,7 @@ toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
 
   @media (-moz-os-version: windows-win8) {
     /* Artificially draw window borders that are covered by lwtheme, see bug 591930.
-     * Borders for win7 are below, win10 doesn't need them. */
+     * Borders for win7 are below, win10/11 doesn't need them. */
     #main-window[sizemode="normal"] > #tab-view-deck > #browser-panel:-moz-lwtheme {
       border-top: 1px solid hsla(209,67%,12%,0.35);
     }
@@ -1234,7 +1237,8 @@ toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
   }
 
   @media (-moz-os-version: windows-win8),
-         (-moz-os-version: windows-win10) {
+         (-moz-os-version: windows-win10),
+         (-moz-os-version: windows-win11) {
     /* Fade text stylings on window inactivity */
     :root:not(:-moz-lwtheme):-moz-window-inactive {
       --titlebar-text-color: rgba(0, 0, 0, 0.6);
@@ -1295,7 +1299,7 @@ toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
       border-top-right-radius: 2.5px;
     }
 	
-	#main-window[sizemode=normal] #nav-bar[tabsontop=true]:not(:-moz-lwtheme),
+	  #main-window[sizemode=normal] #nav-bar[tabsontop=true]:not(:-moz-lwtheme),
     #main-window[sizemode=normal] #nav-bar[tabsontop=true][collapsed=true]:not(:-moz-lwtheme) + toolbar:not(:-moz-lwtheme),
     #main-window[sizemode=normal] #nav-bar[tabsontop=true][collapsed=true]:not(:-moz-lwtheme) + #customToolbars:not(:-moz-lwtheme) + #PersonalToolbar:not(:-moz-lwtheme) {
       border-top-left-radius: 2.5px;
@@ -1342,7 +1346,8 @@ toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
     background-image: linear-gradient(rgba(253,253,253,0.45), rgba(255,255,255,0));
   }	
   
-  @media (-moz-os-version: windows-win10) {
+  @media (-moz-os-version: windows-win10),
+         (-moz-os-version: windows-win11) {
 	/* Use a flatter background for #PersonalToolbar and non-ToT #TabsToolbar */
 	#main-window[tabsontop=false] #PersonalToolbar:not([collapsed=true]):not(:-moz-lwtheme),
     #main-window[tabsontop=false] #PersonalToolbar:not([collapsed=true]) ~ #TabsToolbar:not(:-moz-lwtheme) {
@@ -1387,7 +1392,8 @@ toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
   }
   
   @media (-moz-os-version: windows-win8),
-         (-moz-os-version: windows-win10) {
+         (-moz-os-version: windows-win10),
+         (-moz-os-version: windows-win11) {
     #main-window[tabsontop=false] .urlbar-history-dropmarker:not(:hover):not(:active) {
       filter: contrast(10%);
     }
