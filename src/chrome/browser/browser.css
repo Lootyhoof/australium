@@ -904,7 +904,8 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
     }
   }
 
-  @media (-moz-os-version: windows-win10) {
+  @media (-moz-os-version: windows-win10),
+         (-moz-os-version: windows-win11) {
     #main-window:not(:-moz-lwtheme) {
       --urlbar-border-color: hsl(0,0%,90%);
       --urlbar-border-color-hover: hsl(0,0%,80%);
@@ -947,7 +948,8 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
     }
   }
 
-  @media (-moz-os-version: windows-win10) {
+  @media (-moz-os-version: windows-win10),
+         (-moz-os-version: windows-win11) {
     #urlbar:not(:-moz-lwtheme),
     .searchbar-textbox:not(:-moz-lwtheme) {
       padding: 1px;
@@ -962,7 +964,8 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
   }
 }
 
-@media (-moz-os-version: windows-win10) {
+@media (-moz-os-version: windows-win10),
+       (-moz-os-version: windows-win11) {
   #urlbar,
   .searchbar-textbox {
     font-size: 1.15em;
@@ -992,7 +995,8 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
   background-color: white;
 }
 
-@media (-moz-os-version: windows-win10) {
+@media (-moz-os-version: windows-win10),
+       (-moz-os-version: windows-win11) {
   #urlbar,
   .searchbar-textbox {
     font-size: 1.15em;
@@ -1046,7 +1050,8 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   clip-path: url("chrome://browser/skin/clip.svg#urlbar-back-button-clip-path");
 }
 
-@media (-moz-os-version: windows-win10) {
+@media (-moz-os-version: windows-win10),
+       (-moz-os-version: windows-win11) {
   window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) > #unified-back-forward-button[forwarddisabled] + #urlbar-container {
     clip-path: url("chrome://browser/skin/clip.svg#urlbar-back-button-clip-path-win10");
   }
@@ -1367,7 +1372,8 @@ richlistitem[type~="action"][actiontype="searchengine"] > .ac-title-box > .ac-si
   color: -moz-nativehyperlinktext;
 }
 
-@media (-moz-os-version: windows-win10) and (-moz-windows-default-theme) {
+@media (-moz-os-version: windows-win10) and (-moz-windows-default-theme),
+       (-moz-os-version: windows-win11) and (-moz-windows-default-theme) {
   .ac-url-text:not([selected="true"]),
   .ac-action-text:not([selected="true"]) {
     color: Highlight;
@@ -1700,21 +1706,23 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 
 @media not all and (-moz-os-version: windows-win10) {
-  #TabsToolbar:not(:-moz-lwtheme) {
-    box-shadow: 0px -2px 0px -1px rgba(102, 102, 102, 0.4) inset;
-  }
-
-  @media (-moz-os-version: windows-win7),
-         (-moz-os-version: windows-win8) {
-    .tabbrowser-arrowscrollbox:not(:-moz-lwtheme) {
-      margin-bottom: -1px;
+  @media not all and (-moz-os-version: windows-win11) {
+    #TabsToolbar:not(:-moz-lwtheme) {
+      box-shadow: 0px -2px 0px -1px rgba(102, 102, 102, 0.4) inset;
     }
-  }
 
-  @media not all and (-moz-os-version: windows-win7) {
-    @media  not all and (-moz-os-version: windows-win8) {
-      #main-window[tabsontop=false] .tabbrowser-arrowscrollbox:not(:-moz-lwtheme) {
+    @media (-moz-os-version: windows-win7),
+          (-moz-os-version: windows-win8) {
+      .tabbrowser-arrowscrollbox:not(:-moz-lwtheme) {
         margin-bottom: -1px;
+      }
+    }
+
+    @media not all and (-moz-os-version: windows-win7) {
+      @media not all and (-moz-os-version: windows-win8) {
+        #main-window[tabsontop=false] .tabbrowser-arrowscrollbox:not(:-moz-lwtheme) {
+          margin-bottom: -1px;
+        }
       }
     }
   }
@@ -2075,7 +2083,8 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 
 /* Remove border between tab strip and navigation toolbar on Windows 10+ */
-@media (-moz-os-version: windows-win10) {
+@media (-moz-os-version: windows-win10),
+       (-moz-os-version: windows-win11) {
   .tab-background-end[selected=true]::after,
   .tab-background-start[selected=true]::after {
     content: none;
