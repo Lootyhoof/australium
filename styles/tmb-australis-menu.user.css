@@ -1,0 +1,48 @@
+/* ==UserStyle==
+@name         Australium - "Toolbarize Menu Button" integration          
+@namespace    lootyhoof/australium/tmb
+@version      1.0.0
+@description  Style to integrate "Toolbarize Menu Button" better with Australium. This will override any styling currently on this button (for example selected within the extension). This makes the menu button look like the Firefox "Australis" menu button.  As this introduces some empty space where the appmenu was on Windows, this also removes the titlebar text and moves the tab bar up to be in line with how this is presented on Australis. If you don't want that, simply remove the @media section at the bottom of this style.
+@author       Lootyhoof
+@homepageURL  https://github.com/lootyhoof/australium
+@supportURL   https://github.com/lootyhoof/australium/issues
+@var select icon-theme "Choose Icon type" {
+	"Windows 7":	"url('chrome://browser/skin/hamburger-win7.png')",
+	"Windows 8":	"url('chrome://browser/skin/hamburger-win8.png')",
+	"Windows 10":	"url('chrome://browser/skin/hamburger-win10.png')",
+	"Linux":		"url('chrome://browser/skin/hamburger-linux.png')"
+}
+==/UserStyle== */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#toolbarize-menu-button-toolbar-button {
+  list-style-image: var(--icon-theme) !important;
+}
+
+toolbar[brighttext] #toolbarize-menu-button-toolbar-button {
+  list-style-image: url("chrome://browser/skin/hamburger-inverted.png") !important;
+}
+
+@media (-moz-windows-compositor) {
+  /* Removes titlebar text and moves tab bar up in non-maximized windows on Windows */
+  #main-window[chromemargin][sizemode="normal"] #TabsToolbar[tabsontop="true"] {
+    margin-top: -18px !important;
+  }
+  
+  @media (-moz-os-version: windows-win10) {
+    #main-window[chromemargin][sizemode="normal"] #TabsToolbar[tabsontop="true"] {
+      margin-inline-end: 145px !important;
+    }
+  }
+  
+  @media not all and (-moz-os-version: windows-win10) {
+    #main-window[chromemargin][sizemode="normal"] #TabsToolbar[tabsontop="true"] {
+      margin-inline-end: 110px !important;
+    }
+  }
+  
+  #main-window::after {
+    display: none !important;
+  }
+}
